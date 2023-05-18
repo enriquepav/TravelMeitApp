@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F8294E382A166B3300FFA3DD /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8294E372A166B3300FFA3DD /* CreateAccountView.swift */; };
+		F8294E3A2A16879300FFA3DD /* VistaPruebas.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8294E392A16879300FFA3DD /* VistaPruebas.swift */; };
 		F829CE602A150C040098E251 /* TravelMeitAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F829CE5F2A150C040098E251 /* TravelMeitAppApp.swift */; };
 		F829CE622A150C040098E251 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F829CE612A150C040098E251 /* ContentView.swift */; };
 		F829CE642A150C080098E251 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F829CE632A150C080098E251 /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F8294E372A166B3300FFA3DD /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
+		F8294E392A16879300FFA3DD /* VistaPruebas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaPruebas.swift; sourceTree = "<group>"; };
 		F829CE5C2A150C040098E251 /* TravelMeitApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelMeitApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F829CE5F2A150C040098E251 /* TravelMeitAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelMeitAppApp.swift; sourceTree = "<group>"; };
 		F829CE612A150C040098E251 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +57,8 @@
 			children = (
 				F829CE5F2A150C040098E251 /* TravelMeitAppApp.swift */,
 				F829CE612A150C040098E251 /* ContentView.swift */,
+				F8294E372A166B3300FFA3DD /* CreateAccountView.swift */,
+				F8294E392A16879300FFA3DD /* VistaPruebas.swift */,
 				F829CE632A150C080098E251 /* Assets.xcassets */,
 				F829CE652A150C080098E251 /* Preview Content */,
 			);
@@ -137,7 +143,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8294E382A166B3300FFA3DD /* CreateAccountView.swift in Sources */,
 				F829CE622A150C040098E251 /* ContentView.swift in Sources */,
+				F8294E3A2A16879300FFA3DD /* VistaPruebas.swift in Sources */,
 				F829CE602A150C040098E251 /* TravelMeitAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
