@@ -9,26 +9,25 @@ import SwiftUI
 
 struct VistaPruebas: View {
     
-    @State private var selectedOption: String?
-        let options = ["Opción 1", "Opción 2", "Opción 3"]
+    @State private var selectedOption: Int = 0 // Estado de selección
         
+        let options = ["Opción 1", "Opción 2", "Opción 3"]
+    
         var body: some View {
-            NavigationView {
-                VStack {
-                    NavigationLink(destination: DetailView(selectedOption: selectedOption ?? "")) {
-                        Text("Ir al detalle")
-                    }
-                    .disabled(selectedOption == nil) // Deshabilitar el enlace si no se ha seleccionado ninguna opción
-                    
-                    Picker("Selecciona una opción", selection: $selectedOption) {
-                        ForEach(options, id: \.self) { option in
-                            Text(option)
+            ScrollView(.horizontal, showsIndicators: false) {
+                LazyHStack(spacing: 0) {
+                    ForEach(0..<options.count, id: \.self) { index in
+                        Button(action: {
+                            selectedOption = index // Actualizar el estado de selección al hacer clic en la opción
+                        }) {
+                            Text(options[index])
+                                .font(.title)
+                                .padding()
+                                .background(selectedOption == index ? Color.blue.opacity(0.5) : Color.clear) // Marcar la opción seleccionada
+                                .cornerRadius(10)
                         }
                     }
-                    .pickerStyle(.wheel)
-                    .padding()
                 }
-                .navigationBarTitle("Picker con NavigationLink")
             }
         }
     
