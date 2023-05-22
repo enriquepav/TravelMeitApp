@@ -139,6 +139,54 @@ struct CreateAccountView: View {
                 }
                 
             }
+            Button(action: {
+                      // Acción a realizar cuando se presione el botón
+                  }) {
+                      Text("Continuar")
+                          .foregroundColor(.white)
+                          .padding()
+                          .background(Color.orange)
+                          .cornerRadius(10)
+                  }
+            HStack {
+                        Button(action: {
+                            // Acción a realizar cuando se presione el botón de Facebook
+                        }) {
+                            Image(systemName: "globe") // Reemplaza "facebook_icon" con el nombre de tu imagen de Facebook
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 30, height: 30)
+                        }
+                        
+                        Button(action: {
+                            // Acción a realizar cuando se presione el botón de Instagram
+                        }) {
+                            Image(systemName: "globe") // Reemplaza "instagram_icon" con el nombre de tu imagen de Instagram
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 30, height: 30)
+                        }
+                
+                        Button(action: {
+                            // Acción a realizar cuando se presione el botón de Facebook
+                        }) {
+                            Image(systemName: "globe") // Reemplaza "facebook_icon" con el nombre de tu imagen de Facebook
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 30, height: 30)
+                        }
+                        
+                        Button(action: {
+                            // Acción a realizar cuando se presione el botón de Instagram
+                        }) {
+                            Image(systemName: "globe") // Reemplaza "instagram_icon" con el nombre de tu imagen de Instagram
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 30, height: 30)
+                        }
+        
+                }
+            
         }
     }
     
