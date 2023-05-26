@@ -9,28 +9,29 @@ import SwiftUI
 
 struct VistaPruebas: View {
     
-    @State private var selectedOption: Int = 0 // Estado de selección
+    let items = 1...10
         
-        let options = ["Opción 1", "Opción 2", "Opción 3"]
-    
         var body: some View {
-            ScrollView(.horizontal, showsIndicators: false) {
-                LazyHStack(spacing: 0) {
-                    ForEach(0..<options.count, id: \.self) { index in
-                        Button(action: {
-                            selectedOption = index // Actualizar el estado de selección al hacer clic en la opción
-                        }) {
-                            Text(options[index])
-                                .font(.title)
+            ScrollView {
+                VStack {
+                    Text("Cabecera")
+                        .font(.headline)
+                        .padding()
+                    
+                    LazyVGrid(columns: [
+                        GridItem(.flexible()),
+                        GridItem(.flexible())
+                    ]) {
+                        ForEach(items, id: \.self) { item in
+                            Text("Item \(item)")
                                 .padding()
-                                .background(selectedOption == index ? Color.blue.opacity(0.5) : Color.clear) // Marcar la opción seleccionada
-                                .cornerRadius(10)
+                                .background(Color.gray)
+                                .foregroundColor(Color.white)
                         }
                     }
                 }
             }
         }
-    
 }
 
 struct DetailView: View {

@@ -44,7 +44,6 @@ struct PlacesView: View {
                                         Text("")
                                     }
                                 }
-                        
                     }
                 }
             }
