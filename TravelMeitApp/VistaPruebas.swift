@@ -9,29 +9,22 @@ import SwiftUI
 
 struct VistaPruebas: View {
     
-    let items = 1...10
-        
-        var body: some View {
-            ScrollView {
-                VStack {
-                    Text("Cabecera")
-                        .font(.headline)
-                        .padding()
-                    
-                    LazyVGrid(columns: [
-                        GridItem(.flexible()),
-                        GridItem(.flexible())
-                    ]) {
-                        ForEach(items, id: \.self) { item in
-                            Text("Item \(item)")
-                                .padding()
-                                .background(Color.gray)
-                                .foregroundColor(Color.white)
-                        }
-                    }
-                }
+    var body: some View {
+        ZStack(alignment: .top) {
+            Image("barrancoframe")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+            
+            VStack {
+                
+                Text("Título de la imagen")
+                    .font(.title)
+                    .foregroundColor(.white)
+                    .padding()
+                    .background(Color.black.opacity(0.5))
             }
         }
+    }
 }
 
 struct DetailView: View {

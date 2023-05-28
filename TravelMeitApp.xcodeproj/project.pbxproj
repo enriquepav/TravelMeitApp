@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F815232D2A1FFD6100C9FB41 /* MonumentCelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F815232C2A1FFD6100C9FB41 /* MonumentCelView.swift */; };
 		F815232F2A20233700C9FB41 /* MonumentsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F815232E2A20233700C9FB41 /* MonumentsListView.swift */; };
+		F81523312A238E8D00C9FB41 /* MonumentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81523302A238E8D00C9FB41 /* MonumentDetailView.swift */; };
 		F8294E382A166B3300FFA3DD /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8294E372A166B3300FFA3DD /* CreateAccountView.swift */; };
 		F8294E3A2A16879300FFA3DD /* VistaPruebas.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8294E392A16879300FFA3DD /* VistaPruebas.swift */; };
 		F829CE602A150C040098E251 /* TravelMeitAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F829CE5F2A150C040098E251 /* TravelMeitAppApp.swift */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		F815232C2A1FFD6100C9FB41 /* MonumentCelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentCelView.swift; sourceTree = "<group>"; };
 		F815232E2A20233700C9FB41 /* MonumentsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentsListView.swift; sourceTree = "<group>"; };
+		F81523302A238E8D00C9FB41 /* MonumentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentDetailView.swift; sourceTree = "<group>"; };
 		F8294E372A166B3300FFA3DD /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
 		F8294E392A16879300FFA3DD /* VistaPruebas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaPruebas.swift; sourceTree = "<group>"; };
 		F829CE5C2A150C040098E251 /* TravelMeitApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelMeitApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,6 +66,7 @@
 				F8294E372A166B3300FFA3DD /* CreateAccountView.swift */,
 				F815232C2A1FFD6100C9FB41 /* MonumentCelView.swift */,
 				F815232E2A20233700C9FB41 /* MonumentsListView.swift */,
+				F81523302A238E8D00C9FB41 /* MonumentDetailView.swift */,
 				F8294E392A16879300FFA3DD /* VistaPruebas.swift */,
 				F829CE632A150C080098E251 /* Assets.xcassets */,
 				F829CE652A150C080098E251 /* Preview Content */,
@@ -153,6 +156,7 @@
 				F8294E382A166B3300FFA3DD /* CreateAccountView.swift in Sources */,
 				F829CE622A150C040098E251 /* ContentView.swift in Sources */,
 				F8294E3A2A16879300FFA3DD /* VistaPruebas.swift in Sources */,
+				F81523312A238E8D00C9FB41 /* MonumentDetailView.swift in Sources */,
 				F829CE602A150C040098E251 /* TravelMeitAppApp.swift in Sources */,
 				F815232F2A20233700C9FB41 /* MonumentsListView.swift in Sources */,
 			);

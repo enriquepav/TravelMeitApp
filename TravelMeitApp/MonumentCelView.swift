@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MonumentCelView: View {
+    
     @State private var isChecked: Bool = false
     @State var monumentImage: String = "barrancoframe"
     @State var distance: Float
@@ -28,11 +29,13 @@ struct MonumentCelView: View {
                     Spacer()
                     HStack {
                         HStack {
-                            Image(systemName: "globe")
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                        .imageScale(.large)
+                            HStack {
+                                Image(systemName: "globe")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .imageScale(.large)
                                         .frame(width: 10, height: 10)
+                            }
                             Text(String(format: "%.2f", distance)).foregroundColor(.white)
                             Text("\(typeLong)").foregroundColor(.white)
                         }
