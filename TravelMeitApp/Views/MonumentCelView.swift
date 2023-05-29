@@ -12,6 +12,7 @@ struct MonumentCelView: View {
     @State private var isChecked: Bool = false
     @State var monumentImage: String = "barrancoframe"
     @State var distance: Float
+    @State var title: String
     @State var typeLong: String = "km."
     
     
@@ -24,7 +25,7 @@ struct MonumentCelView: View {
                             .imageScale(.large)
                             .frame(width: 300, height: 300)
                 VStack {
-                    Text("Plaza de barranco")
+                    Text(title)
                         .foregroundColor(.white)
                         .font(.system(size: 12, weight: .bold))
                         .padding(8)
@@ -68,6 +69,6 @@ struct MonumentCelView: View {
 
 struct MonumentCelView_Previews: PreviewProvider {
     static var previews: some View {
-        MonumentCelView(distance: 0.20)
+        MonumentCelView(distance: 0.20, title: "Plaza de barranco")
     }
 }
