@@ -15,9 +15,6 @@ struct MonumentsListView: View {
         NavigationView {
             ScrollView {
                 VStack {
-                    Text("Cabecera")
-                        .font(.headline)
-                        .padding()
                     Spacer(minLength: 150)
                     LazyVGrid(columns: [
                         GridItem(.flexible(), spacing: 20),
@@ -40,7 +37,30 @@ struct MonumentsListView: View {
                     }
                     .padding()
                 }
-
+            }.toolbar {
+                ToolbarItemGroup() {
+                    HStack(alignment: .center) {
+                        Image(systemName: "trash")
+                            .frame(width: 32, height: 32)
+                        Image("logoTravelmeit")
+                            .resizable()
+                            .frame(width: 150, height: 40)
+                        Spacer(minLength: 50)
+                        Image(systemName: "trash")
+                            .frame(width: 32, height: 32)
+                            .background(Color.blue)
+                            .mask(Circle())
+                        Image(systemName: "trash")
+                            .frame(width: 32, height: 32)
+                            .background(Color.blue)
+                            .mask(Circle())
+                        Image(systemName: "trash")
+                            .frame(width: 32, height: 32)
+                            .background(Color.blue)
+                            .mask(Circle())
+                    }
+                }
+                
             }
         }
     }

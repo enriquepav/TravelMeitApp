@@ -11,5 +11,5 @@ import SwiftUI
 extension Color {
     static let principalColor = Color("PrincipalColor")
     static let secondColor = Color("SecondColor")
-    
+    static let thirdColor = Color("ThirdColor")
 }

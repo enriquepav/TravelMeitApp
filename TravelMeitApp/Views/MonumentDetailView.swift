@@ -94,7 +94,7 @@ struct MonumentDetailView: View {
                             }
                             
                         }
-                        
+
                        
                     }
                 }
