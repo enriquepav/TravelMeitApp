@@ -12,6 +12,11 @@ struct MonumentsListView: View {
     
     let items: [Float] = [1.50, 0.15, 0.89, 2.35, 1.69, 3.45]// Reemplaza "YourDataType" con el tipo de dato que utilices en tu grid
     
+    @State private var selectedOption: Int = 1 // Estado de selección
+    let distanceSelected: [Float] = [3.00, 10.00, 50.00]
+    let options = ["ic_3km", "ic_10km", "ic_50km"]
+    let optionSelected = ["ic_3kmSelected", "ic_10kmSelected", "ic_50kmSelected"]
+    
     @ObservedObject var viewModel = MonumentsListViewModel()
     
     var body: some View {
@@ -41,21 +46,41 @@ struct MonumentsListView: View {
             }
         }.toolbar {
             ToolbarItemGroup() {
-                HStack(alignment: .center) {
-                    Image("logoTravelmeit")
-                        .resizable()
-                        .frame(width: 150, height: 40)
-                    Spacer(minLength: 50)
-                    Image("ic_3km")
-                        .resizable()
-                        .frame(width: 32, height: 32)
-                    Image("ic_10km")
-                        .resizable()
-                        .frame(width: 32, height: 32)
-                    Image("ic_50km")
-                        .resizable()
-                        .frame(width: 32, height: 32)
+                Image("logoTravelmeit")
+                .resizable()
+                .frame(width: 150, height: 40)
+               Spacer(minLength: 50)
+                
+                ScrollView(.horizontal, showsIndicators: false) {
+                    LazyHStack(spacing: 0) {
+                        ForEach(0..<options.count, id: \.self) { index in
+                            Button(action: {
+                                selectedOption = index
+                                FilterManager.sharedInstance.distanceSelected = distanceSelected[index]// Actualizar el estado de selección al hacer clic en la opción
+                            }) {
+                                Image(options[index])
+                                    .resizable()
+                                    .frame(width: 32, height: 32)
+                                    .background(selectedOption == index ? Color.blue.opacity(0.5) : Color.clear) // Marcar la opción seleccionada
+                            }
+                        }
+                    }
                 }
+            
+//                HStack(alignment: .center) {
+//                    Image("logoTravelmeit")
+//                        .resizable()
+//                        .frame(width: 150, height: 40)
+//                    Spacer(minLength: 50)
+//                    Image("ic_3km")
+//                        .resizable()
+//                        .frame(width: 32, height: 32)
+//                    Image("ic_10km")
+//                        .resizable()
+//                        .frame(width: 32, height: 32)
+//                    Image("ic_50km")
+//                        .resizable()
+//                        .frame(width: 32, height: 32)
             }
             
         }

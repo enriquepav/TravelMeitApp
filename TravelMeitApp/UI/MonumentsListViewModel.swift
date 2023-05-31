@@ -22,8 +22,12 @@ final class MonumentsListViewModel: ObservableObject {
     
     func callFuncToGetEmpData() {
         self.apiService.apiToGetMonumentsData { (monumentsData) in
-               self.monumentsData = monumentsData
-           }
+            self.monumentsData = monumentsData.filter {
+                Float(self.calculateDistance(point1: self.coordinateZero, point2: CLLocationCoordinate2D(latitude: $0.Lattitude ?? 0.00, longitude: $0.Longitude ?? 0.00))) < FilterManager.sharedInstance.distanceSelected
+                
+            }
+        }
+        
        }
     func calculateDistance(point1: CLLocationCoordinate2D, point2: CLLocationCoordinate2D) -> CLLocationDistance {
            let location1 = CLLocation(latitude: point1.latitude, longitude: point1.longitude)

@@ -16,6 +16,7 @@
 		F815232F2A20233700C9FB41 /* MonumentsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F815232E2A20233700C9FB41 /* MonumentsListView.swift */; };
 		F81523312A238E8D00C9FB41 /* MonumentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81523302A238E8D00C9FB41 /* MonumentDetailView.swift */; };
 		F81523342A24386700C9FB41 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81523332A24386600C9FB41 /* Colors.swift */; };
+		F81523362A26F8E800C9FB41 /* FilterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81523352A26F8E800C9FB41 /* FilterManager.swift */; };
 		F8294E382A166B3300FFA3DD /* CreateAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8294E372A166B3300FFA3DD /* CreateAccountView.swift */; };
 		F8294E3A2A16879300FFA3DD /* VistaPruebas.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8294E392A16879300FFA3DD /* VistaPruebas.swift */; };
 		F829CE602A150C040098E251 /* TravelMeitAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F829CE5F2A150C040098E251 /* TravelMeitAppApp.swift */; };
@@ -34,6 +35,7 @@
 		F815232E2A20233700C9FB41 /* MonumentsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentsListView.swift; sourceTree = "<group>"; };
 		F81523302A238E8D00C9FB41 /* MonumentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentDetailView.swift; sourceTree = "<group>"; };
 		F81523332A24386600C9FB41 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		F81523352A26F8E800C9FB41 /* FilterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterManager.swift; sourceTree = "<group>"; };
 		F8294E372A166B3300FFA3DD /* CreateAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountView.swift; sourceTree = "<group>"; };
 		F8294E392A16879300FFA3DD /* VistaPruebas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaPruebas.swift; sourceTree = "<group>"; };
 		F829CE5C2A150C040098E251 /* TravelMeitApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelMeitApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +106,7 @@
 		F829CE532A150C040098E251 = {
 			isa = PBXGroup;
 			children = (
+				F81523352A26F8E800C9FB41 /* FilterManager.swift */,
 				F829CE5E2A150C040098E251 /* TravelMeitApp */,
 				F829CE5D2A150C040098E251 /* Products */,
 			);
@@ -215,6 +218,7 @@
 				F8294E382A166B3300FFA3DD /* CreateAccountView.swift in Sources */,
 				F829CE622A150C040098E251 /* ContentView.swift in Sources */,
 				A2948DDB2A252E8200928576 /* MonumentsResponse.swift in Sources */,
+				F81523362A26F8E800C9FB41 /* FilterManager.swift in Sources */,
 				A2948DD72A250D4900928576 /* APIService.swift in Sources */,
 				A2948DD92A250D6000928576 /* MonumentsListViewModel.swift in Sources */,
 				F8294E3A2A16879300FFA3DD /* VistaPruebas.swift in Sources */,
