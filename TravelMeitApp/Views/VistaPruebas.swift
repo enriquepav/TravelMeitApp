@@ -8,21 +8,36 @@
 import SwiftUI
 
 struct VistaPruebas: View {
-
-    var body: some View {
-            NavigationView {
-                VStack {
-                    Text("Contenido de la vista")
-                }
-                .navigationBarTitle("Vista principal", displayMode: .inline)
-                .navigationBarItems(trailing:
-                    Button(action: {
-                        // Acción del botón
-                    }) {
-                        Image(systemName: "plus")
+    @State private var selectedImageIndex = 0
+        
+        let images = ["globe", "globe.fill", "globe", "globe", "globe"]
+        
+        var body: some View {
+            VStack {
+                TabView(selection: $selectedImageIndex) {
+                    ForEach(0..<images.count) { index in
+                        Image(images[index])
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .tag(index)
+                            .onTapGesture {
+                                selectedImageIndex = index
+                            }
                     }
-                )
+                }
+                .tabViewStyle(PageTabViewStyle())
+                
+                HStack {
+                    ForEach(0..<images.count) { index in
+                        Circle()
+                            .fill(index == selectedImageIndex ? Color.blue : Color.gray)
+                            .frame(width: 10, height: 10)
+                            .padding(.horizontal, 4)
+                    }
+                }
+                .padding(.top, 8)
             }
+            .padding()
         }
 }
     

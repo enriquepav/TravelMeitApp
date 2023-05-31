@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 struct MonumentsListView: View {
     
@@ -22,8 +23,8 @@ struct MonumentsListView: View {
                     GridItem(.flexible(), spacing: 20)
                 ], spacing: 300) {
                     ForEach(viewModel.monumentsData, id: \.id) { item in
-                        NavigationLink(destination: MonumentDetailView(name: item.monument, distance: 1.50)) {
-                            MonumentCelView(distance: 1.50, title: item.monument)
+                        NavigationLink(destination: MonumentDetailView(image: "barrancoframe", name: item.monument, distance: Float(viewModel.calculateDistance(point1: viewModel.coordinateZero, point2: CLLocationCoordinate2D(latitude: item.Lattitude ?? 0.00, longitude: item.Longitude ?? 0.00))))) {
+                            MonumentCelView(monumentImage: "barrancoframe", distance: Float(viewModel.calculateDistance(point1: viewModel.coordinateZero, point2: CLLocationCoordinate2D(latitude: item.Lattitude ?? 0.00, longitude: item.Longitude ?? 0.00))), title: item.monument)
                         }
                         //                            .navigationBarItems(trailing:
                         //                                                    Button(action: {

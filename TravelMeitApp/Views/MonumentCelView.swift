@@ -10,7 +10,7 @@ import SwiftUI
 struct MonumentCelView: View {
     
     @State private var isChecked: Bool = false
-    @State var monumentImage: String = "barrancoframe"
+    @State var monumentImage: String
     @State var distance: Float
     @State var title: String
     @State var typeLong: String = "km."
@@ -69,6 +69,6 @@ struct MonumentCelView: View {
 
 struct MonumentCelView_Previews: PreviewProvider {
     static var previews: some View {
-        MonumentCelView(distance: 0.20, title: "Plaza de barranco")
+        MonumentCelView(monumentImage: "barrancoframe", distance: 0.20444, title: "Plaza de barranco")
     }
 }

@@ -10,6 +10,7 @@ import SwiftUI
 struct MonumentDetailView: View {
     @State private var isChecked: Bool = false
     @State private var isActive: Bool = false
+    @State var image: String
     @State var name: String
     @State var distance: Float
     @State var typeLong: String = "km."
@@ -17,7 +18,7 @@ struct MonumentDetailView: View {
     var body: some View {
         NavigationView {
             ZStack{
-                Image("barrancoframe")
+                Image(image)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .edgesIgnoringSafeArea(.all)
@@ -108,6 +109,6 @@ struct MonumentDetailView: View {
 
 struct MonumentDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        MonumentDetailView(name: "Vista de Prueba", distance: 2.5)
+        MonumentDetailView(image:"barrancoframe", name: "Vista de Prueba", distance: 2.5)
     }
 }
