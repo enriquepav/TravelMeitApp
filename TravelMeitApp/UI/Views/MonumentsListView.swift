@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CoreLocation
+import CoreLocationUI
 
 struct MonumentsListView: View {
     
@@ -14,8 +15,13 @@ struct MonumentsListView: View {
     let distanceSelected: [Float] = [0.15, 0.26, 50.00] // Cambiar distancias
     let options = ["ic_3km", "ic_10km", "ic_50km"]
     let optionSelected = ["ic_3kmSelected", "ic_10kmSelected", "ic_50kmSelected"]
-    
+    @StateObject var locationManager = LocationManager()
     @ObservedObject var viewModel = MonumentsListViewModel()
+    
+    var userCoordinate: CLLocationCoordinate2D{
+        locationManager.requestLocation()
+        return locationManager.location ?? viewModel.coordinateZero
+    }
     
     var body: some View {
         ScrollView {
@@ -26,11 +32,10 @@ struct MonumentsListView: View {
                     GridItem(.flexible(), spacing: 20)
                 ], spacing: 300) {
                     ForEach(viewModel.monumentsData, id: \.id) { item in
-                        NavigationLink(destination: MonumentDetailView(image: "barrancoframe", name: item.monument, distance: Float(viewModel.calculateDistance(point1: viewModel.coordinateZero, point2: CLLocationCoordinate2D(latitude: item.Lattitude ?? 0.00, longitude: item.Longitude ?? 0.00))))) {
-                            MonumentCelView(monumentImage: "barrancoframe", distance: Float(viewModel.calculateDistance(point1: viewModel.coordinateZero, point2: CLLocationCoordinate2D(latitude: item.Lattitude ?? 0.00, longitude: item.Longitude ?? 0.00))), title: item.monument)
+                        NavigationLink(destination: MonumentDetailView(image: "barrancoframe", name: item.monument, distance: Float(viewModel.calculateDistance(point1: userCoordinate, point2: CLLocationCoordinate2D(latitude: item.Lattitude ?? 0.00, longitude: item.Longitude ?? 0.00))))) {
+                            MonumentCelView(monumentImage: "barrancoframe", distance: Float(viewModel.calculateDistance(point1: userCoordinate, point2: CLLocationCoordinate2D(latitude: item.Lattitude ?? 0.00, longitude: item.Longitude ?? 0.00))), title: item.monument)
                         }
- 
-                    }
+                     }
                 }
                 .padding()
             }

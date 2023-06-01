@@ -11,7 +11,7 @@ class APIService :  ObservableObject {
     
     private let sourcesURL = URL(string: "https://api.jsonbin.io/v3/b/6474fd029d312622a3677e3a/")!
     
-    func apiToGetMonumentsData(completion : @escaping ([MonumentData]) -> ()){
+    /*func apiToGetMonumentsData(completion : @escaping ([MonumentData]) -> ()){
         URLSession.shared.dataTask(with: sourcesURL) { (data, urlResponse, error) in
             if let data = data {
                 
@@ -21,16 +21,15 @@ class APIService :  ObservableObject {
                 completion(empData.record)
             }
         }.resume()
-    }
-
-   /* func apiToGetMonumentsData() -> [MonumentData]{
-        let decoder = JSONDecoder()
-             do {
-                 return try decoder.decode([MonumentData].self, from: monumentsData)
-             } catch {
-                 print("Error decoding JSON: \(error.localizedDescription)")
-             }
-             return []
     }*/
     
+    func apiToGetMonumentsData(completion : @escaping ([MonumentData]) -> ()){
+        let decoder = JSONDecoder()
+        do {
+            let empData = try decoder.decode(Monuments.self, from: monumentsData)
+            completion(empData.record)
+        } catch {
+            print(String(describing: error))
+        }
+    }
 }

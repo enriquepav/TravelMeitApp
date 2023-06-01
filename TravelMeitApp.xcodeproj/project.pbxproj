@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A28C13512A28317300E19E29 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28C13502A28317300E19E29 /* LocationManager.swift */; };
 		A2948DD42A250D2C00928576 /* Monuments.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2948DD32A250D2C00928576 /* Monuments.swift */; };
 		A2948DD72A250D4900928576 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2948DD62A250D4900928576 /* APIService.swift */; };
 		A2948DD92A250D6000928576 /* MonumentsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2948DD82A250D6000928576 /* MonumentsListViewModel.swift */; };
@@ -26,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A28C13502A28317300E19E29 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		A28C138C2A2845D000E19E29 /* MyLocation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MyLocation.gpx; sourceTree = "<group>"; };
 		A2948DD32A250D2C00928576 /* Monuments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monuments.swift; sourceTree = "<group>"; };
 		A2948DD62A250D4900928576 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		A2948DD82A250D6000928576 /* MonumentsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentsListViewModel.swift; sourceTree = "<group>"; };
@@ -56,9 +59,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A28C134F2A28315500E19E29 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				A28C13502A28317300E19E29 /* LocationManager.swift */,
+				A28C138C2A2845D000E19E29 /* MyLocation.gpx */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
 		A2948DD02A250CF600928576 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				F81523322A240B7E00C9FB41 /* Views */,
 				A2948DD82A250D6000928576 /* MonumentsListViewModel.swift */,
 			);
 			path = UI;
@@ -123,11 +136,11 @@
 		F829CE5E2A150C040098E251 /* TravelMeitApp */ = {
 			isa = PBXGroup;
 			children = (
+				A28C134F2A28315500E19E29 /* Location */,
 				A2948DD12A250D1400928576 /* Data */,
 				A2948DD02A250CF600928576 /* UI */,
 				A2B4D3282A24FE4000BA5635 /* Commons */,
 				F829CE5F2A150C040098E251 /* TravelMeitAppApp.swift */,
-				F81523322A240B7E00C9FB41 /* Views */,
 				F829CE632A150C080098E251 /* Assets.xcassets */,
 				F81523332A24386600C9FB41 /* Colors.swift */,
 				F829CE652A150C080098E251 /* Preview Content */,
@@ -215,6 +228,7 @@
 			files = (
 				F815232D2A1FFD6100C9FB41 /* MonumentCelView.swift in Sources */,
 				F81523342A24386700C9FB41 /* Colors.swift in Sources */,
+				A28C13512A28317300E19E29 /* LocationManager.swift in Sources */,
 				F8294E382A166B3300FFA3DD /* CreateAccountView.swift in Sources */,
 				F829CE622A150C040098E251 /* ContentView.swift in Sources */,
 				A2948DDB2A252E8200928576 /* MonumentsResponse.swift in Sources */,
@@ -358,6 +372,7 @@
 				DEVELOPMENT_TEAM = 589WUB4565;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App permissions";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -388,6 +403,7 @@
 				DEVELOPMENT_TEAM = 589WUB4565;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App permissions";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
