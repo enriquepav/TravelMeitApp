@@ -11,7 +11,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                Image("PantallaEntrada")
+                Image("bg_start")
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .edgesIgnoringSafeArea(.all)
