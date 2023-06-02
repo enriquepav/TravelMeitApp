@@ -11,15 +11,19 @@ import CoreLocationUI
 
 struct MonumentsListView: View {
     
-    @State private var selectedOption: Int = 1 // Estado de selección
-    let distanceSelected: [Float] = [0.15, 0.26, 50.00] // Cambiar distancias
+    @State private var selectedOption: Int = 2 // Estado de selección
+    let distanceSelected: [Float] = [3.00, 10.00, 50.00] // Cambiar distancias
     let options = ["ic_3km", "ic_10km", "ic_50km"]
     let optionSelected = ["ic_3kmSelected", "ic_10kmSelected", "ic_50kmSelected"]
     @StateObject var locationManager = LocationManager()
     @ObservedObject var viewModel = MonumentsListViewModel()
+    let zeroPoint = CLLocationCoordinate2D(latitude: 0, longitude: 0)
     
     var userCoordinate: CLLocationCoordinate2D{
         locationManager.requestLocation()
+        while locationManager.location?.latitude == zeroPoint.latitude && locationManager.location?.longitude == zeroPoint.longitude {
+            locationManager.requestLocation()
+        }
         return locationManager.location ?? viewModel.coordinateZero
     }
     
@@ -41,29 +45,31 @@ struct MonumentsListView: View {
             }
         }.toolbar {
             ToolbarItemGroup() {
-                Image("logoTravelmeit")
-                .resizable()
-                .frame(width: 150, height: 40)
-               Spacer(minLength: 50)
-                
-                ScrollView(.horizontal, showsIndicators: false) {
-                    LazyHStack(spacing: 0) {
-                        ForEach(0..<options.count, id: \.self) { index in
-                            Button(action: {
-                                FilterManager.sharedInstance.distanceSelected = distanceSelected[index]
-                                viewModel.callFuncToGetEmpData()
-                                selectedOption = index
-                                print(FilterManager.sharedInstance.distanceSelected)
-                                viewModel.callFuncToGetEmpData()// Actualizar el estado de selección al hacer clic en la opción
-                            }) {
-                                Image(options[index])
-                                    .resizable()
-                                    .frame(width: 32, height: 32)
-                                    .background(selectedOption == index ? Color.blue.opacity(0.5) : Color.clear) // Marcar la opción seleccionada
+                HStack {
+                    Image("logoTravelmeit")
+                    .resizable()
+                    .frame(width: 150, height: 40)
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        LazyHStack(spacing: 0) {
+                            ForEach(0..<options.count, id: \.self) { index in
+                                Button(action: {
+                                    FilterManager.sharedInstance.distanceSelected = distanceSelected[index]
+                                    viewModel.callFuncToGetEmpData()
+                                    selectedOption = index
+                                    print(FilterManager.sharedInstance.distanceSelected)
+                                    viewModel.callFuncToGetEmpData()// Actualizar el estado de selección al hacer clic en la opción
+                                }) {
+                                    Image(options[index])
+                                        .resizable()
+                                        .frame(width: 32, height: 32)
+                                        .background(selectedOption == index ? Color.blue.opacity(0.5) : Color.clear) // Marcar la opción seleccionada
+                                }
                             }
                         }
                     }
+        
                 }
+
             }
             
         }
