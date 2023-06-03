@@ -18,6 +18,12 @@ struct MonumentDetailView: View {
     @State private var didTap45:Bool = false
     @State private var didTap15:Bool = false
     @State private var didTap3:Bool = false
+    @StateObject var viewModel = MonumentsDetailViewModel()
+    @ObservedObject var viewModelUser = MonumentsListViewModel()
+    @State var textShort: String
+    @State var textMedium: String
+    @State var textLong: String
+    @State var textToSpeech = ""
 
     var body: some View {
         NavigationView {
@@ -80,6 +86,8 @@ struct MonumentDetailView: View {
                                         self.didTap45 = true
                                         self.didTap15 = false
                                         self.didTap3 = false
+                                        textToSpeech = self.textShort
+                                        
                                     }, label: {
                                         Text("45 seg")
                                             .frame(width: 45, height: 8)
@@ -91,6 +99,7 @@ struct MonumentDetailView: View {
                                         self.didTap15 = true
                                         self.didTap45 = false
                                         self.didTap3 = false
+                                        textToSpeech = self.textMedium
                                     }, label: {
                                         Text("1.5 min")
                                             .frame(width: 45, height: 8)
@@ -102,6 +111,7 @@ struct MonumentDetailView: View {
                                         self.didTap3 = true
                                         self.didTap15 = false
                                         self.didTap45 = false
+                                        textToSpeech = self.textLong
                                     }, label: {
                                         Text("3 min")
                                             .frame(width: 45, height: 8)
@@ -111,7 +121,7 @@ struct MonumentDetailView: View {
                                 }
                                 
                                 HStack{
-                                    Button(action: {}, label: {
+                                    Button(action: {viewModel.reproducirTextoEnDialogo(texto: textToSpeech)}, label: {
                                         Image("btn_play")
                                             .resizable()
                                             .frame(width: 50, height: 50)
@@ -184,6 +194,6 @@ struct MonumentDetailView: View {
 
 struct MonumentDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        MonumentDetailView(image:"barrancoframe", name: "Vista de Prueba", distance: 2.5)
+        MonumentDetailView(image:"barrancoframe", name: "Vista de Prueba", distance: 2.5,textShort: "", textMedium: "", textLong: "")
     }
 }

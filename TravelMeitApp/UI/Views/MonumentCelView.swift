@@ -14,6 +14,9 @@ struct MonumentCelView: View {
     @State var distance: Float
     @State var title: String
     @State var typeLong: String = "km."
+    @State var textShort: String
+    @State var textMedium: String
+    @State var textLong: String
     
     
     var body: some View {
@@ -69,6 +72,6 @@ struct MonumentCelView: View {
 
 struct MonumentCelView_Previews: PreviewProvider {
     static var previews: some View {
-        MonumentCelView(monumentImage: "barrancoframe", distance: 0.20444, title: "Plaza de barranco")
+        MonumentCelView(monumentImage: "barrancoframe", distance: 0.20444, title: "Plaza de barranco",textShort: "", textMedium: "", textLong: "")
     }
 }
