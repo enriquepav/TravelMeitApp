@@ -6,38 +6,75 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct VistaPruebas: View {
-    @State private var selectedImageIndex = 0
-        
-        let images = ["globe", "globe.fill", "globe", "globe", "globe"]
+    let synthesizer = AVSpeechSynthesizer()
+        @State private var isSpeaking = false
         
         var body: some View {
             VStack {
-                TabView(selection: $selectedImageIndex) {
-                    ForEach(0..<images.count) { index in
-                        Image(images[index])
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .tag(index)
-                            .onTapGesture {
-                                selectedImageIndex = index
-                            }
+                Button(action: {
+                    if self.isSpeaking {
+                        self.pausarReproduccion()
+                    } else {
+                        self.iniciarReproduccion()
                     }
+                }) {
+                    Text(self.isSpeaking ? "Pausar" : "Reproducir")
+                        .font(.title)
+                        .padding()
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
                 }
-                .tabViewStyle(PageTabViewStyle())
                 
-                HStack {
-                    ForEach(0..<images.count) { index in
-                        Circle()
-                            .fill(index == selectedImageIndex ? Color.blue : Color.gray)
-                            .frame(width: 10, height: 10)
-                            .padding(.horizontal, 4)
-                    }
+                Button(action: {
+                    self.reanudarReproduccion()
+                }) {
+                    Text("Reanudar")
+                        .font(.title)
+                        .padding()
+                        .background(Color.green)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
                 }
-                .padding(.top, 8)
+                
+                Button(action: {
+                    self.terminarReproduccion()
+                }) {
+                    Text("Terminar")
+                        .font(.title)
+                        .padding()
+                        .background(Color.red)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                }
             }
-            .padding()
+        }
+        
+        func iniciarReproduccion() {
+            let utterance = AVSpeechUtterance(string: "¡Hola! Esto es un ejemplo de texto en diálogo.")
+            utterance.voice = AVSpeechSynthesisVoice(language: "es-ES")
+            utterance.rate = 0.5
+            
+            self.synthesizer.speak(utterance)
+            self.isSpeaking = true
+        }
+        
+        func pausarReproduccion() {
+            self.synthesizer.pauseSpeaking(at: .word)
+            self.isSpeaking = false
+        }
+        
+        func reanudarReproduccion() {
+            self.synthesizer.continueSpeaking()
+            self.isSpeaking = true
+        }
+        
+        func terminarReproduccion() {
+            self.synthesizer.stopSpeaking(at: .immediate)
+            self.isSpeaking = false
         }
 }
     
