@@ -24,7 +24,10 @@ struct MonumentDetailView: View {
     @State var textMedium: String
     @State var textLong: String
     @State var textToSpeech = ""
-
+    @State private var isSpeaking = false
+    @State private var isPausedSpeech = false
+    
+    
     var body: some View {
         NavigationView {
             ZStack{
@@ -121,14 +124,34 @@ struct MonumentDetailView: View {
                                 }
                                 
                                 HStack{
-                                    Button(action: {viewModel.reproducirTextoEnDialogo(texto: textToSpeech)}, label: {
-                                        Image("btn_play")
+                                    Button(action: {
+                                        if isSpeaking {
+                                            viewModel.pausarReproduccion()
+                                            self.isSpeaking = false
+                                            self.isPausedSpeech = true
+                                        } else {
+                                            if isPausedSpeech {
+                                                viewModel.reanudarReproduccion()
+                                                self.isSpeaking = true
+                                                self.isPausedSpeech = false
+                                            } else {
+                                                viewModel.reproducirTextoEnDialogo(texto: textToSpeech)
+                                                self.isSpeaking = true
+                                            }
+                                        }
+                                        
+                                    }, label: {
+                                        Image(self.isSpeaking ? "Pause.Fill" : "btn_play")
                                             .resizable()
                                             .frame(width: 50, height: 50)
                                             .padding()
                                     })
-                                    
-                                    Button(action: {}, label: {
+                                   
+                                    Button(action: {
+                                        viewModel.terminarReproduccion()
+                                        self.isSpeaking = false
+                                        self.isPausedSpeech = false
+                                    }, label: {
                                         Image("btn_stop")
                                             .resizable()
                                             .frame(width: 50, height: 50)

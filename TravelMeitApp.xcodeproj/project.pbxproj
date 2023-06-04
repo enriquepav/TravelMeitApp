@@ -48,6 +48,7 @@
 		F829CE632A150C080098E251 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F829CE662A150C080098E251 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F8E7B68B2A2BF47800B62165 /* MonumentDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentDetailViewModel.swift; sourceTree = "<group>"; };
+		F8E7B68D2A2C429F00B62165 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +140,7 @@
 		F829CE5E2A150C040098E251 /* TravelMeitApp */ = {
 			isa = PBXGroup;
 			children = (
+				F8E7B68D2A2C429F00B62165 /* Info.plist */,
 				A28C134F2A28315500E19E29 /* Location */,
 				A2948DD12A250D1400928576 /* Data */,
 				A2948DD02A250CF600928576 /* UI */,
@@ -376,6 +378,7 @@
 				DEVELOPMENT_TEAM = 589WUB4565;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TravelMeitApp/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App permissions";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "App permissions";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -408,6 +411,7 @@
 				DEVELOPMENT_TEAM = 589WUB4565;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TravelMeitApp/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App permissions";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "App permissions";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

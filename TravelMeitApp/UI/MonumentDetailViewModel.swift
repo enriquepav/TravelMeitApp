@@ -24,8 +24,26 @@ final class MonumentsDetailViewModel: ObservableObject {
         synthesizer.speak(utterance)
     }
 
+    func pausarReproduccion() {
+        self.synthesizer.pauseSpeaking(at: .word)
+    }
     
+    func reanudarReproduccion() {
+        self.synthesizer.continueSpeaking()
+    }
     
+    func terminarReproduccion() {
+        self.synthesizer.stopSpeaking(at: .immediate)
+    }
+    
+    func configurarAudioEnSegundoPlano() {
+            do {
+                try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [.mixWithOthers, .allowAirPlay])
+                try AVAudioSession.sharedInstance().setActive(true)
+            } catch {
+                print("Error al configurar el audio en segundo plano: \(error.localizedDescription)")
+            }
+        }
     
     
     
