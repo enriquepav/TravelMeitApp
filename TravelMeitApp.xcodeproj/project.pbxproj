@@ -102,6 +102,7 @@
 		A2B4D3282A24FE4000BA5635 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				F81523352A26F8E800C9FB41 /* FilterManager.swift */,
 				A2B4D3292A24FE5500BA5635 /* RoundedCorners.swift */,
 			);
 			path = Commons;
@@ -123,7 +124,6 @@
 		F829CE532A150C040098E251 = {
 			isa = PBXGroup;
 			children = (
-				F81523352A26F8E800C9FB41 /* FilterManager.swift */,
 				F829CE5E2A150C040098E251 /* TravelMeitApp */,
 				F829CE5D2A150C040098E251 /* Products */,
 			);
