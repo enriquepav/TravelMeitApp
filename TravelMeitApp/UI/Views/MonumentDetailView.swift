@@ -146,6 +146,9 @@ struct MonumentDetailView: View {
                                             .frame(width: 50, height: 50)
                                             .padding()
                                     })
+                                    .onAppear {
+                                        self.viewModel.configurarAudioEnSegundoPlano()
+                                            }
                                    
                                     Button(action: {
                                         viewModel.terminarReproduccion()

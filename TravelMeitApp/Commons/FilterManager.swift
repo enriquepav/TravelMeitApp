@@ -12,5 +12,4 @@ class FilterManager {
     static let sharedInstance = FilterManager()
     var distanceSelected: Float = 10.00
     
-    
 }
