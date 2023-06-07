@@ -29,7 +29,8 @@ struct ContentView: View {
                         .shadow(color: .black, radius: 4, x: 0, y: 2)
                     Spacer()
                         .frame(height: 100)
-                    NavigationLink(destination: CreateAccountView()) {
+                    NavigationLink(destination:
+                                    MonumentsListView()) {
                         Image("buttonStart")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
@@ -37,11 +38,11 @@ struct ContentView: View {
                     }
                     Spacer()
                     HStack {
-                        Text("If you have an account")
+                        Text("If you haven't an account")
                             .foregroundColor(.secondColor)
                             .font(.system(size: 12))
-                        NavigationLink(destination: MonumentsListView()) {
-                            Text("click here")
+                        NavigationLink(destination: CreateAccountView()) {
+                            Text("click here to create")
                                 .foregroundColor(.secondColor)
                             .font(.system(size: 12, weight: .bold))
                         }
