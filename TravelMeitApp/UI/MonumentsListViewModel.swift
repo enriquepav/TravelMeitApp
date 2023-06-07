@@ -30,13 +30,19 @@ final class MonumentsListViewModel: ObservableObject {
     }
     
     func callFuncToGetEmpData() {
-        self.apiService.apiToGetMonumentsData { (monumentsData) in
-            self.monumentsData = monumentsData.sorted(by: { Float(self.calculateDistance(point1: self.userCoordinate, point2: CLLocationCoordinate2D(latitude: $0.Lattitude ?? 0.00, longitude: $0.Longitude ?? 0.00))) < Float(self.calculateDistance(point1: self.userCoordinate, point2: CLLocationCoordinate2D(latitude: $1.Lattitude ?? 0.00, longitude: $1.Longitude ?? 0.00))) })
-                .filter {
-                    Float(self.calculateDistance(point1: self.userCoordinate, point2: CLLocationCoordinate2D(latitude: $0.Lattitude ?? 0.00, longitude: $0.Longitude ?? 0.00))) < FilterManager.sharedInstance.distanceSelected
-                }
+        self.monumentsData = apiService.apiToGetMonumentsData().filter {
+            Float(self.calculateDistance(point1: self.userCoordinate, point2: CLLocationCoordinate2D(latitude: $0.latitude , longitude: $0.longitude ))) < FilterManager.sharedInstance.distanceSelected
+            }
+
         }
-    }
+        
+//        self.apiService.apiToGetMonumentsData { (monumentsData) in
+//            self.monumentsData = monumentsData.sorted(by: { Float(self.calculateDistance(point1: self.userCoordinate, point2: CLLocationCoordinate2D(latitude: $0.Lattitude ?? 0.00, longitude: $0.Longitude ?? 0.00))) < Float(self.calculateDistance(point1: self.userCoordinate, point2: CLLocationCoordinate2D(latitude: $1.Latitude ?? 0.00, longitude: $1.Longitude ?? 0.00))) })
+//                .filter {
+//                    Float(self.calculateDistance(point1: self.userCoordinate, point2: CLLocationCoordinate2D(latitude: $0.Latitude ?? 0.00, longitude: $0.Longitude ?? 0.00))) < FilterManager.sharedInstance.distanceSelected
+//                }
+//        }
+
     
     
     func calculateDistance(point1: CLLocationCoordinate2D, point2: CLLocationCoordinate2D) -> CLLocationDistance {

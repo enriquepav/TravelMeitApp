@@ -12,34 +12,30 @@ struct Monuments: Decodable {
 }
 
 struct MonumentData: Decodable {
-    let id: Int
-    let pais, ciudad, monument: String
-    let short, medium, long, Image: String?
-    let Lattitude, Longitude: Double?
-    
-    init(id: Int, pais: String, ciudad: String, monument: String, short: String, medium: String, long: String, Lattitude: Double, Longitude: Double, Image: String) {
-        self.id = id
-        self.pais = pais
-        self.ciudad = ciudad
-        self.monument = monument
-        self.short = short.isEmpty ? "" : short
-        self.medium = medium.isEmpty ? "" : medium
-        self.long = long.isEmpty ? "" : long
-        self.Lattitude = Lattitude.isNaN ? 0.0 : Lattitude
-        self.Longitude = Longitude.isNaN ? 0.0 : Lattitude
-        self.Image = Image.isEmpty ? "" : Image
-    }
+    let pais: String
+    let ciudad: String
+    let district: String
+    let latitude, longitude: Double
+    let general, historic, landscape, artist: Int
+    let party: Int
+    let monument, short, medium, long: String
+    let image: String
 
     enum CodingKeys: String, CodingKey {
-        case id
         case pais = "Pais"
         case ciudad = "Ciudad"
+        case district = "District"
+        case latitude = "Latitude"
+        case longitude = "Longitude"
+        case general = "General"
+        case historic = "Historic"
+        case landscape = "Landscape"
+        case artist = "Artist"
+        case party = "Party"
         case monument = "Monument"
         case short = "Short"
         case medium = "Medium"
         case long = "Long"
-        case Lattitude
-        case Longitude
-        case Image
+        case image = "Image"
     }
 }
