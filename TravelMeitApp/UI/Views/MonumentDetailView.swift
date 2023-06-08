@@ -141,7 +141,7 @@ struct MonumentDetailView: View {
                                         }
                                         
                                     }, label: {
-                                        Image(self.isSpeaking ? "Pause.Fill" : "btn_play")
+                                        Image(self.isSpeaking ? "ic_pausenew" : "btn_play")
                                             .resizable()
                                             .frame(width: 50, height: 50)
                                             .padding()

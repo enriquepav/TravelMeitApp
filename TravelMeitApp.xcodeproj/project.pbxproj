@@ -24,6 +24,7 @@
 		F829CE622A150C040098E251 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F829CE612A150C040098E251 /* ContentView.swift */; };
 		F829CE642A150C080098E251 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F829CE632A150C080098E251 /* Assets.xcassets */; };
 		F829CE672A150C080098E251 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F829CE662A150C080098E251 /* Preview Assets.xcassets */; };
+		F83CAE752A32016200C6D5BC /* UserRegistered.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83CAE742A32016200C6D5BC /* UserRegistered.swift */; };
 		F8E7B68C2A2BF47800B62165 /* MonumentDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E7B68B2A2BF47800B62165 /* MonumentDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		F829CE612A150C040098E251 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F829CE632A150C080098E251 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F829CE662A150C080098E251 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F83CAE742A32016200C6D5BC /* UserRegistered.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistered.swift; sourceTree = "<group>"; };
 		F8E7B68B2A2BF47800B62165 /* MonumentDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentDetailViewModel.swift; sourceTree = "<group>"; };
 		F8E7B68D2A2C429F00B62165 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,6 +97,7 @@
 			children = (
 				A2948DD32A250D2C00928576 /* Monuments.swift */,
 				A2948DDA2A252E8200928576 /* MonumentsResponse.swift */,
+				F83CAE742A32016200C6D5BC /* UserRegistered.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				A2948DD72A250D4900928576 /* APIService.swift in Sources */,
 				A2948DD92A250D6000928576 /* MonumentsListViewModel.swift in Sources */,
 				F8294E3A2A16879300FFA3DD /* VistaPruebas.swift in Sources */,
+				F83CAE752A32016200C6D5BC /* UserRegistered.swift in Sources */,
 				F8E7B68C2A2BF47800B62165 /* MonumentDetailViewModel.swift in Sources */,
 				F81523312A238E8D00C9FB41 /* MonumentDetailView.swift in Sources */,
 				A2948DD42A250D2C00928576 /* Monuments.swift in Sources */,
