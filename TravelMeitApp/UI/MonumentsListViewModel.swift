@@ -15,6 +15,7 @@ final class MonumentsListViewModel: ObservableObject {
     @Published var coordinateZero : CLLocationCoordinate2D
     var locationManager = LocationManager()
     let zeroPoint = CLLocationCoordinate2D(latitude: 0, longitude: 0)
+    let newList = [MonumentData]
     
     var userCoordinate: CLLocationCoordinate2D{
         locationManager.requestLocation()
@@ -29,19 +30,46 @@ final class MonumentsListViewModel: ObservableObject {
         self.apiService = APIService()
     }
     
-    func callFuncToGetEmpData() {
-        self.monumentsData = apiService.apiToGetMonumentsData().filter {
+    //La primera vez carga con el orden por valoración y 3km  -> lista1
+    func callFuncToGetEmpData(user: User) {
+        
+        // ordenamiento por valoración sortBy
+        
+        newList = getListWithRating(user: user, list: apiService.apiToGetMonumentsData()).sort(by: rating)
+       
+        self.monumentsData = newList.filter {
             Float(self.calculateDistance(point1: self.userCoordinate, point2: CLLocationCoordinate2D(latitude: $0.latitude , longitude: $0.longitude ))) < FilterManager.sharedInstance.distanceSelected
             }
-
         }
-        
-//        self.apiService.apiToGetMonumentsData { (monumentsData) in
-//            self.monumentsData = monumentsData.sorted(by: { Float(self.calculateDistance(point1: self.userCoordinate, point2: CLLocationCoordinate2D(latitude: $0.Lattitude ?? 0.00, longitude: $0.Longitude ?? 0.00))) < Float(self.calculateDistance(point1: self.userCoordinate, point2: CLLocationCoordinate2D(latitude: $1.Latitude ?? 0.00, longitude: $1.Longitude ?? 0.00))) })
-//                .filter {
-//                    Float(self.calculateDistance(point1: self.userCoordinate, point2: CLLocationCoordinate2D(latitude: $0.Latitude ?? 0.00, longitude: $0.Longitude ?? 0.00))) < FilterManager.sharedInstance.distanceSelected
-//                }
-//        }
+    
+    func getListWithRating(user: User, list: [MonumentData]) -> [MonumentData]{
+        return list.forEach { item ->
+            item.rating = getRating(user, item)
+        }
+    }
+    
+    func getRating(user: User, data: MonumentData) -> Int{
+        var generalValue = data.general
+        var historicValue = data.historic
+        var landscape = data.landscape
+        var artist = data.artist
+
+        user.selectedOptionIDs.forEach { option ->
+            switch option {
+            case 0: generalValue = generalValue * 2
+            case 1: historicValue = historicValue * 2
+            case 2: landscape = landscape * 2
+            case 3: artist = artist * 2
+            default : {}
+            }
+        }
+        return generalValue + historicValue + landscape + artist
+    }
+    
+    
+    // Función para ordenar por distancia de 3km sobre lista 1
+    
+
 
     
     

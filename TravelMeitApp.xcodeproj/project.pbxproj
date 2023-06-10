@@ -13,6 +13,7 @@
 		A2948DD92A250D6000928576 /* MonumentsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2948DD82A250D6000928576 /* MonumentsListViewModel.swift */; };
 		A2948DDB2A252E8200928576 /* MonumentsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2948DDA2A252E8200928576 /* MonumentsResponse.swift */; };
 		A2B4D32A2A24FE5500BA5635 /* RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B4D3292A24FE5500BA5635 /* RoundedCorners.swift */; };
+		A2D19E902A3431EA00898083 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D19E8F2A3431EA00898083 /* AppSettings.swift */; };
 		F815232D2A1FFD6100C9FB41 /* MonumentCelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F815232C2A1FFD6100C9FB41 /* MonumentCelView.swift */; };
 		F815232F2A20233700C9FB41 /* MonumentsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F815232E2A20233700C9FB41 /* MonumentsListView.swift */; };
 		F81523312A238E8D00C9FB41 /* MonumentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81523302A238E8D00C9FB41 /* MonumentDetailView.swift */; };
@@ -36,6 +37,7 @@
 		A2948DD82A250D6000928576 /* MonumentsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentsListViewModel.swift; sourceTree = "<group>"; };
 		A2948DDA2A252E8200928576 /* MonumentsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentsResponse.swift; sourceTree = "<group>"; };
 		A2B4D3292A24FE5500BA5635 /* RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorners.swift; sourceTree = "<group>"; };
+		A2D19E8F2A3431EA00898083 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		F815232C2A1FFD6100C9FB41 /* MonumentCelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentCelView.swift; sourceTree = "<group>"; };
 		F815232E2A20233700C9FB41 /* MonumentsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentsListView.swift; sourceTree = "<group>"; };
 		F81523302A238E8D00C9FB41 /* MonumentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentDetailView.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				F81523322A240B7E00C9FB41 /* Views */,
 				A2948DD82A250D6000928576 /* MonumentsListViewModel.swift */,
 				F8E7B68B2A2BF47800B62165 /* MonumentDetailViewModel.swift */,
+				A2D19E8F2A3431EA00898083 /* AppSettings.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -116,8 +119,8 @@
 			children = (
 				F829CE612A150C040098E251 /* ContentView.swift */,
 				F8294E372A166B3300FFA3DD /* CreateAccountView.swift */,
-				F815232C2A1FFD6100C9FB41 /* MonumentCelView.swift */,
 				F815232E2A20233700C9FB41 /* MonumentsListView.swift */,
+				F815232C2A1FFD6100C9FB41 /* MonumentCelView.swift */,
 				F81523302A238E8D00C9FB41 /* MonumentDetailView.swift */,
 				F8294E392A16879300FFA3DD /* VistaPruebas.swift */,
 			);
@@ -248,6 +251,7 @@
 				F8E7B68C2A2BF47800B62165 /* MonumentDetailViewModel.swift in Sources */,
 				F81523312A238E8D00C9FB41 /* MonumentDetailView.swift in Sources */,
 				A2948DD42A250D2C00928576 /* Monuments.swift in Sources */,
+				A2D19E902A3431EA00898083 /* AppSettings.swift in Sources */,
 				F829CE602A150C040098E251 /* TravelMeitAppApp.swift in Sources */,
 				A2B4D32A2A24FE5500BA5635 /* RoundedCorners.swift in Sources */,
 				F815232F2A20233700C9FB41 /* MonumentsListView.swift in Sources */,

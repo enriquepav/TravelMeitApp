@@ -16,6 +16,5 @@ struct User {
     var selectedLanguage : String = ""
     var selectedDate: Date
     var sizeType : String = ""
-    var selectedOptionIDs: Set<UUID> = []
-    
+    var selectedOptionIDs: Set<Int> = []
 }

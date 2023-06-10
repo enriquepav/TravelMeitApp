@@ -8,14 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    
+    @ObservedObject var appSettings = AppSettings()
+    
     var body: some View {
         NavigationView {
             ZStack {
                 Image("bg_start")
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .edgesIgnoringSafeArea(.all)
-                            .blur(radius: 3)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .edgesIgnoringSafeArea(.all)
+                    .blur(radius: 3)
                 VStack {
                     Spacer()
                         .frame(height: 300)
@@ -29,8 +33,13 @@ struct ContentView: View {
                         .shadow(color: .black, radius: 4, x: 0, y: 2)
                     Spacer()
                         .frame(height: 100)
-                    NavigationLink(destination:
-                                    MonumentsListView()) {
+                    NavigationLink(destination: {
+                        if (appSettings.isUserCreated){
+                            MonumentsListView()
+                        } else {
+                            CreateAccountView()
+                        }
+                    }) {
                         Image("buttonStart")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
@@ -41,10 +50,10 @@ struct ContentView: View {
                         Text("If you haven't an account")
                             .foregroundColor(.secondColor)
                             .font(.system(size: 12))
-                        NavigationLink(destination: CreateAccountView()) {
+                        NavigationLink(destination: MonumentsListView()) {
                             Text("click here to create")
                                 .foregroundColor(.secondColor)
-                            .font(.system(size: 12, weight: .bold))
+                                .font(.system(size: 12, weight: .bold))
                         }
                         
                     }

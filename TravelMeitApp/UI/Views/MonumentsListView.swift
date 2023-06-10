@@ -15,17 +15,10 @@ struct MonumentsListView: View {
     let distanceSelected: [Float] = [3.00, 10.00, 50.00] // Cambiar distancias
     let options = ["ic_3km", "ic_10km", "ic_50km"]
     let optionSelected = ["ic_3kmSelected", "ic_10kmSelected", "ic_50kmSelected"]
+    
     @StateObject var locationManager = LocationManager()
     @ObservedObject var viewModel = MonumentsListViewModel()
     let zeroPoint = CLLocationCoordinate2D(latitude: 0, longitude: 0)
-    
-    var userCoordinate: CLLocationCoordinate2D{
-        locationManager.requestLocation()
-        while locationManager.location?.latitude == zeroPoint.latitude && locationManager.location?.longitude == zeroPoint.longitude {
-            locationManager.requestLocation()
-        }
-        return locationManager.location ?? viewModel.coordinateZero
-    }
     
     var body: some View {
         ScrollView {
@@ -36,8 +29,8 @@ struct MonumentsListView: View {
                     GridItem(.flexible(), spacing: 20)
                 ], spacing: 300) {
                     ForEach(viewModel.monumentsData, id: \.monument) { item in
-                        NavigationLink(destination: MonumentDetailView(image: "barrancoframe", name: item.monument, distance: Float(viewModel.calculateDistance(point1: userCoordinate, point2: CLLocationCoordinate2D(latitude: item.latitude , longitude: item.longitude ))),textShort: item.short , textMedium: item.medium , textLong: item.long )) {
-                            MonumentCelView(monumentImage: "barrancoframe", distance: Float(viewModel.calculateDistance(point1: userCoordinate, point2: CLLocationCoordinate2D(latitude: item.latitude , longitude: item.longitude ))), title: item.monument,textShort: item.short , textMedium: item.medium , textLong: item.long )
+                        NavigationLink(destination: MonumentDetailView(image: "barrancoframe", name: item.monument, distance: Float(viewModel.calculateDistance(point1: viewModel.userCoordinate, point2: CLLocationCoordinate2D(latitude: item.latitude , longitude: item.longitude ))),textShort: item.short , textMedium: item.medium , textLong: item.long )) {
+                            MonumentCelView(monumentImage: "barrancoframe", distance: Float(viewModel.calculateDistance(point1: viewModel.userCoordinate, point2: CLLocationCoordinate2D(latitude: item.latitude , longitude: item.longitude ))), title: item.monument,textShort: item.short , textMedium: item.medium , textLong: item.long )
                         }
                      }
                 }
@@ -54,9 +47,7 @@ struct MonumentsListView: View {
                             ForEach(0..<options.count, id: \.self) { index in
                                 Button(action: {
                                     FilterManager.sharedInstance.distanceSelected = distanceSelected[index]
-                                    viewModel.callFuncToGetEmpData()
                                     selectedOption = index
-                                    print(FilterManager.sharedInstance.distanceSelected)
                                     viewModel.callFuncToGetEmpData()// Actualizar el estado de selección al hacer clic en la opción
                                 }) {
                                     Image(options[index])
@@ -67,13 +58,9 @@ struct MonumentsListView: View {
                             }
                         }
                     }
-        
                 }
-
             }
-            
-        }
-        
+        }.navigationBarBackButtonHidden(true)
     }
 }
 

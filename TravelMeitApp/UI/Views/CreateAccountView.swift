@@ -36,6 +36,8 @@ struct CreateAccountView: View {
     @State private var showAlert = false
     @State private var navigateToNextView = false
     
+    @ObservedObject var appSettings = AppSettings()
+    
     var body: some View {
         NavigationView {
             ZStack{
@@ -57,7 +59,9 @@ struct CreateAccountView: View {
                         VStack {
                             
                             VStack {
-                                Text("Create your account").font(.title)                            .foregroundColor(.principalColor).padding(10)
+                                Text("Create your account")
+                                    .font(.title)
+                                    .foregroundColor(.principalColor).padding(10)
                                 TextField("Name", text: $name)
                                     .padding()
                                     .frame(maxWidth: 350)
@@ -180,6 +184,7 @@ struct CreateAccountView: View {
                                     message: Text("¿Deseas continuar?"),
                                     primaryButton: .default(Text("Sí"), action: {
                                         navigateToNextView = true
+                                        appSettings.isUserCreated = true
                                     }),
                                     secondaryButton: .cancel()
                                 )
