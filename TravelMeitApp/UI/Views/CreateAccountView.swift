@@ -21,22 +21,22 @@ struct CreateAccountView: View {
     let sizes = ["Kilómetros y metros", "Millas y pies"]
 
     struct Option: Identifiable {
-        let id = UUID()
+        let id: String
         let icon: String
         var isSelected = false
     }
     
     @State private var options = [
-        Option(icon: "ic_historical"),
-        Option(icon: "ic_party"),
-        Option(icon: "ic_landscape"),
-        Option(icon: "ic_artist")
+        Option(id: "A", icon: "ic_historical"),
+        Option(id: "B", icon: "ic_party"),
+        Option(id: "C", icon: "ic_landscape"),
+        Option(id: "D", icon: "ic_artist")
     ]
-    @State private var selectedOptionIDs: Set<UUID> = []
+    @State private var selectedOptionIDs: Set<String> = []
     @State private var showAlert = false
     @State private var navigateToNextView = false
-    
     @ObservedObject var appSettings = AppSettings()
+    @EnvironmentObject private var userData: UserData
     
     var body: some View {
         NavigationView {
@@ -155,6 +155,7 @@ struct CreateAccountView: View {
                                     ForEach(options) { option in
                                         Button(action: {
                                             toggleSelection(option)
+                                            print(selectedOptionIDs)
                                         }) {
                                             Image(option.isSelected ? "\(option.icon).fill" : option.icon)
                                                 .resizable()
@@ -170,6 +171,8 @@ struct CreateAccountView: View {
                             }
                             Button(action: {
                                 showAlert = true
+                                let newUser = User(name: name, mail: mail, emergencyData: emergencyData, selectedCountry: selectedCountry, selectedLanguage: selectedLanguage, selectedDate: selectedDate, sizeType: sizeType, selectedOptionIDs: selectedOptionIDs) // Ejemplo: reemplaza con los datos del formulario
+                                userData.user = newUser
                             }) {
                                 Text("Continue")
                                     .foregroundColor(.white)

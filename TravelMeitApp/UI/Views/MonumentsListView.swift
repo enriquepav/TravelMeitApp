@@ -19,6 +19,7 @@ struct MonumentsListView: View {
     @StateObject var locationManager = LocationManager()
     @ObservedObject var viewModel = MonumentsListViewModel()
     let zeroPoint = CLLocationCoordinate2D(latitude: 0, longitude: 0)
+    @EnvironmentObject private var userData: UserData
     
     var body: some View {
         ScrollView {
@@ -48,7 +49,7 @@ struct MonumentsListView: View {
                                 Button(action: {
                                     FilterManager.sharedInstance.distanceSelected = distanceSelected[index]
                                     selectedOption = index
-                                    viewModel.callFuncToGetEmpData()// Actualizar el estado de selección al hacer clic en la opción
+                                    viewModel.callFuncToGetEmpData(user: userData.user!)// Actualizar el estado de selección al hacer clic en la opción
                                 }) {
                                     Image(options[index])
                                         .resizable()

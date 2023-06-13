@@ -11,6 +11,7 @@ struct ContentView: View {
     
     
     @ObservedObject var appSettings = AppSettings()
+    @StateObject private var userData = UserData()
     
     var body: some View {
         NavigationView {
@@ -75,7 +76,7 @@ struct ContentView: View {
                         .padding()
                 }.cornerRadius(10).padding(-34)
             })
-        }
+        }.environmentObject(userData)
     }
 }
 

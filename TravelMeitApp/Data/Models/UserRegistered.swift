@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct User {
+struct User: Decodable, Encodable {
     
     var name: String = ""
     var mail: String = ""
@@ -16,5 +16,5 @@ struct User {
     var selectedLanguage : String = ""
     var selectedDate: Date
     var sizeType : String = ""
-    var selectedOptionIDs: Set<Int> = []
+    var selectedOptionIDs: Set<String> = []
 }

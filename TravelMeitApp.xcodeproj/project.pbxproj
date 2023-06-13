@@ -26,6 +26,7 @@
 		F829CE642A150C080098E251 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F829CE632A150C080098E251 /* Assets.xcassets */; };
 		F829CE672A150C080098E251 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F829CE662A150C080098E251 /* Preview Assets.xcassets */; };
 		F83CAE752A32016200C6D5BC /* UserRegistered.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83CAE742A32016200C6D5BC /* UserRegistered.swift */; };
+		F8A0BA552A38E1D600B4E4FC /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A0BA542A38E1D600B4E4FC /* UserData.swift */; };
 		F8E7B68C2A2BF47800B62165 /* MonumentDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E7B68B2A2BF47800B62165 /* MonumentDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		F829CE632A150C080098E251 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F829CE662A150C080098E251 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F83CAE742A32016200C6D5BC /* UserRegistered.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistered.swift; sourceTree = "<group>"; };
+		F8A0BA542A38E1D600B4E4FC /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		F8E7B68B2A2BF47800B62165 /* MonumentDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentDetailViewModel.swift; sourceTree = "<group>"; };
 		F8E7B68D2A2C429F00B62165 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,7 +83,6 @@
 				F81523322A240B7E00C9FB41 /* Views */,
 				A2948DD82A250D6000928576 /* MonumentsListViewModel.swift */,
 				F8E7B68B2A2BF47800B62165 /* MonumentDetailViewModel.swift */,
-				A2D19E8F2A3431EA00898083 /* AppSettings.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -108,6 +109,8 @@
 		A2B4D3282A24FE4000BA5635 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				F8A0BA542A38E1D600B4E4FC /* UserData.swift */,
+				A2D19E8F2A3431EA00898083 /* AppSettings.swift */,
 				F81523352A26F8E800C9FB41 /* FilterManager.swift */,
 				A2B4D3292A24FE5500BA5635 /* RoundedCorners.swift */,
 			);
@@ -240,6 +243,7 @@
 				F815232D2A1FFD6100C9FB41 /* MonumentCelView.swift in Sources */,
 				F81523342A24386700C9FB41 /* Colors.swift in Sources */,
 				A28C13512A28317300E19E29 /* LocationManager.swift in Sources */,
+				F8A0BA552A38E1D600B4E4FC /* UserData.swift in Sources */,
 				F8294E382A166B3300FFA3DD /* CreateAccountView.swift in Sources */,
 				F829CE622A150C040098E251 /* ContentView.swift in Sources */,
 				A2948DDB2A252E8200928576 /* MonumentsResponse.swift in Sources */,
