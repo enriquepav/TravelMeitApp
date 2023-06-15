@@ -15,6 +15,7 @@ struct MonumentDetailView: View {
     @State var distance: Float
     @State var typeLong: String = "km."
     @State var showGoto = false
+    @State var showAudio = false
     @State private var didTap45:Bool = false
     @State private var didTap15:Bool = false
     @State private var didTap3:Bool = false
@@ -30,10 +31,14 @@ struct MonumentDetailView: View {
     var body: some View {
         NavigationView {
             ZStack{
-                Image(image)
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .edgesIgnoringSafeArea(.all)
+                AsyncImage(url: URL(string: image)) { image in
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .edgesIgnoringSafeArea(.all)
+                } placeholder: {
+                    ProgressView()
+                }
                 
                 HStack {
                     Spacer()
@@ -75,90 +80,102 @@ struct MonumentDetailView: View {
                     }.overlay(alignment:.bottom, content:{
                         VStack {
                             VStack {
-                                Image("listen_to")
-                                    .resizable()
-                                    .frame(width: 170, height: 45)
-                                Text("Choose the audio duration")
-                                    .foregroundColor(Color.principalColor)
-                                    .font(.system(size: 12).bold())
-                                    .frame(width: 200, height: 20)
-                                    .multilineTextAlignment(.center)
-                                HStack{
-                                    Button(action: {
-                                        self.didTap45 = true
-                                        self.didTap15 = false
-                                        self.didTap3 = false
-                                        textToSpeech = self.textShort
-                                        
-                                    }, label: {
-                                        Text("45 seg")
-                                            .frame(width: 45, height: 8)
-                                            .padding()
-                                            .foregroundColor(didTap45 ? Color.white : Color.principalColor).font(.system(size: 13))
-                                    }).background(didTap45 ? Color.thirdColor : Color.white).cornerRadius(10)
-
-                                    Button(action: {
-                                        self.didTap15 = true
-                                        self.didTap45 = false
-                                        self.didTap3 = false
-                                        textToSpeech = self.textMedium
-                                    }, label: {
-                                        Text("1.5 min")
-                                            .frame(width: 45, height: 8)
-                                            .padding()
-                                            .foregroundColor(didTap15 ? Color.white : Color.principalColor).font(.system(size: 13))
-                                    }).background(didTap15 ? Color.thirdColor : Color.white).cornerRadius(10)
-                                    
-                                    Button(action: {
-                                        self.didTap3 = true
-                                        self.didTap15 = false
-                                        self.didTap45 = false
-                                        textToSpeech = self.textLong
-                                    }, label: {
-                                        Text("3 min")
-                                            .frame(width: 45, height: 8)
-                                            .padding()
-                                            .foregroundColor(didTap3 ? Color.white : Color.principalColor).font(.system(size: 13))
-                                    }).background(didTap3 ? Color.thirdColor : Color.white).cornerRadius(10)
-                                }
+                                Button(action: {
+                                    if (!showAudio){
+                                        self.showAudio = true
+                                    }else{
+                                        self.showAudio = false
+                                    }
+                                }, label: {
+                                    Image("listen_to")
+                                        .resizable()
+                                        .frame(width: 170, height: 45)
+                                })
                                 
-                                HStack{
-                                    Button(action: {
-                                        if isSpeaking {
-                                            viewModel.pausarReproduccion()
-                                            self.isSpeaking = false
-                                            self.isPausedSpeech = true
-                                        } else {
-                                            if isPausedSpeech {
-                                                viewModel.reanudarReproduccion()
-                                                self.isSpeaking = true
-                                                self.isPausedSpeech = false
-                                            } else {
-                                                viewModel.reproducirTextoEnDialogo(texto: textToSpeech)
-                                                self.isSpeaking = true
-                                            }
-                                        }
+                                if (showAudio){
+                                    Text("Choose the audio duration")
+                                        .foregroundColor(Color.principalColor)
+                                        .font(.system(size: 12).bold())
+                                        .frame(width: 200, height: 20)
+                                        .multilineTextAlignment(.center)
+                                    
+                                    HStack{
+                                        Button(action: {
+                                            self.didTap45 = true
+                                            self.didTap15 = false
+                                            self.didTap3 = false
+                                            textToSpeech = self.textShort
+                                            
+                                        }, label: {
+                                            Text("45 seg")
+                                                .frame(width: 45, height: 8)
+                                                .padding()
+                                                .foregroundColor(didTap45 ? Color.white : Color.principalColor).font(.system(size: 13))
+                                        }).background(didTap45 ? Color.thirdColor : Color.white).cornerRadius(10)
+
+                                        Button(action: {
+                                            self.didTap15 = true
+                                            self.didTap45 = false
+                                            self.didTap3 = false
+                                            textToSpeech = self.textMedium
+                                        }, label: {
+                                            Text("1.5 min")
+                                                .frame(width: 45, height: 8)
+                                                .padding()
+                                                .foregroundColor(didTap15 ? Color.white : Color.principalColor).font(.system(size: 13))
+                                        }).background(didTap15 ? Color.thirdColor : Color.white).cornerRadius(10)
                                         
-                                    }, label: {
-                                        Image(self.isSpeaking ? "ic_pausenew" : "btn_play")
-                                            .resizable()
-                                            .frame(width: 50, height: 50)
-                                            .padding()
-                                    })
-                                    .onAppear {
-                                        self.viewModel.configurarAudioEnSegundoPlano()
+                                        Button(action: {
+                                            self.didTap3 = true
+                                            self.didTap15 = false
+                                            self.didTap45 = false
+                                            textToSpeech = self.textLong
+                                        }, label: {
+                                            Text("3 min")
+                                                .frame(width: 45, height: 8)
+                                                .padding()
+                                                .foregroundColor(didTap3 ? Color.white : Color.principalColor).font(.system(size: 13))
+                                        }).background(didTap3 ? Color.thirdColor : Color.white).cornerRadius(10)
+                                    }
+                                    
+                                    HStack{
+                                        Button(action: {
+                                            if isSpeaking {
+                                                viewModel.pausarReproduccion()
+                                                self.isSpeaking = false
+                                                self.isPausedSpeech = true
+                                            } else {
+                                                if isPausedSpeech {
+                                                    viewModel.reanudarReproduccion()
+                                                    self.isSpeaking = true
+                                                    self.isPausedSpeech = false
+                                                } else {
+                                                    viewModel.reproducirTextoEnDialogo(texto: textToSpeech)
+                                                    self.isSpeaking = true
+                                                }
                                             }
-                                   
-                                    Button(action: {
-                                        viewModel.terminarReproduccion()
-                                        self.isSpeaking = false
-                                        self.isPausedSpeech = false
-                                    }, label: {
-                                        Image("btn_stop")
-                                            .resizable()
-                                            .frame(width: 50, height: 50)
-                                            .padding()
-                                    })
+                                            
+                                        }, label: {
+                                            Image(self.isSpeaking ? "ic_pausenew" : "btn_play")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                                .padding()
+                                        })
+                                        .onAppear {
+                                            self.viewModel.configurarAudioEnSegundoPlano()
+                                                }
+                                       
+                                        Button(action: {
+                                            viewModel.terminarReproduccion()
+                                            self.isSpeaking = false
+                                            self.isPausedSpeech = false
+                                        }, label: {
+                                            Image("btn_stop")
+                                                .resizable()
+                                                .frame(width: 50, height: 50)
+                                                .padding()
+                                        })
+                                    }
                                 }
                             }.padding(EdgeInsets(top: 20, leading: 40, bottom: 10, trailing:50))
                             

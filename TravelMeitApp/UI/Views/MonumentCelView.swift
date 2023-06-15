@@ -20,20 +20,18 @@ struct MonumentCelView: View {
     var body: some View {
         VStack {
             ZStack {
-                AsyncImage(url: URL(string: "https://drive.google.com/uc?id=1wF7AeMJ8LcqnrFNHK_Xxx-ES92ao6h4l")) { image in
+                /*AsyncImage(url: URL(string: monumentImage)) { image in
                     image
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .imageScale(.large)
                         .frame(width: 300, height: 300)
                 } placeholder: {
-                   // ProgressView()
-                    Image("barrancoframe")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .imageScale(.large)
-                                .frame(width: 300, height: 300)
-                }
+                    ProgressView()
+                }*/
+                //a revisar si es funcional o no
+                CachedAsyncImage(url: URL(string: monumentImage)!, placeholder: Image("placeholder"))
+                            .frame(width: 300, height: 300)
                 
                 VStack {
                     Text(title)

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A23021652A3BC68F0030BFAE /* CachedAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23021642A3BC68F0030BFAE /* CachedAsyncImage.swift */; };
 		A28C13512A28317300E19E29 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28C13502A28317300E19E29 /* LocationManager.swift */; };
 		A2948DD42A250D2C00928576 /* Monuments.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2948DD32A250D2C00928576 /* Monuments.swift */; };
 		A2948DD72A250D4900928576 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2948DD62A250D4900928576 /* APIService.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A23021642A3BC68F0030BFAE /* CachedAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedAsyncImage.swift; sourceTree = "<group>"; };
 		A28C13502A28317300E19E29 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		A28C138C2A2845D000E19E29 /* MyLocation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MyLocation.gpx; sourceTree = "<group>"; };
 		A2948DD32A250D2C00928576 /* Monuments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monuments.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				A2D19E8F2A3431EA00898083 /* AppSettings.swift */,
 				F81523352A26F8E800C9FB41 /* FilterManager.swift */,
 				A2B4D3292A24FE5500BA5635 /* RoundedCorners.swift */,
+				A23021642A3BC68F0030BFAE /* CachedAsyncImage.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				A2D19E902A3431EA00898083 /* AppSettings.swift in Sources */,
 				F829CE602A150C040098E251 /* TravelMeitAppApp.swift in Sources */,
 				A2B4D32A2A24FE5500BA5635 /* RoundedCorners.swift in Sources */,
+				A23021652A3BC68F0030BFAE /* CachedAsyncImage.swift in Sources */,
 				F815232F2A20233700C9FB41 /* MonumentsListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
