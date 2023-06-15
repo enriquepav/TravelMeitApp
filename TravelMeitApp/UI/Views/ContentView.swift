@@ -12,7 +12,8 @@ struct ContentView: View {
     
     @ObservedObject var appSettings = AppSettings()
     @StateObject private var userData = UserData()
-    
+    @ObservedObject var locationManager = LocationManager.shared
+
     var body: some View {
         NavigationView {
             ZStack {
@@ -76,7 +77,9 @@ struct ContentView: View {
                         .padding()
                 }.cornerRadius(10).padding(-34)
             })
-        }.environmentObject(userData)
+        }.environmentObject(userData).onAppear(){
+            locationManager.requestLocation()
+        }
     }
 }
 

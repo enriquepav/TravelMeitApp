@@ -19,7 +19,6 @@ struct MonumentDetailView: View {
     @State private var didTap15:Bool = false
     @State private var didTap3:Bool = false
     @StateObject var viewModel = MonumentsDetailViewModel()
-    @ObservedObject var viewModelUser = MonumentsListViewModel()
     @State var textShort: String
     @State var textMedium: String
     @State var textLong: String

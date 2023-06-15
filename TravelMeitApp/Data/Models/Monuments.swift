@@ -21,6 +21,7 @@ struct MonumentData: Decodable {
     let monument, short, medium, long: String
     let image: String
     var rating: Int = 0
+    var distance: Float = 0.0
 
     enum CodingKeys: String, CodingKey {
         case pais = "Pais"

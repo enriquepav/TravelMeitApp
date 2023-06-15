@@ -22,6 +22,9 @@ class UserData: ObservableObject {
         if let savedUser = UserDefaults.standard.data(forKey: "user"),
            let decodedUser = try? JSONDecoder().decode(User.self, from: savedUser) {
             self.user = decodedUser
+        }else{
+            let newUser = User(name: "Prueba", mail: "mail@gmail.com", emergencyData: "emergencyData", selectedCountry: "selectedCountry", selectedLanguage: "selectedLanguage", selectedDate:"selectedDate", sizeType: "sizeType", selectedOptionIDs: ["A","B","C","D"]) // Ejemplo: reemplaza con los datos del formulario
+            self.user = newUser
         }
     }
 }

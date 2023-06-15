@@ -171,8 +171,6 @@ struct CreateAccountView: View {
                             }
                             Button(action: {
                                 showAlert = true
-                                let newUser = User(name: name, mail: mail, emergencyData: emergencyData, selectedCountry: selectedCountry, selectedLanguage: selectedLanguage, selectedDate: selectedDate, sizeType: sizeType, selectedOptionIDs: selectedOptionIDs) // Ejemplo: reemplaza con los datos del formulario
-                                userData.user = newUser
                             }) {
                                 Text("Continue")
                                     .foregroundColor(.white)
@@ -186,8 +184,15 @@ struct CreateAccountView: View {
                                     title: Text("Alerta"),
                                     message: Text("¿Deseas continuar?"),
                                     primaryButton: .default(Text("Sí"), action: {
-                                        navigateToNextView = true
                                         appSettings.isUserCreated = true
+                                        let formatter3 = DateFormatter()
+                                        formatter3.dateFormat = "HH:mm E, d MMM y"
+                                        print(formatter3.string(from: selectedDate))
+                                        
+                                        let newUser = User(name: name, mail: mail, emergencyData: emergencyData, selectedCountry: selectedCountry, selectedLanguage: selectedLanguage, selectedDate: formatter3.string(from: selectedDate), sizeType: sizeType, selectedOptionIDs: selectedOptionIDs) // Ejemplo: reemplaza con los datos del formulario
+                                        userData.user = newUser
+                                        print(userData.user?.name)
+                                        navigateToNextView = true
                                     }),
                                     secondaryButton: .cancel()
                                 )
@@ -203,11 +208,7 @@ struct CreateAccountView: View {
                             
                         }
                     }.background(Color.white.opacity(0.7)).cornerRadius(20).padding(EdgeInsets(top: 20, leading: 80, bottom: 10, trailing: 80))
-
-                    
                 }
-                
-                
             }
         }
         

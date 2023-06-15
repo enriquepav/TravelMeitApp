@@ -15,27 +15,32 @@ struct MonumentsListView: View {
     let distanceSelected: [Float] = [3.00, 10.00, 50.00] // Cambiar distancias
     let options = ["ic_3km", "ic_10km", "ic_50km"]
     let optionSelected = ["ic_3kmSelected", "ic_10kmSelected", "ic_50kmSelected"]
-    
-    @StateObject var locationManager = LocationManager()
-    @ObservedObject var viewModel = MonumentsListViewModel()
-    let zeroPoint = CLLocationCoordinate2D(latitude: 0, longitude: 0)
+    @ObservedObject var viewModel = MonumentsListViewModel.shared
     @EnvironmentObject private var userData: UserData
     
     var body: some View {
         ScrollView {
-            VStack {
-                Spacer(minLength: 150)
-                LazyVGrid(columns: [
-                    GridItem(.flexible(), spacing: 20),
-                    GridItem(.flexible(), spacing: 20)
-                ], spacing: 300) {
-                    ForEach(viewModel.monumentsData, id: \.monument) { item in
-                        NavigationLink(destination: MonumentDetailView(image: item.image , name: item.monument, distance: Float(viewModel.calculateDistance(point1: viewModel.userCoordinate, point2: CLLocationCoordinate2D(latitude: item.latitude , longitude: item.longitude ))),textShort: item.short , textMedium: item.medium , textLong: item.long )) {
-                            MonumentCelView(monumentImage: item.image, distance: Float(viewModel.calculateDistance(point1: viewModel.userCoordinate, point2: CLLocationCoordinate2D(latitude: item.latitude , longitude: item.longitude ))), title: item.monument,textShort: item.short , textMedium: item.medium , textLong: item.long )
-                        }
-                     }
+            if viewModel.isLoading {
+                VStack{
+                    ProgressView()
+                        .scaleEffect(1.0, anchor: .center)
+                        .progressViewStyle(CircularProgressViewStyle(tint: .principalColor))  // Show the loader when isLoading is true
                 }
-                .padding()
+            }else{
+                VStack {
+                    Spacer(minLength: 150)
+                    LazyVGrid(columns: [
+                        GridItem(.flexible(), spacing: 20),
+                        GridItem(.flexible(), spacing: 20)
+                    ], spacing: 300) {
+                        ForEach(viewModel.monumentsData, id: \.monument) { item in
+                            NavigationLink(destination: MonumentDetailView(image: item.image , name: item.monument, distance: item.distance,textShort: item.short , textMedium: item.medium , textLong: item.long )) {
+                                MonumentCelView(monumentImage: item.image, distance: item.distance, title: item.monument)
+                            }
+                        }
+                    }
+                    .padding()
+                }
             }
         }.toolbar {
             ToolbarItemGroup() {
@@ -49,7 +54,8 @@ struct MonumentsListView: View {
                                 Button(action: {
                                     FilterManager.sharedInstance.distanceSelected = distanceSelected[index]
                                     selectedOption = index
-                                    viewModel.callFuncToGetEmpData(user: userData.user!)// Actualizar el estado de selección al hacer clic en la opción
+                                    viewModel.filterByDistanceSelected()
+                                    // Actualizar el estado de selección al hacer clic en la opción
                                 }) {
                                     Image(options[index])
                                         .resizable()
@@ -61,7 +67,21 @@ struct MonumentsListView: View {
                     }
                 }
             }
-        }.navigationBarBackButtonHidden(true)
+        }.navigationBarBackButtonHidden(true).onAppear {
+            viewModel.calculateDistance()
+        }
+    }
+}
+
+
+struct LoaderView: View {
+    var tintColor: Color = .blue
+    var scaleSize: CGFloat = 1.0
+    
+    var body: some View {
+        ProgressView()
+            .scaleEffect(scaleSize, anchor: .center)
+            .progressViewStyle(CircularProgressViewStyle(tint: tintColor))
     }
 }
 

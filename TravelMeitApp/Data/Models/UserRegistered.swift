@@ -14,7 +14,7 @@ struct User: Decodable, Encodable {
     var emergencyData: String = ""
     var selectedCountry : String = ""
     var selectedLanguage : String = ""
-    var selectedDate: Date
+    var selectedDate: String = ""
     var sizeType : String = ""
     var selectedOptionIDs: Set<String> = []
 }
