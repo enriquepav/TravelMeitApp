@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct MonumentCelView: View {
     
     @State private var isChecked: Bool = false
@@ -22,11 +23,21 @@ struct MonumentCelView: View {
     var body: some View {
         VStack {
             ZStack {
-                Image(monumentImage)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .imageScale(.large)
-                            .frame(width: 300, height: 300)
+                AsyncImage(url: URL(string: "https://drive.google.com/uc?id=1wF7AeMJ8LcqnrFNHK_Xxx-ES92ao6h4l")) { image in
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .imageScale(.large)
+                        .frame(width: 300, height: 300)
+                } placeholder: {
+                    ProgressView()
+//                    Image(monumentImage)
+//                                .resizable()
+//                                .aspectRatio(contentMode: .fit)
+//                                .imageScale(.large)
+//                                .frame(width: 300, height: 300)
+                }
+                
                 VStack {
                     Text(title)
                         .foregroundColor(.white)

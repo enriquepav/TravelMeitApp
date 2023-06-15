@@ -30,8 +30,8 @@ struct MonumentsListView: View {
                     GridItem(.flexible(), spacing: 20)
                 ], spacing: 300) {
                     ForEach(viewModel.monumentsData, id: \.monument) { item in
-                        NavigationLink(destination: MonumentDetailView(image: "barrancoframe", name: item.monument, distance: Float(viewModel.calculateDistance(point1: viewModel.userCoordinate, point2: CLLocationCoordinate2D(latitude: item.latitude , longitude: item.longitude ))),textShort: item.short , textMedium: item.medium , textLong: item.long )) {
-                            MonumentCelView(monumentImage: "barrancoframe", distance: Float(viewModel.calculateDistance(point1: viewModel.userCoordinate, point2: CLLocationCoordinate2D(latitude: item.latitude , longitude: item.longitude ))), title: item.monument,textShort: item.short , textMedium: item.medium , textLong: item.long )
+                        NavigationLink(destination: MonumentDetailView(image: item.image , name: item.monument, distance: Float(viewModel.calculateDistance(point1: viewModel.userCoordinate, point2: CLLocationCoordinate2D(latitude: item.latitude , longitude: item.longitude ))),textShort: item.short , textMedium: item.medium , textLong: item.long )) {
+                            MonumentCelView(monumentImage: item.image, distance: Float(viewModel.calculateDistance(point1: viewModel.userCoordinate, point2: CLLocationCoordinate2D(latitude: item.latitude , longitude: item.longitude ))), title: item.monument,textShort: item.short , textMedium: item.medium , textLong: item.long )
                         }
                      }
                 }
