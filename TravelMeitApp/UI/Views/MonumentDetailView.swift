@@ -198,14 +198,20 @@ struct MonumentDetailView: View {
                                         .foregroundColor(Color.principalColor)
                                         .font(.system(size: 10).bold())
                                         .multilineTextAlignment(.center)
-                                    Button(action: {}, label: {
-                                        Text("Yes")
-                                            .frame(width: 100, height: 10)
-                                            .padding()
-                                            .background(Color.thirdColor)
-                                            .cornerRadius(20)
-                                            .foregroundColor(Color.white)
-                                    })
+                                    
+                                    NavigationLink(destination: {
+                                        MapRouteView()
+                                    }
+                                    ){
+                                        Button(action: {}, label: {
+                                            Text("Yes")
+                                                .frame(width: 100, height: 10)
+                                                .padding()
+                                                .background(Color.thirdColor)
+                                                .cornerRadius(20)
+                                                .foregroundColor(Color.white)
+                                        })
+                                    }
                                     
                                     Button(action: {}, label: {
                                         Text("No")
