@@ -7,11 +7,20 @@
 
 import Foundation
 import AVFoundation
+import CoreLocation
 
 final class MonumentsDetailViewModel: ObservableObject {
     let synthesizer = AVSpeechSynthesizer()
-    
-    
+    private let locationManager = LocationManager.shared
+    let zeroPoint = CLLocationCoordinate2D(latitude: 0, longitude: 0)
+
+    var userCoordinate: CLLocation{
+        while locationManager.currentLocation == nil || locationManager.currentLocation?.coordinate.longitude == zeroPoint.longitude {
+            locationManager.requestLocation()
+        }
+        return locationManager.currentLocation!
+    }
+
     
     func reproducirTextoEnDialogo(texto: String) {
         
@@ -44,9 +53,5 @@ final class MonumentsDetailViewModel: ObservableObject {
                 print("Error al configurar el audio en segundo plano: \(error.localizedDescription)")
             }
         }
-    
-    
-    
-    
     
 }

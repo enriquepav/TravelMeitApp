@@ -19,7 +19,7 @@ struct MonumentData: Decodable {
     let general, historic, landscape, artist: Int
     let party: Int
     let monument, short, medium, long: String
-    let image: String
+    var image: String
     var rating: Int = 0
     var distance: Float = 0.0
 

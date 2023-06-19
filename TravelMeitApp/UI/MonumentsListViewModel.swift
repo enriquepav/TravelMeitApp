@@ -48,6 +48,7 @@ final class MonumentsListViewModel: ObservableObject {
             var updatedItem = item
             //calculamos valoración
             updatedItem.rating = getRating(user: user, data: item)
+            updatedItem.image = "https://drive.google.com/uc?id=\(item.image)"
             return updatedItem
         }
     }
