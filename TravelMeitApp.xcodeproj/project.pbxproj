@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -87,7 +87,6 @@
 				640524DE96F3CF91B5964FD4 /* Pods-TravelMeitApp.debug.xcconfig */,
 				33C1AB6FBA57804E52BE7E64 /* Pods-TravelMeitApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -245,7 +244,7 @@
 				};
 			};
 			buildConfigurationList = F829CE572A150C040098E251 /* Build configuration list for PBXProject "TravelMeitApp" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (

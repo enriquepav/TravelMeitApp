@@ -181,7 +181,7 @@ struct CreateAccountView: View {
                             .padding()
                             .alert(isPresented: $showAlert) {
                                 Alert(
-                                    title: Text("Alerta"),
+                                    title: Text("Estamos creando tu usuario..."),
                                     message: Text("¿Deseas continuar?"),
                                     primaryButton: .default(Text("Sí"), action: {
                                         appSettings.isUserCreated = true

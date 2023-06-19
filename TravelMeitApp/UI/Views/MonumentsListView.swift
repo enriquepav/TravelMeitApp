@@ -34,8 +34,8 @@ struct MonumentsListView: View {
                         GridItem(.flexible(), spacing: 20)
                     ], spacing: 300) {
                         ForEach(viewModel.monumentsData, id: \.monument) { item in
-                            NavigationLink(destination: MonumentDetailView(image: "https://drive.google.com/uc?id=\(item.image)" , name: item.monument, distance: item.distance,textShort: item.short , textMedium: item.medium , textLong: item.long )) {
-                                MonumentCelView(monumentImage: "https://drive.google.com/uc?id=\(item.image)", distance: item.distance, title: item.monument)
+                            NavigationLink(destination: MonumentDetailView(monumentData: item)) {
+                                MonumentCelView(monumentImage:item.image, distance: item.distance, title: item.monument)
                             }
                         }
                     }
