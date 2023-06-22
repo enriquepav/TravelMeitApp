@@ -19,6 +19,7 @@ struct MonumentDetailView: View {
     @State private var didTap15:Bool = false
     @State private var didTap3:Bool = false
     @StateObject var viewModel = MonumentsDetailViewModel()
+    @ObservedObject var listViewModel = MonumentsListViewModel.shared
     @State var textToSpeech = ""
     @State private var isSpeaking = false
     @State private var isPausedSpeech = false
@@ -195,11 +196,12 @@ struct MonumentDetailView: View {
                                         .multilineTextAlignment(.center)
                                     
                                     NavigationLink(destination: {
-                                        let locations = [
+                                        /*let locations = [
                                             CLLocation(latitude: viewModel.userCoordinate.coordinate.latitude, longitude: viewModel.userCoordinate.coordinate.longitude), // Point 1
                                             CLLocation(latitude: monumentData.latitude, longitude: monumentData.longitude) // Point 2
-                                        ]
-                                        MapRouteView(locations: locations)
+                                        ]*/
+                                        let result = viewModel.findLocations(monumentCoordinate: monumentData, allCoordinates: listViewModel.newList)
+                                        MapRouteView(locations: result.1 , monumentsList: result.0 )
                                     }
                                     ){
                                         Text("Yes")

@@ -11,8 +11,8 @@ import CoreLocation
 struct MapRouteView: View {
     
     @State var locations: [CLLocation]
-    //@State var monumentsList: [MonumentData]
-    @ObservedObject var viewModel = MonumentsListViewModel.shared
+    @State var monumentsList: [MonumentData]?
+    //@ObservedObject var viewModel = MonumentsListViewModel.shared
     @State var typeLong: String = "km."
 
     var body: some View {
@@ -24,7 +24,7 @@ struct MapRouteView: View {
                 
                 ScrollView(.horizontal) {
                     LazyHGrid(rows: [GridItem(.fixed(50))], spacing: 10) {
-                        ForEach(viewModel.monumentsData, id: \.monument) { item in
+                        ForEach(monumentsList!, id: \.monument) { item in
                             NavigationLink(destination: MonumentDetailView(monumentData: item)) {
                                 MonumentCelView(monumentImage:item.image, distance: item.distance, title: item.monument)
                             }
@@ -85,7 +85,9 @@ struct MapRouteView: View {
             
             }.background(Color.white).cornerRadius(20).padding(EdgeInsets(top: 20, leading: 10, bottom: 10, trailing: 10))
             // Other UI elements...
-        }.navigationBarBackButtonHidden(true).background(Color.principalColor).cornerRadius(20).padding(EdgeInsets(top: 20, leading: 10, bottom: 10, trailing: 10))
+        }.navigationBarBackButtonHidden(true).background(Color.principalColor).cornerRadius(20).padding(EdgeInsets(top: 20, leading: 10, bottom: 10, trailing: 10)).onAppear(){
+            
+        }
     }
 }
 
@@ -97,6 +99,6 @@ struct MapRouteView_Previews: PreviewProvider {
             CLLocation(latitude: 47.6062, longitude: -122.3321), // Point 3
             CLLocation(latitude: 40.7128, longitude: -74.0060)   // Point 4
         ]
-        MapRouteView(locations: locations)
+        MapRouteView(locations: locations, monumentsList: nil)
     }
 }

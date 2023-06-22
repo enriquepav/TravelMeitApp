@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "E2AC9A14-8FFE-4FDF-B95D-F14C7A44B307"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8F6672C9-36A6-4E19-94DE-AB832D383C90"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TravelMeitApp/UI/MonumentsListViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "getRating(user:data:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8F6672C9-36A6-4E19-94DE-AB832D383C90 - 1234d83341572977"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TravelMeitApp.MonumentsListViewModel.getRating(user: TravelMeitApp.User, data: TravelMeitApp.MonumentData) -&gt; Swift.Int"
+                  moduleName = "TravelMeitApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kathcaillahua/Documents/TravelMeitApp/TravelMeitApp/UI/MonumentsListViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "228">
+               </Location>
+               <Location
+                  uuid = "8F6672C9-36A6-4E19-94DE-AB832D383C90 - 1234d83341572898"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TravelMeitApp.MonumentsListViewModel.getRating(user: TravelMeitApp.User, data: TravelMeitApp.MonumentData) -&gt; Swift.Int"
+                  moduleName = "TravelMeitApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kathcaillahua/Documents/TravelMeitApp/TravelMeitApp/UI/MonumentsListViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "228">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

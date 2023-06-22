@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		19B82CC4EEBBF887AB9406B1 /* Pods_TravelMeitApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D74C196DA94174E1A0EAF930 /* Pods_TravelMeitApp.framework */; };
 		A23021652A3BC68F0030BFAE /* CachedAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23021642A3BC68F0030BFAE /* CachedAsyncImage.swift */; };
+		A231A5CA2A4405A700E2D0AD /* FindIntermediatePoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A231A5C92A4405A700E2D0AD /* FindIntermediatePoints.swift */; };
 		A28C13512A28317300E19E29 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28C13502A28317300E19E29 /* LocationManager.swift */; };
 		A2948DD42A250D2C00928576 /* Monuments.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2948DD32A250D2C00928576 /* Monuments.swift */; };
 		A2948DD72A250D4900928576 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2948DD62A250D4900928576 /* APIService.swift */; };
@@ -39,6 +40,7 @@
 		33C1AB6FBA57804E52BE7E64 /* Pods-TravelMeitApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelMeitApp.release.xcconfig"; path = "Target Support Files/Pods-TravelMeitApp/Pods-TravelMeitApp.release.xcconfig"; sourceTree = "<group>"; };
 		640524DE96F3CF91B5964FD4 /* Pods-TravelMeitApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelMeitApp.debug.xcconfig"; path = "Target Support Files/Pods-TravelMeitApp/Pods-TravelMeitApp.debug.xcconfig"; sourceTree = "<group>"; };
 		A23021642A3BC68F0030BFAE /* CachedAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedAsyncImage.swift; sourceTree = "<group>"; };
+		A231A5C92A4405A700E2D0AD /* FindIntermediatePoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIntermediatePoints.swift; sourceTree = "<group>"; };
 		A28C13502A28317300E19E29 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		A28C138C2A2845D000E19E29 /* MyLocation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MyLocation.gpx; sourceTree = "<group>"; };
 		A2948DD32A250D2C00928576 /* Monuments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monuments.swift; sourceTree = "<group>"; };
@@ -90,6 +92,43 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		A231A5CB2A44077E00E2D0AD /* maps */ = {
+			isa = PBXGroup;
+			children = (
+				F8A0BA562A3E1DC800B4E4FC /* GoogleMapsView.swift */,
+				F8A0BA582A3E1E0200B4E4FC /* MapRouteView.swift */,
+			);
+			path = maps;
+			sourceTree = "<group>";
+		};
+		A231A5CC2A44079500E2D0AD /* monuments_list */ = {
+			isa = PBXGroup;
+			children = (
+				A2948DD82A250D6000928576 /* MonumentsListViewModel.swift */,
+				F815232E2A20233700C9FB41 /* MonumentsListView.swift */,
+				F815232C2A1FFD6100C9FB41 /* MonumentCelView.swift */,
+			);
+			path = monuments_list;
+			sourceTree = "<group>";
+		};
+		A231A5CE2A4407BC00E2D0AD /* monuments_detail */ = {
+			isa = PBXGroup;
+			children = (
+				F8E7B68B2A2BF47800B62165 /* MonumentDetailViewModel.swift */,
+				F81523302A238E8D00C9FB41 /* MonumentDetailView.swift */,
+			);
+			path = monuments_detail;
+			sourceTree = "<group>";
+		};
+		A231A5D02A44081D00E2D0AD /* start */ = {
+			isa = PBXGroup;
+			children = (
+				F829CE612A150C040098E251 /* ContentView.swift */,
+				F8294E372A166B3300FFA3DD /* CreateAccountView.swift */,
+			);
+			path = start;
+			sourceTree = "<group>";
+		};
 		A28C134F2A28315500E19E29 /* Location */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,8 +142,6 @@
 			isa = PBXGroup;
 			children = (
 				F81523322A240B7E00C9FB41 /* Views */,
-				A2948DD82A250D6000928576 /* MonumentsListViewModel.swift */,
-				F8E7B68B2A2BF47800B62165 /* MonumentDetailViewModel.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -137,6 +174,7 @@
 				A2B4D3292A24FE5500BA5635 /* RoundedCorners.swift */,
 				A23021642A3BC68F0030BFAE /* CachedAsyncImage.swift */,
 				F8A0BA5A2A3E1E4D00B4E4FC /* AppDelegate.swift */,
+				A231A5C92A4405A700E2D0AD /* FindIntermediatePoints.swift */,
 			);
 			path = Commons;
 			sourceTree = "<group>";
@@ -152,14 +190,11 @@
 		F81523322A240B7E00C9FB41 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F829CE612A150C040098E251 /* ContentView.swift */,
-				F8294E372A166B3300FFA3DD /* CreateAccountView.swift */,
-				F815232E2A20233700C9FB41 /* MonumentsListView.swift */,
-				F815232C2A1FFD6100C9FB41 /* MonumentCelView.swift */,
-				F81523302A238E8D00C9FB41 /* MonumentDetailView.swift */,
+				A231A5D02A44081D00E2D0AD /* start */,
+				A231A5CE2A4407BC00E2D0AD /* monuments_detail */,
+				A231A5CC2A44079500E2D0AD /* monuments_list */,
+				A231A5CB2A44077E00E2D0AD /* maps */,
 				F8294E392A16879300FFA3DD /* VistaPruebas.swift */,
-				F8A0BA562A3E1DC800B4E4FC /* GoogleMapsView.swift */,
-				F8A0BA582A3E1E0200B4E4FC /* MapRouteView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -328,6 +363,7 @@
 				F8294E382A166B3300FFA3DD /* CreateAccountView.swift in Sources */,
 				F829CE622A150C040098E251 /* ContentView.swift in Sources */,
 				A2948DDB2A252E8200928576 /* MonumentsResponse.swift in Sources */,
+				A231A5CA2A4405A700E2D0AD /* FindIntermediatePoints.swift in Sources */,
 				F81523362A26F8E800C9FB41 /* FilterManager.swift in Sources */,
 				A2948DD72A250D4900928576 /* APIService.swift in Sources */,
 				A2948DD92A250D6000928576 /* MonumentsListViewModel.swift in Sources */,

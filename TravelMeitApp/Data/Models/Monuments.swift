@@ -11,7 +11,7 @@ struct Monuments: Decodable {
     let record : [MonumentData]
 }
 
-struct MonumentData: Decodable {
+struct MonumentData: Decodable, Equatable {
     let pais: String
     let ciudad: String
     let district: String

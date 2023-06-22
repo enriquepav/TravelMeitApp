@@ -54,4 +54,28 @@ final class MonumentsDetailViewModel: ObservableObject {
             }
         }
     
+    func findLocations(monumentCoordinate: MonumentData, allCoordinates: [MonumentData]) -> ([MonumentData],[CLLocation]){
+        
+        // find Locations
+        var allLocations = [CLLocation]()
+        for coordinate in allCoordinates {
+            allLocations.append(CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude))
+        }
+        
+        let locations = findIntermediatePoints(startPoint: userCoordinate, endPoint: CLLocation(latitude: monumentCoordinate.latitude, longitude: monumentCoordinate.longitude), allPoints: allLocations)
+        
+        // with locations find monumentList
+        var monumentList = [MonumentData]()
+        
+        for itemLocation in locations {
+            for monument in allCoordinates {
+                if (monument.latitude == itemLocation.coordinate.latitude && monument.longitude == itemLocation.coordinate.longitude){
+                    monumentList.append(monument)
+                }
+            }
+        }
+        
+        return (monumentList, locations)
+    }
+    
 }
