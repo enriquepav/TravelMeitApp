@@ -10,13 +10,18 @@ import GoogleMaps
 
 struct MapView: UIViewRepresentable {
     let locations: [CLLocation]
-    @State private var marker: GMSMarker? = nil
+    let monumentsData: [MonumentData]
+    
 
+    @State private var marker: GMSMarker? = nil
+    
     func makeUIView(context: Context) -> GMSMapView {
         let camera = GMSCameraPosition.camera(withLatitude: locations[0].coordinate.latitude,
                                               longitude: locations[0].coordinate.longitude,
-                                              zoom: 12.0)
+                                              zoom: 15.0)
         let mapView = GMSMapView.map(withFrame: .zero, camera: camera)
+        mapView.settings.zoomGestures = true
+        mapView.settings.scrollGestures = true
         return mapView
     }
 
@@ -31,10 +36,10 @@ struct MapView: UIViewRepresentable {
             calculateRoute(from: sourceLocation, to: destinationLocation, mapView: mapView)
         }
         
-        for location in locations {
+        for monument in monumentsData {
             let marker = GMSMarker()
-            marker.position = location.coordinate
-            marker.title = "Marker"
+            marker.position = CLLocationCoordinate2D(latitude: monument.latitude, longitude: monument.longitude)
+            marker.title = monument.monument
             marker.map = mapView
         }
     }
