@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CoreLocation
+import GoogleMaps
 
 struct MapRouteView: View {
     
@@ -14,6 +15,7 @@ struct MapRouteView: View {
     @State var monumentsList: [MonumentData]
     //@ObservedObject var viewModel = MonumentsListViewModel.shared
     @State var typeLong: String = "km."
+    @State private var selectedMarker: GMSMarker? = nil
 
     var body: some View {
         VStack {
@@ -34,7 +36,7 @@ struct MapRouteView: View {
                 }
             }.background(Color.secondColor).cornerRadius(20).padding(EdgeInsets(top: 20, leading: 10, bottom: 10, trailing: 10))
             
-            MapView(locations: locations, monumentsData: monumentsList)
+            MapView(locations: locations, monumentsData: monumentsList, selectedMarker: $selectedMarker)
                 .edgesIgnoringSafeArea(.all).cornerRadius(20).padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
             
             HStack{

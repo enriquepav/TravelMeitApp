@@ -7,319 +7,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8F6672C9-36A6-4E19-94DE-AB832D383C90"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TravelMeitApp/UI/MonumentsListViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "getRating(user:data:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "8F6672C9-36A6-4E19-94DE-AB832D383C90 - 1234d83341572977"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TravelMeitApp.MonumentsListViewModel.getRating(user: TravelMeitApp.User, data: TravelMeitApp.MonumentData) -&gt; Swift.Int"
-                  moduleName = "TravelMeitApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kathcaillahua/Documents/TravelMeitApp/TravelMeitApp/UI/MonumentsListViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "228">
-               </Location>
-               <Location
-                  uuid = "8F6672C9-36A6-4E19-94DE-AB832D383C90 - 1234d83341572898"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TravelMeitApp.MonumentsListViewModel.getRating(user: TravelMeitApp.User, data: TravelMeitApp.MonumentData) -&gt; Swift.Int"
-                  moduleName = "TravelMeitApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kathcaillahua/Documents/TravelMeitApp/TravelMeitApp/UI/MonumentsListViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "57"
-                  endingLineNumber = "57"
-                  offsetFromSymbolStart = "228">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D1110A1F-8EDA-4DE6-9A6F-0B60882355A0"
+            uuid = "F17313EB-24A5-455F-86F1-80CBF3023AE2"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TravelMeitApp/UI/Views/maps/GoogleMapsView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "updateUIView(_:context:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "220441D5-2621-4416-9E3D-F596B9483159"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TravelMeitApp/UI/Views/monuments_detail/MonumentDetailView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "204"
-            endingLineNumber = "204"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "1F27BDD1-9A73-4BFE-BEEE-268D5A4B70CC"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TravelMeitApp/UI/Views/monuments_detail/MonumentDetailViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "findLocations(monumentCoordinate:allCoordinates:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "1F27BDD1-9A73-4BFE-BEEE-268D5A4B70CC - af5a73f0e7548b78"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TravelMeitApp.MonumentsDetailViewModel.findLocations(monumentCoordinate: TravelMeitApp.MonumentData, allCoordinates: Swift.Array&lt;TravelMeitApp.MonumentData&gt;) -&gt; (Swift.Array&lt;TravelMeitApp.MonumentData&gt;, Swift.Array&lt;TravelMeitApp.Point&gt;)"
-                  moduleName = "TravelMeitApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kathcaillahua/Documents/TravelMeitApp/TravelMeitApp/UI/Views/monuments_detail/MonumentDetailViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "78"
-                  endingLineNumber = "78"
-                  offsetFromSymbolStart = "5028">
-               </Location>
-               <Location
-                  uuid = "1F27BDD1-9A73-4BFE-BEEE-268D5A4B70CC - 57976d88dd67ac47"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TravelMeitApp.MonumentsDetailViewModel.findLocations(monumentCoordinate: TravelMeitApp.MonumentData, allCoordinates: Swift.Array&lt;TravelMeitApp.MonumentData&gt;) -&gt; (Swift.Array&lt;TravelMeitApp.MonumentData&gt;, Swift.Array&lt;__C.CLLocation&gt;)"
-                  moduleName = "TravelMeitApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kathcaillahua/Documents/TravelMeitApp/TravelMeitApp/UI/Views/monuments_detail/MonumentDetailViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "78"
-                  endingLineNumber = "78"
-                  offsetFromSymbolStart = "4563">
-               </Location>
-               <Location
-                  uuid = "1F27BDD1-9A73-4BFE-BEEE-268D5A4B70CC - 57976d88dd67ac05"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TravelMeitApp.MonumentsDetailViewModel.findLocations(monumentCoordinate: TravelMeitApp.MonumentData, allCoordinates: Swift.Array&lt;TravelMeitApp.MonumentData&gt;) -&gt; (Swift.Array&lt;TravelMeitApp.MonumentData&gt;, Swift.Array&lt;__C.CLLocation&gt;)"
-                  moduleName = "TravelMeitApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kathcaillahua/Documents/TravelMeitApp/TravelMeitApp/UI/Views/monuments_detail/MonumentDetailViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "80"
-                  endingLineNumber = "80"
-                  offsetFromSymbolStart = "4757">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "77E556D0-8D89-4A19-9CA8-794C0B303984"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TravelMeitApp/UI/Views/monuments_detail/MonumentDetailViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "findLocations(monumentCoordinate:allCoordinates:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "77E556D0-8D89-4A19-9CA8-794C0B303984 - af5a73f0e754892d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TravelMeitApp.MonumentsDetailViewModel.findLocations(monumentCoordinate: TravelMeitApp.MonumentData, allCoordinates: Swift.Array&lt;TravelMeitApp.MonumentData&gt;) -&gt; (Swift.Array&lt;TravelMeitApp.MonumentData&gt;, Swift.Array&lt;TravelMeitApp.Point&gt;)"
-                  moduleName = "TravelMeitApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kathcaillahua/Documents/TravelMeitApp/TravelMeitApp/UI/Views/monuments_detail/MonumentDetailViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "65"
-                  endingLineNumber = "65"
-                  offsetFromSymbolStart = "1874">
-               </Location>
-               <Location
-                  uuid = "77E556D0-8D89-4A19-9CA8-794C0B303984 - 57976d88dd67ae12"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TravelMeitApp.MonumentsDetailViewModel.findLocations(monumentCoordinate: TravelMeitApp.MonumentData, allCoordinates: Swift.Array&lt;TravelMeitApp.MonumentData&gt;) -&gt; (Swift.Array&lt;TravelMeitApp.MonumentData&gt;, Swift.Array&lt;__C.CLLocation&gt;)"
-                  moduleName = "TravelMeitApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kathcaillahua/Documents/TravelMeitApp/TravelMeitApp/UI/Views/monuments_detail/MonumentDetailViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "65"
-                  endingLineNumber = "65"
-                  offsetFromSymbolStart = "1812">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7B57CDE8-273E-473B-B8E3-1A7333471CB8"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TravelMeitApp/UI/Views/monuments_detail/MonumentDetailViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "findLocations(monumentCoordinate:allCoordinates:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "7B57CDE8-273E-473B-B8E3-1A7333471CB8 - af5a73f0e7548ad5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TravelMeitApp.MonumentsDetailViewModel.findLocations(monumentCoordinate: TravelMeitApp.MonumentData, allCoordinates: Swift.Array&lt;TravelMeitApp.MonumentData&gt;) -&gt; (Swift.Array&lt;TravelMeitApp.MonumentData&gt;, Swift.Array&lt;TravelMeitApp.Point&gt;)"
-                  moduleName = "TravelMeitApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kathcaillahua/Documents/TravelMeitApp/TravelMeitApp/UI/Views/monuments_detail/MonumentDetailViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "73"
-                  endingLineNumber = "73"
-                  offsetFromSymbolStart = "4450">
-               </Location>
-               <Location
-                  uuid = "7B57CDE8-273E-473B-B8E3-1A7333471CB8 - 57976d88dd67adea"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TravelMeitApp.MonumentsDetailViewModel.findLocations(monumentCoordinate: TravelMeitApp.MonumentData, allCoordinates: Swift.Array&lt;TravelMeitApp.MonumentData&gt;) -&gt; (Swift.Array&lt;TravelMeitApp.MonumentData&gt;, Swift.Array&lt;__C.CLLocation&gt;)"
-                  moduleName = "TravelMeitApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kathcaillahua/Documents/TravelMeitApp/TravelMeitApp/UI/Views/monuments_detail/MonumentDetailViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "73"
-                  endingLineNumber = "73"
-                  offsetFromSymbolStart = "3984">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E2F07A6B-D3AD-424B-990D-5E70037EAB1C"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TravelMeitApp/UI/Views/monuments_detail/MonumentDetailViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
             startingLineNumber = "68"
             endingLineNumber = "68"
-            landmarkName = "findLocations(monumentCoordinate:allCoordinates:)"
+            landmarkName = "calculateRoute(from:to:mapView:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "E2F07A6B-D3AD-424B-990D-5E70037EAB1C - af5a73f0e754898e"
+                  uuid = "F17313EB-24A5-455F-86F1-80CBF3023AE2 - a328d47b5df0e64a"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "TravelMeitApp.MonumentsDetailViewModel.findLocations(monumentCoordinate: TravelMeitApp.MonumentData, allCoordinates: Swift.Array&lt;TravelMeitApp.MonumentData&gt;) -&gt; (Swift.Array&lt;TravelMeitApp.MonumentData&gt;, Swift.Array&lt;TravelMeitApp.Point&gt;)"
+                  symbolName = "TravelMeitApp.MapView.calculateRoute(from: __C.CLLocation, to: __C.CLLocation, mapView: __C.GMSMapView) -&gt; ()"
                   moduleName = "TravelMeitApp"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kathcaillahua/Documents/TravelMeitApp/TravelMeitApp/UI/Views/monuments_detail/MonumentDetailViewModel.swift"
+                  urlString = "file:///Users/kathcaillahua/Documents/TravelMeitApp/TravelMeitApp/UI/Views/maps/GoogleMapsView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "68"
                   endingLineNumber = "68"
-                  offsetFromSymbolStart = "2326">
+                  offsetFromSymbolStart = "1394">
                </Location>
                <Location
-                  uuid = "E2F07A6B-D3AD-424B-990D-5E70037EAB1C - 57976d88dd67aeb1"
+                  uuid = "F17313EB-24A5-455F-86F1-80CBF3023AE2 - 99434e44858d97ca"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "TravelMeitApp.MonumentsDetailViewModel.findLocations(monumentCoordinate: TravelMeitApp.MonumentData, allCoordinates: Swift.Array&lt;TravelMeitApp.MonumentData&gt;) -&gt; (Swift.Array&lt;TravelMeitApp.MonumentData&gt;, Swift.Array&lt;__C.CLLocation&gt;)"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TravelMeitApp.MapView.calculateRoute(from: __C.CLLocation, to: __C.CLLocation, mapView: __C.GMSMapView) -&gt; ()"
                   moduleName = "TravelMeitApp"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kathcaillahua/Documents/TravelMeitApp/TravelMeitApp/UI/Views/monuments_detail/MonumentDetailViewModel.swift"
+                  urlString = "file:///Users/kathcaillahua/Documents/TravelMeitApp/TravelMeitApp/UI/Views/maps/GoogleMapsView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "68"
-                  endingLineNumber = "68"
-                  offsetFromSymbolStart = "1964">
-               </Location>
-               <Location
-                  uuid = "E2F07A6B-D3AD-424B-990D-5E70037EAB1C - 57976d88dd67aeb1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TravelMeitApp.MonumentsDetailViewModel.findLocations(monumentCoordinate: TravelMeitApp.MonumentData, allCoordinates: Swift.Array&lt;TravelMeitApp.MonumentData&gt;) -&gt; (Swift.Array&lt;TravelMeitApp.MonumentData&gt;, Swift.Array&lt;__C.CLLocation&gt;)"
-                  moduleName = "TravelMeitApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kathcaillahua/Documents/TravelMeitApp/TravelMeitApp/UI/Views/monuments_detail/MonumentDetailViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "68"
-                  endingLineNumber = "68"
-                  offsetFromSymbolStart = "1976">
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "426">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9B796562-9343-4F01-BF8F-D4B7950F6678"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TravelMeitApp/Commons/FindIntermediatePoints.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "toRadians()"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

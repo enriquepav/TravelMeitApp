@@ -12,24 +12,34 @@ struct MapView: UIViewRepresentable {
     let locations: [CLLocation]
     let monumentsData: [MonumentData]
     
-
-    @State private var marker: GMSMarker? = nil
+    @Binding var selectedMarker: GMSMarker?
+    
+    func makeCoordinator() -> Coordinator {
+        Coordinator(self)
+    }
     
     func makeUIView(context: Context) -> GMSMapView {
-        let camera = GMSCameraPosition.camera(withLatitude: locations[0].coordinate.latitude,
-                                              longitude: locations[0].coordinate.longitude,
-                                              zoom: 15.0)
-        let mapView = GMSMapView.map(withFrame: .zero, camera: camera)
+        let mapView = GMSMapView()
         mapView.settings.zoomGestures = true
         mapView.settings.scrollGestures = true
-        return mapView
-    }
-
-    func updateUIView(_ mapView: GMSMapView, context: Context) {
-        // Remove any existing overlays on the map
-        mapView.clear()
-
-        // Draw the route
+        
+        mapView.delegate = context.coordinator // Assign delegate
+        
+        // ...
+        
+        // Calculate center coordinates
+        var centerLatitude: CLLocationDegrees = 0.0
+        var centerLongitude: CLLocationDegrees = 0.0
+        for location in locations {
+            centerLatitude += location.coordinate.latitude
+            centerLongitude += location.coordinate.longitude
+        }
+        let centerLocation = CLLocation(latitude: centerLatitude / Double(locations.count), longitude: centerLongitude / Double(locations.count))
+        
+        // Set camera to center location
+        let camera = GMSCameraPosition.camera(withTarget: centerLocation.coordinate, zoom: 15.0)
+        mapView.camera = camera
+        
         for index in 0..<(locations.count - 1) {
             let sourceLocation = locations[index]
             let destinationLocation = locations[index + 1]
@@ -42,19 +52,25 @@ struct MapView: UIViewRepresentable {
             marker.title = monument.monument
             marker.map = mapView
         }
+        
+        return mapView
     }
-
+    
+    func updateUIView(_ mapView: GMSMapView, context: Context) {
+        
+    }
+    
     private func calculateRoute(from source: CLLocation, to destination: CLLocation, mapView: GMSMapView) {
         let origin = "\(source.coordinate.latitude),\(source.coordinate.longitude)"
         let destination = "\(destination.coordinate.latitude),\(destination.coordinate.longitude)"
         let url = "https://maps.googleapis.com/maps/api/directions/json?origin=\(origin)&destination=\(destination)&mode=walking&key=AIzaSyC9LY0k_YloKpu_Ip2Amu82DPElu4jda_U"
-
+        
         URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
             guard let data = data else {
                 // Handle error
                 return
             }
-
+            
             do {
                 let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
                 if let routes = json["routes"] as? [[String: Any]], let route = routes.first,
@@ -79,7 +95,7 @@ struct MapView: UIViewRepresentable {
             }
         }.resume()
     }
-
+    
     private func drawRouteOnMap(from encodedPath: String, mapView: GMSMapView) {
         let path = GMSPath(fromEncodedPath: encodedPath)
         let polyline = GMSPolyline(path: path)
@@ -95,5 +111,41 @@ struct MapView: UIViewRepresentable {
         
         polyline.map = mapView
     }
-
+    
+    class Coordinator: NSObject, GMSMapViewDelegate {
+        var parent: MapView
+        
+        init(_ parent: MapView) {
+            self.parent = parent
+        }
+        
+        func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+            parent.selectedMarker = marker
+            if let title = marker.title {
+                let snackbarView = UIView(frame: CGRect(x: 0, y: 0, width: mapView.frame.width, height: 50))
+                snackbarView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.8)
+                
+                let label = UILabel(frame: CGRect(x: 16, y: 0, width: snackbarView.frame.width - 32, height: snackbarView.frame.height))
+                label.text = title
+                label.textColor = .white
+                
+                snackbarView.addSubview(label)
+                snackbarView.alpha = 0.0
+                
+                mapView.addSubview(snackbarView)
+                
+                UIView.animate(withDuration: 0.3, animations: {
+                    snackbarView.alpha = 1.0
+                }) { _ in
+                    UIView.animate(withDuration: 0.3, delay: 2.0, options: [], animations: {
+                        snackbarView.alpha = 0.0
+                    }, completion: { _ in
+                        snackbarView.removeFromSuperview()
+                    })
+                }
+            }
+            return true
+        }
+    }
+    
 }
