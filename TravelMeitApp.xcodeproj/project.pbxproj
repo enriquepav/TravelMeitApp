@@ -3,16 +3,20 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19B82CC4EEBBF887AB9406B1 /* Pods_TravelMeitApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D74C196DA94174E1A0EAF930 /* Pods_TravelMeitApp.framework */; };
+		A23021652A3BC68F0030BFAE /* CachedAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23021642A3BC68F0030BFAE /* CachedAsyncImage.swift */; };
+		A231A5CA2A4405A700E2D0AD /* FindIntermediatePoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A231A5C92A4405A700E2D0AD /* FindIntermediatePoints.swift */; };
 		A28C13512A28317300E19E29 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28C13502A28317300E19E29 /* LocationManager.swift */; };
 		A2948DD42A250D2C00928576 /* Monuments.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2948DD32A250D2C00928576 /* Monuments.swift */; };
 		A2948DD72A250D4900928576 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2948DD62A250D4900928576 /* APIService.swift */; };
 		A2948DD92A250D6000928576 /* MonumentsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2948DD82A250D6000928576 /* MonumentsListViewModel.swift */; };
 		A2948DDB2A252E8200928576 /* MonumentsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2948DDA2A252E8200928576 /* MonumentsResponse.swift */; };
 		A2B4D32A2A24FE5500BA5635 /* RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B4D3292A24FE5500BA5635 /* RoundedCorners.swift */; };
+		A2D19E902A3431EA00898083 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D19E8F2A3431EA00898083 /* AppSettings.swift */; };
 		F815232D2A1FFD6100C9FB41 /* MonumentCelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F815232C2A1FFD6100C9FB41 /* MonumentCelView.swift */; };
 		F815232F2A20233700C9FB41 /* MonumentsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F815232E2A20233700C9FB41 /* MonumentsListView.swift */; };
 		F81523312A238E8D00C9FB41 /* MonumentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81523302A238E8D00C9FB41 /* MonumentDetailView.swift */; };
@@ -25,10 +29,18 @@
 		F829CE642A150C080098E251 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F829CE632A150C080098E251 /* Assets.xcassets */; };
 		F829CE672A150C080098E251 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F829CE662A150C080098E251 /* Preview Assets.xcassets */; };
 		F83CAE752A32016200C6D5BC /* UserRegistered.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83CAE742A32016200C6D5BC /* UserRegistered.swift */; };
+		F8A0BA552A38E1D600B4E4FC /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A0BA542A38E1D600B4E4FC /* UserData.swift */; };
+		F8A0BA572A3E1DC800B4E4FC /* GoogleMapsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A0BA562A3E1DC800B4E4FC /* GoogleMapsView.swift */; };
+		F8A0BA592A3E1E0200B4E4FC /* MapRouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A0BA582A3E1E0200B4E4FC /* MapRouteView.swift */; };
+		F8A0BA5B2A3E1E4D00B4E4FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A0BA5A2A3E1E4D00B4E4FC /* AppDelegate.swift */; };
 		F8E7B68C2A2BF47800B62165 /* MonumentDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E7B68B2A2BF47800B62165 /* MonumentDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		33C1AB6FBA57804E52BE7E64 /* Pods-TravelMeitApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelMeitApp.release.xcconfig"; path = "Target Support Files/Pods-TravelMeitApp/Pods-TravelMeitApp.release.xcconfig"; sourceTree = "<group>"; };
+		640524DE96F3CF91B5964FD4 /* Pods-TravelMeitApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelMeitApp.debug.xcconfig"; path = "Target Support Files/Pods-TravelMeitApp/Pods-TravelMeitApp.debug.xcconfig"; sourceTree = "<group>"; };
+		A23021642A3BC68F0030BFAE /* CachedAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedAsyncImage.swift; sourceTree = "<group>"; };
+		A231A5C92A4405A700E2D0AD /* FindIntermediatePoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIntermediatePoints.swift; sourceTree = "<group>"; };
 		A28C13502A28317300E19E29 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		A28C138C2A2845D000E19E29 /* MyLocation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MyLocation.gpx; sourceTree = "<group>"; };
 		A2948DD32A250D2C00928576 /* Monuments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monuments.swift; sourceTree = "<group>"; };
@@ -36,6 +48,8 @@
 		A2948DD82A250D6000928576 /* MonumentsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentsListViewModel.swift; sourceTree = "<group>"; };
 		A2948DDA2A252E8200928576 /* MonumentsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentsResponse.swift; sourceTree = "<group>"; };
 		A2B4D3292A24FE5500BA5635 /* RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorners.swift; sourceTree = "<group>"; };
+		A2D19E8F2A3431EA00898083 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		D74C196DA94174E1A0EAF930 /* Pods_TravelMeitApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelMeitApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F815232C2A1FFD6100C9FB41 /* MonumentCelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentCelView.swift; sourceTree = "<group>"; };
 		F815232E2A20233700C9FB41 /* MonumentsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentsListView.swift; sourceTree = "<group>"; };
 		F81523302A238E8D00C9FB41 /* MonumentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentDetailView.swift; sourceTree = "<group>"; };
@@ -49,6 +63,10 @@
 		F829CE632A150C080098E251 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F829CE662A150C080098E251 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F83CAE742A32016200C6D5BC /* UserRegistered.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistered.swift; sourceTree = "<group>"; };
+		F8A0BA542A38E1D600B4E4FC /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		F8A0BA562A3E1DC800B4E4FC /* GoogleMapsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsView.swift; sourceTree = "<group>"; };
+		F8A0BA582A3E1E0200B4E4FC /* MapRouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouteView.swift; sourceTree = "<group>"; };
+		F8A0BA5A2A3E1E4D00B4E4FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8E7B68B2A2BF47800B62165 /* MonumentDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentDetailViewModel.swift; sourceTree = "<group>"; };
 		F8E7B68D2A2C429F00B62165 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,12 +76,59 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19B82CC4EEBBF887AB9406B1 /* Pods_TravelMeitApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D1373508854875BCCBE9E70 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				640524DE96F3CF91B5964FD4 /* Pods-TravelMeitApp.debug.xcconfig */,
+				33C1AB6FBA57804E52BE7E64 /* Pods-TravelMeitApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		A231A5CB2A44077E00E2D0AD /* maps */ = {
+			isa = PBXGroup;
+			children = (
+				F8A0BA562A3E1DC800B4E4FC /* GoogleMapsView.swift */,
+				F8A0BA582A3E1E0200B4E4FC /* MapRouteView.swift */,
+			);
+			path = maps;
+			sourceTree = "<group>";
+		};
+		A231A5CC2A44079500E2D0AD /* monuments_list */ = {
+			isa = PBXGroup;
+			children = (
+				A2948DD82A250D6000928576 /* MonumentsListViewModel.swift */,
+				F815232E2A20233700C9FB41 /* MonumentsListView.swift */,
+				F815232C2A1FFD6100C9FB41 /* MonumentCelView.swift */,
+			);
+			path = monuments_list;
+			sourceTree = "<group>";
+		};
+		A231A5CE2A4407BC00E2D0AD /* monuments_detail */ = {
+			isa = PBXGroup;
+			children = (
+				F8E7B68B2A2BF47800B62165 /* MonumentDetailViewModel.swift */,
+				F81523302A238E8D00C9FB41 /* MonumentDetailView.swift */,
+			);
+			path = monuments_detail;
+			sourceTree = "<group>";
+		};
+		A231A5D02A44081D00E2D0AD /* start */ = {
+			isa = PBXGroup;
+			children = (
+				F829CE612A150C040098E251 /* ContentView.swift */,
+				F8294E372A166B3300FFA3DD /* CreateAccountView.swift */,
+			);
+			path = start;
+			sourceTree = "<group>";
+		};
 		A28C134F2A28315500E19E29 /* Location */ = {
 			isa = PBXGroup;
 			children = (
@@ -77,8 +142,6 @@
 			isa = PBXGroup;
 			children = (
 				F81523322A240B7E00C9FB41 /* Views */,
-				A2948DD82A250D6000928576 /* MonumentsListViewModel.swift */,
-				F8E7B68B2A2BF47800B62165 /* MonumentDetailViewModel.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -105,20 +168,32 @@
 		A2B4D3282A24FE4000BA5635 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				F8A0BA542A38E1D600B4E4FC /* UserData.swift */,
+				A2D19E8F2A3431EA00898083 /* AppSettings.swift */,
 				F81523352A26F8E800C9FB41 /* FilterManager.swift */,
 				A2B4D3292A24FE5500BA5635 /* RoundedCorners.swift */,
+				A23021642A3BC68F0030BFAE /* CachedAsyncImage.swift */,
+				F8A0BA5A2A3E1E4D00B4E4FC /* AppDelegate.swift */,
+				A231A5C92A4405A700E2D0AD /* FindIntermediatePoints.swift */,
 			);
 			path = Commons;
+			sourceTree = "<group>";
+		};
+		B0ECB9F753461E4EF2A0357B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D74C196DA94174E1A0EAF930 /* Pods_TravelMeitApp.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		F81523322A240B7E00C9FB41 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F829CE612A150C040098E251 /* ContentView.swift */,
-				F8294E372A166B3300FFA3DD /* CreateAccountView.swift */,
-				F815232C2A1FFD6100C9FB41 /* MonumentCelView.swift */,
-				F815232E2A20233700C9FB41 /* MonumentsListView.swift */,
-				F81523302A238E8D00C9FB41 /* MonumentDetailView.swift */,
+				A231A5D02A44081D00E2D0AD /* start */,
+				A231A5CE2A4407BC00E2D0AD /* monuments_detail */,
+				A231A5CC2A44079500E2D0AD /* monuments_list */,
+				A231A5CB2A44077E00E2D0AD /* maps */,
 				F8294E392A16879300FFA3DD /* VistaPruebas.swift */,
 			);
 			path = Views;
@@ -129,6 +204,8 @@
 			children = (
 				F829CE5E2A150C040098E251 /* TravelMeitApp */,
 				F829CE5D2A150C040098E251 /* Products */,
+				7D1373508854875BCCBE9E70 /* Pods */,
+				B0ECB9F753461E4EF2A0357B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -171,9 +248,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F829CE6A2A150C080098E251 /* Build configuration list for PBXNativeTarget "TravelMeitApp" */;
 			buildPhases = (
+				A29914795BFFE2F848B9C600 /* [CP] Check Pods Manifest.lock */,
 				F829CE582A150C040098E251 /* Sources */,
 				F829CE592A150C040098E251 /* Frameworks */,
 				F829CE5A2A150C040098E251 /* Resources */,
+				A402C65A90207E0DDA5C1AB2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -200,7 +279,7 @@
 				};
 			};
 			buildConfigurationList = F829CE572A150C040098E251 /* Build configuration list for PBXProject "TravelMeitApp" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -229,6 +308,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A29914795BFFE2F848B9C600 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TravelMeitApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A402C65A90207E0DDA5C1AB2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TravelMeitApp/Pods-TravelMeitApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TravelMeitApp/Pods-TravelMeitApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TravelMeitApp/Pods-TravelMeitApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F829CE582A150C040098E251 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -237,9 +358,12 @@
 				F815232D2A1FFD6100C9FB41 /* MonumentCelView.swift in Sources */,
 				F81523342A24386700C9FB41 /* Colors.swift in Sources */,
 				A28C13512A28317300E19E29 /* LocationManager.swift in Sources */,
+				F8A0BA592A3E1E0200B4E4FC /* MapRouteView.swift in Sources */,
+				F8A0BA552A38E1D600B4E4FC /* UserData.swift in Sources */,
 				F8294E382A166B3300FFA3DD /* CreateAccountView.swift in Sources */,
 				F829CE622A150C040098E251 /* ContentView.swift in Sources */,
 				A2948DDB2A252E8200928576 /* MonumentsResponse.swift in Sources */,
+				A231A5CA2A4405A700E2D0AD /* FindIntermediatePoints.swift in Sources */,
 				F81523362A26F8E800C9FB41 /* FilterManager.swift in Sources */,
 				A2948DD72A250D4900928576 /* APIService.swift in Sources */,
 				A2948DD92A250D6000928576 /* MonumentsListViewModel.swift in Sources */,
@@ -248,9 +372,13 @@
 				F8E7B68C2A2BF47800B62165 /* MonumentDetailViewModel.swift in Sources */,
 				F81523312A238E8D00C9FB41 /* MonumentDetailView.swift in Sources */,
 				A2948DD42A250D2C00928576 /* Monuments.swift in Sources */,
+				F8A0BA572A3E1DC800B4E4FC /* GoogleMapsView.swift in Sources */,
+				A2D19E902A3431EA00898083 /* AppSettings.swift in Sources */,
 				F829CE602A150C040098E251 /* TravelMeitAppApp.swift in Sources */,
 				A2B4D32A2A24FE5500BA5635 /* RoundedCorners.swift in Sources */,
+				A23021652A3BC68F0030BFAE /* CachedAsyncImage.swift in Sources */,
 				F815232F2A20233700C9FB41 /* MonumentsListView.swift in Sources */,
+				F8A0BA5B2A3E1E4D00B4E4FC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,6 +501,7 @@
 		};
 		F829CE6B2A150C080098E251 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 640524DE96F3CF91B5964FD4 /* Pods-TravelMeitApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -406,6 +535,7 @@
 		};
 		F829CE6C2A150C080098E251 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33C1AB6FBA57804E52BE7E64 /* Pods-TravelMeitApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

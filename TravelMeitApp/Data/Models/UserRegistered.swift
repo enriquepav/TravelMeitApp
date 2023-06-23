@@ -7,15 +7,14 @@
 
 import Foundation
 
-struct User {
+struct User: Decodable, Encodable {
     
     var name: String = ""
     var mail: String = ""
     var emergencyData: String = ""
     var selectedCountry : String = ""
     var selectedLanguage : String = ""
-    var selectedDate: Date
+    var selectedDate: String = ""
     var sizeType : String = ""
-    var selectedOptionIDs: Set<UUID> = []
-    
+    var selectedOptionIDs: Set<String> = []
 }
