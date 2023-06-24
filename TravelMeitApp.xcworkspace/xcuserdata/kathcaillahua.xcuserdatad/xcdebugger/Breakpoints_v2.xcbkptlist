@@ -14,8 +14,8 @@
             filePath = "TravelMeitApp/UI/Views/maps/GoogleMapsView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "calculateRoute(from:to:mapView:)"
             landmarkType = "7">
             <Locations>
@@ -48,6 +48,195 @@
                   startingLineNumber = "69"
                   endingLineNumber = "69"
                   offsetFromSymbolStart = "426">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8B6FF724-53BC-44EC-98A6-0B77DD19B594"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TravelMeitApp/UI/Views/maps/GoogleMapsView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "calculateRoute(from:to:mapView:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8B6FF724-53BC-44EC-98A6-0B77DD19B594 - 99434e44858d963f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TravelMeitApp.MapView.calculateRoute(from: __C.CLLocation, to: __C.CLLocation, mapView: __C.GMSMapView) -&gt; ()"
+                  moduleName = "TravelMeitApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kathcaillahua/Documents/TravelMeitApp/TravelMeitApp/UI/Views/maps/GoogleMapsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "2784">
+               </Location>
+               <Location
+                  uuid = "8B6FF724-53BC-44EC-98A6-0B77DD19B594 - 99434e44858d963f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TravelMeitApp.MapView.calculateRoute(from: __C.CLLocation, to: __C.CLLocation, mapView: __C.GMSMapView) -&gt; ()"
+                  moduleName = "TravelMeitApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kathcaillahua/Documents/TravelMeitApp/TravelMeitApp/UI/Views/maps/GoogleMapsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "2008">
+               </Location>
+               <Location
+                  uuid = "8B6FF724-53BC-44EC-98A6-0B77DD19B594 - 99434e44858d963f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TravelMeitApp.MapView.calculateRoute(from: __C.CLLocation, to: __C.CLLocation, mapView: __C.GMSMapView) -&gt; ()"
+                  moduleName = "TravelMeitApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kathcaillahua/Documents/TravelMeitApp/TravelMeitApp/UI/Views/maps/GoogleMapsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "2271">
+               </Location>
+               <Location
+                  uuid = "8B6FF724-53BC-44EC-98A6-0B77DD19B594 - 99434e44858d963f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TravelMeitApp.MapView.calculateRoute(from: __C.CLLocation, to: __C.CLLocation, mapView: __C.GMSMapView) -&gt; ()"
+                  moduleName = "TravelMeitApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kathcaillahua/Documents/TravelMeitApp/TravelMeitApp/UI/Views/maps/GoogleMapsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "80"
+                  endingLineNumber = "80"
+                  offsetFromSymbolStart = "2677">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9919BE18-2787-44A3-9C9B-900CC9FC14CB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TravelMeitApp/UI/Views/maps/GoogleMapsView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "calculateRoute(from:to:mapView:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9919BE18-2787-44A3-9C9B-900CC9FC14CB - 99434e44858d967d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TravelMeitApp.MapView.calculateRoute(from: __C.CLLocation, to: __C.CLLocation, mapView: __C.GMSMapView) -&gt; ()"
+                  moduleName = "TravelMeitApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kathcaillahua/Documents/TravelMeitApp/TravelMeitApp/UI/Views/maps/GoogleMapsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "3840">
+               </Location>
+               <Location
+                  uuid = "9919BE18-2787-44A3-9C9B-900CC9FC14CB - 99434e44858d967d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TravelMeitApp.MapView.calculateRoute(from: __C.CLLocation, to: __C.CLLocation, mapView: __C.GMSMapView) -&gt; ()"
+                  moduleName = "TravelMeitApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kathcaillahua/Documents/TravelMeitApp/TravelMeitApp/UI/Views/maps/GoogleMapsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "2784">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A8E39AF5-E67A-412A-9C81-7F1CDEE6050E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TravelMeitApp/UI/Views/maps/GoogleMapsView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "calculateRoute(from:to:mapView:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A8E39AF5-E67A-412A-9C81-7F1CDEE6050E - 99434e44858d94b3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TravelMeitApp.MapView.calculateRoute(from: __C.CLLocation, to: __C.CLLocation, mapView: __C.GMSMapView) -&gt; ()"
+                  moduleName = "TravelMeitApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kathcaillahua/Documents/TravelMeitApp/TravelMeitApp/UI/Views/maps/GoogleMapsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "4879">
+               </Location>
+               <Location
+                  uuid = "A8E39AF5-E67A-412A-9C81-7F1CDEE6050E - 99434e44858d94b3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TravelMeitApp.MapView.calculateRoute(from: __C.CLLocation, to: __C.CLLocation, mapView: __C.GMSMapView) -&gt; ()"
+                  moduleName = "TravelMeitApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kathcaillahua/Documents/TravelMeitApp/TravelMeitApp/UI/Views/maps/GoogleMapsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "5714">
+               </Location>
+               <Location
+                  uuid = "A8E39AF5-E67A-412A-9C81-7F1CDEE6050E - 99434e44858d94b3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TravelMeitApp.MapView.calculateRoute(from: __C.CLLocation, to: __C.CLLocation, mapView: __C.GMSMapView) -&gt; ()"
+                  moduleName = "TravelMeitApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kathcaillahua/Documents/TravelMeitApp/TravelMeitApp/UI/Views/maps/GoogleMapsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "92"
+                  endingLineNumber = "92"
+                  offsetFromSymbolStart = "4831">
                </Location>
             </Locations>
          </BreakpointContent>

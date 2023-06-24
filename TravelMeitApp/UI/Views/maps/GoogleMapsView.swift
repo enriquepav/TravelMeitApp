@@ -13,6 +13,7 @@ struct MapView: UIViewRepresentable {
     let monumentsData: [MonumentData]
     
     @Binding var selectedMarker: GMSMarker?
+    @ObservedObject var viewModel = MapRouteViewModel.shared
     
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
@@ -57,7 +58,7 @@ struct MapView: UIViewRepresentable {
     }
     
     func updateUIView(_ mapView: GMSMapView, context: Context) {
-        
+
     }
     
     private func calculateRoute(from source: CLLocation, to destination: CLLocation, mapView: GMSMapView) {
@@ -84,7 +85,7 @@ struct MapView: UIViewRepresentable {
                             self.drawRouteOnMap(from: points, mapView: mapView)
                         }
                     }
-                    
+                    viewModel.getTotalDuration(durationText: durationText)
                     print("Total Time: \(durationText)")
                 }else{
                     print("Unable to retrieve route information")

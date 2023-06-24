@@ -20,6 +20,12 @@ class AppSettings: ObservableObject {
         }
     }
     
+    @Published var totalTime: String {
+        didSet {
+            UserDefaults.standard.set(totalTime, forKey: "totalTime")
+        }
+    }
+    
    /* @Published var ringtone: String {
         didSet {
             UserDefaults.standard.set(ringtone, forKey: "ringtone")
@@ -31,6 +37,8 @@ class AppSettings: ObservableObject {
     init() {
         //self.username = UserDefaults.standard.object(forKey: "username") as? String ?? ""
         self.isUserCreated = UserDefaults.standard.object(forKey: "isUserCreated") as? Bool ?? false
+        self.totalTime = UserDefaults.standard.object(forKey: "totalTime") as? String ?? "0 min"
+
         //self.ringtone = UserDefaults.standard.object(forKey: "ringtone") as? String ?? "Chimes"
     }
 }

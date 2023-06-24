@@ -13,9 +13,9 @@ struct MapRouteView: View {
     
     @State var locations: [CLLocation]
     @State var monumentsList: [MonumentData]
-    //@ObservedObject var viewModel = MonumentsListViewModel.shared
     @State var typeLong: String = "km."
     @State private var selectedMarker: GMSMarker? = nil
+    @ObservedObject var viewModel = MapRouteViewModel.shared
 
     var body: some View {
         VStack {
@@ -53,7 +53,7 @@ struct MapRouteView: View {
                         .frame(width: 15, height: 10)
                         .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 0))
                     
-                    Text("15min")
+                    Text(viewModel.formattedDuration(viewModel.totalDuration))
                         .foregroundColor(.white)
                         .font(.system(size: 12, weight: .bold))
                         .padding(EdgeInsets(top: 0, leading: -5, bottom: 0, trailing: 0))

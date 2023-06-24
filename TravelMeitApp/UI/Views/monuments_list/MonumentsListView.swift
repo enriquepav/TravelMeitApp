@@ -35,7 +35,7 @@ struct MonumentsListView: View {
                     ], spacing: 300) {
                         ForEach(viewModel.monumentsData, id: \.monument) { item in
                             NavigationLink(destination: MonumentDetailView(monumentData: item)) {
-                                MonumentCelView(monumentImage:item.image, distance: item.distance, title: item.monument)
+                                MonumentCelView(monumentImage:"https://www.wagnerproducciones.com/travelmeit/monumentos/APP%20IMG__PUENTE%20DE%20LOS%20SUSPIROS%202.jpg", distance: item.distance, title: item.monument)
                             }
                         }
                     }
