@@ -102,11 +102,11 @@ struct MapRouteView: View {
             ZStack {
                 Rectangle()
                     .fill(Color.secondColor)
-                    .frame(width: 400,height: 60)
+                    .frame(width: 400,height: 80)
                     .cornerRadius(20)
                     .offset(y: 40)
                     .padding()
-            }.cornerRadius(10).padding(-20)
+            }.cornerRadius(10).padding(-34)
         })
     }
 }

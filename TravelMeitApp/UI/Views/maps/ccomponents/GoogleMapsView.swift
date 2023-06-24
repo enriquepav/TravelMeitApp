@@ -15,6 +15,9 @@ struct MapView: UIViewRepresentable {
     @Binding var selectedMarker: GMSMarker?
     @ObservedObject var viewModel = MapRouteViewModel.shared
     
+    @State private var userLocation: CLLocationCoordinate2D?
+    private let locationManager = CLLocationManager()
+    
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
@@ -53,6 +56,16 @@ struct MapView: UIViewRepresentable {
             marker.title = monument.monument
             marker.map = mapView
         }
+        
+        // Configurar el mapa
+        mapView.isMyLocationEnabled = true
+        mapView.settings.myLocationButton = true
+        
+        // Configurar el administrador de ubicación
+        locationManager.delegate = context.coordinator
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
         
         return mapView
     }
@@ -107,12 +120,10 @@ struct MapView: UIViewRepresentable {
         let strokePattern = [GMSStrokeStyle.solidColor(.clear), strokeStyle]
         let spans = GMSStyleSpans(polyline.path!, strokePattern, [NSNumber(value: 5.0)], GMSLengthKind.rhumb)
         polyline.spans = spans
-        
-        
         polyline.map = mapView
     }
     
-    class Coordinator: NSObject, GMSMapViewDelegate {
+    class Coordinator: NSObject, GMSMapViewDelegate, CLLocationManagerDelegate {
         var parent: MapView
         
         init(_ parent: MapView) {
@@ -145,6 +156,11 @@ struct MapView: UIViewRepresentable {
                 }
             }
             return true
+        }
+        
+        func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+            guard let location = locations.last?.coordinate else { return }
+            parent.userLocation = location
         }
     }
     
