@@ -21,7 +21,7 @@ func findIntermediatePoints(startPoint: CLLocation, endPoint: CLLocation, allPoi
     let intermediatePoints = Array(sortedPoints[(startIndex + 1)...(endIndex - 1)])
     let limitedIntermediatePoints = Array(intermediatePoints.prefix(5))
 
-    return intermediatePoints
+    return limitedIntermediatePoints
 }
 
 func calculateDistance(_ startPoint: CLLocation, _ endPoint: CLLocation) -> Double {

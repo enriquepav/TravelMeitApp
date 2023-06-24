@@ -48,13 +48,13 @@ final class MonumentsListViewModel: ObservableObject {
             var updatedItem = item
             //calculamos valoración
             updatedItem.rating = getRating(user: user, data: item)
-            updatedItem.image = "https://drive.google.com/uc?id=\(item.image)"
+            updatedItem.image = "https://www.wagnerproducciones.com/travelmeit/monumentos/APP%20IMG__PUENTE%20DE%20LOS%20SUSPIROS%202.jpg"
             return updatedItem
         }
     }
     
     func getRating(user: User, data: MonumentData) -> Int {
-        var generalValue = data.general
+        let generalValue = data.general
         var historical = data.historic
         var party = data.party
         var landscape = data.landscape

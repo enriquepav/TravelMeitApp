@@ -188,10 +188,8 @@ struct CreateAccountView: View {
                                         let formatter3 = DateFormatter()
                                         formatter3.dateFormat = "HH:mm E, d MMM y"
                                         print(formatter3.string(from: selectedDate))
-                                        
                                         let newUser = User(name: name, mail: mail, emergencyData: emergencyData, selectedCountry: selectedCountry, selectedLanguage: selectedLanguage, selectedDate: formatter3.string(from: selectedDate), sizeType: sizeType, selectedOptionIDs: selectedOptionIDs) // Ejemplo: reemplaza con los datos del formulario
                                         userData.user = newUser
-                                        print(userData.user?.name)
                                         navigateToNextView = true
                                     }),
                                     secondaryButton: .cancel()

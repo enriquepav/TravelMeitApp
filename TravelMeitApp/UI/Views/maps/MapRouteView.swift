@@ -12,21 +12,30 @@ import GoogleMaps
 struct MapRouteView: View {
     
     @State var locations: [CLLocation]
-    @State var monumentsList: [MonumentData]
-    //@ObservedObject var viewModel = MonumentsListViewModel.shared
+    @State var monumentsList: [MonumentData]?
     @State var typeLong: String = "km."
     @State private var selectedMarker: GMSMarker? = nil
+    @ObservedObject var viewModel = MapRouteViewModel.shared
 
     var body: some View {
         VStack {
             VStack{
-                Text("Choose your stops:")
-                    .foregroundColor(Color.principalColor)
-                    .font(.system(size: 20).bold()).padding(10)
+                HStack{
+                    Image("ic_heart")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 25, height: 25)
+                        .padding(EdgeInsets(top: 5, leading: 0, bottom: 0, trailing: 0))
+                    
+                    Text("Choose your stops:")
+                        .foregroundColor(Color.principalColor)
+                        .font(.system(size: 20).bold()).padding(5)
+                    Spacer()
+                }
                 
                 ScrollView(.horizontal) {
-                    LazyHGrid(rows: [GridItem(.fixed(50))], spacing: 10) {
-                        ForEach(monumentsList, id: \.monument) { item in
+                    LazyHGrid(rows: [GridItem(.fixed(50))], spacing: 15) {
+                        ForEach(monumentsList!, id: \.monument) { item in
                             NavigationLink(destination: MonumentDetailView(monumentData: item)) {
                                 MonumentCelView(monumentImage:item.image, distance: item.distance, title: item.monument)
                             }
@@ -36,7 +45,7 @@ struct MapRouteView: View {
                 }
             }.background(Color.secondColor).cornerRadius(20).padding(EdgeInsets(top: 20, leading: 10, bottom: 10, trailing: 10))
             
-            MapView(locations: locations, monumentsData: monumentsList, selectedMarker: $selectedMarker)
+            MapView(locations: locations, monumentsData: monumentsList!, selectedMarker: $selectedMarker)
                 .edgesIgnoringSafeArea(.all).cornerRadius(20).padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
             
             HStack{
@@ -53,7 +62,7 @@ struct MapRouteView: View {
                         .frame(width: 15, height: 10)
                         .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 0))
                     
-                    Text("15min")
+                    Text(viewModel.formattedDuration(viewModel.totalDuration))
                         .foregroundColor(.white)
                         .font(.system(size: 12, weight: .bold))
                         .padding(EdgeInsets(top: 0, leading: -5, bottom: 0, trailing: 0))
@@ -71,7 +80,7 @@ struct MapRouteView: View {
                     Text(String(format: "%.2f" + " " + typeLong, "3"))
                         .foregroundColor(.white)
                         .font(.system(size: 12, weight: .bold))
-                        .padding(EdgeInsets(top: 0, leading: -5, bottom: 0, trailing: 5))
+                        .padding(EdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 5))
                 
                 }.background(
                     RoundedCorners(color: .thirdColor, tl: 10, tr: 10, bl: 10, br:10))
@@ -80,20 +89,29 @@ struct MapRouteView: View {
                 Button(action: {
                 }, label: {
                     Text("Start!")
-                        .frame(width: 100, height: 8)
+                        .frame(width: 80, height: 8)
                         .padding()
                         .foregroundColor(Color.white)
-                }).background(Color.principalColor).cornerRadius(20).padding(EdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10))
+                }).background(Color.principalColor).cornerRadius(20).padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 10))
             
-            }.background(Color.white).cornerRadius(20).padding(EdgeInsets(top: 20, leading: 10, bottom: 10, trailing: 10))
+            }.background(Color.white).cornerRadius(20).padding(EdgeInsets(top: 20, leading: 10, bottom: 25, trailing: 10))
             // Other UI elements...
-        }.navigationBarBackButtonHidden(true).background(Color.principalColor).cornerRadius(20).padding(EdgeInsets(top: 20, leading: 10, bottom: 10, trailing: 10)).onAppear(){
-            
-        }
+        }.navigationBarBackButtonHidden(true).background(Color.principalColor).cornerRadius(20).padding(EdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10)).onDisappear(){
+            viewModel.clearTotalDuration()
+        }.overlay(alignment: .bottom, content: {
+            ZStack {
+                Rectangle()
+                    .fill(Color.secondColor)
+                    .frame(width: 400,height: 80)
+                    .cornerRadius(20)
+                    .offset(y: 40)
+                    .padding()
+            }.cornerRadius(10).padding(-34)
+        })
     }
 }
 
-/*struct MapRouteView_Previews: PreviewProvider {
+struct MapRouteView_Previews: PreviewProvider {
     static var previews: some View {
         let locations = [
             CLLocation(latitude: 37.7749, longitude: -122.4194), // Point 1
@@ -103,4 +121,4 @@ struct MapRouteView: View {
         ]
         MapRouteView(locations: locations, monumentsList: nil)
     }
-}*/
+}

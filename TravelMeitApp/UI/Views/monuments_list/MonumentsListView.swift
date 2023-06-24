@@ -46,8 +46,8 @@ struct MonumentsListView: View {
             ToolbarItemGroup() {
                 HStack {
                     Image("logoTravelmeit")
-                    .resizable()
-                    .frame(width: 150, height: 40)
+                        .resizable()
+                        .frame(width: 150, height: 40)
                     ScrollView(.horizontal, showsIndicators: false) {
                         LazyHStack(spacing: 0) {
                             ForEach(0..<options.count, id: \.self) { index in
@@ -57,10 +57,15 @@ struct MonumentsListView: View {
                                     viewModel.filterByDistanceSelected()
                                     // Actualizar el estado de selección al hacer clic en la opción
                                 }) {
-                                    Image(options[index])
-                                        .resizable()
-                                        .frame(width: 32, height: 32)
-                                        .background(selectedOption == index ? Color.blue.opacity(0.5) : Color.clear) // Marcar la opción seleccionada
+                                    if (selectedOption == index ){
+                                        Image(optionSelected[index])
+                                            .resizable()
+                                            .frame(width: 32, height: 32)
+                                    }else{
+                                        Image(options[index])
+                                            .resizable()
+                                            .frame(width: 32, height: 32)
+                                    }
                                 }
                             }
                         }
