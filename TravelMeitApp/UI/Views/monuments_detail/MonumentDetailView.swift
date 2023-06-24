@@ -27,7 +27,7 @@ struct MonumentDetailView: View {
     var body: some View {
         NavigationView {
             ZStack{
-                AsyncImage(url: URL(string: "https://www.wagnerproducciones.com/travelmeit/monumentos/APP%20IMG__PUENTE%20DE%20LOS%20SUSPIROS%202.jpg")) { image in
+                AsyncImage(url: URL(string: monumentData.image)) { image in
                     image
                         .resizable()
                         .aspectRatio(contentMode: .fill)

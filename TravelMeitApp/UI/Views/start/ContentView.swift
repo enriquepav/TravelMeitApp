@@ -69,12 +69,6 @@ struct ContentView: View {
                         .cornerRadius(20)
                         .offset(y: 40)
                         .padding()
-                    Rectangle()
-                        .fill(Color.white)
-                        .frame(width: 100,height: 10)
-                        .cornerRadius(20)
-                        .offset(y:30)
-                        .padding()
                 }.cornerRadius(10).padding(-34)
             })
         }.environmentObject(userData).onAppear(){

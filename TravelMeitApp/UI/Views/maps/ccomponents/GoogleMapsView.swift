@@ -86,7 +86,6 @@ struct MapView: UIViewRepresentable {
                         }
                     }
                     viewModel.getTotalDuration(durationText: durationText)
-                    print("Total Time: \(durationText)")
                 }else{
                     print("Unable to retrieve route information")
                 }
@@ -106,7 +105,7 @@ struct MapView: UIViewRepresentable {
         // Create a custom stroke pattern for dotted lines
         let strokeStyle = GMSStrokeStyle.solidColor(.blue)
         let strokePattern = [GMSStrokeStyle.solidColor(.clear), strokeStyle]
-        let spans = GMSStyleSpans(polyline.path!, strokePattern, [NSNumber(value: 1.0)], GMSLengthKind.rhumb)
+        let spans = GMSStyleSpans(polyline.path!, strokePattern, [NSNumber(value: 5.0)], GMSLengthKind.rhumb)
         polyline.spans = spans
         
         

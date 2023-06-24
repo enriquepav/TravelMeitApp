@@ -97,9 +97,8 @@
 		A231A5CB2A44077E00E2D0AD /* maps */ = {
 			isa = PBXGroup;
 			children = (
-				F8A0BA562A3E1DC800B4E4FC /* GoogleMapsView.swift */,
+				A2DDA9D62A468CE900B4EB9E /* ccomponents */,
 				F8A0BA582A3E1E0200B4E4FC /* MapRouteView.swift */,
-				A231A5C92A4405A700E2D0AD /* FindIntermediatePoints.swift */,
 				A2DDA9D42A4682B200B4EB9E /* MapRouteViewModel.swift */,
 			);
 			path = maps;
@@ -180,6 +179,15 @@
 				F8A0BA5A2A3E1E4D00B4E4FC /* AppDelegate.swift */,
 			);
 			path = Commons;
+			sourceTree = "<group>";
+		};
+		A2DDA9D62A468CE900B4EB9E /* ccomponents */ = {
+			isa = PBXGroup;
+			children = (
+				F8A0BA562A3E1DC800B4E4FC /* GoogleMapsView.swift */,
+				A231A5C92A4405A700E2D0AD /* FindIntermediatePoints.swift */,
+			);
+			path = ccomponents;
 			sourceTree = "<group>";
 		};
 		B0ECB9F753461E4EF2A0357B /* Frameworks */ = {

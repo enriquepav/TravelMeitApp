@@ -18,8 +18,11 @@ final class MapRouteViewModel: ObservableObject {
             totalDuration += value * unit.secondsMultiplier
             totalTime = totalDuration
         }
-        
-        print("Total Time final: \(formattedDuration(totalDuration))")
+    }
+    
+    func clearTotalDuration(){
+        totalDuration = 0
+        totalTime = 0
     }
     
     func formattedDuration(_ duration: TimeInterval) -> String {
@@ -38,7 +41,6 @@ final class MapRouteViewModel: ObservableObject {
             }
         }
     }
-    
 
     enum DurationUnit: String {
         case seconds = "s"
