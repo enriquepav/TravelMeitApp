@@ -30,7 +30,7 @@ struct MonumentCelView: View {
                     ProgressView()
                 }*/
                 //a revisar si es funcional o no
-                CachedAsyncImage(url: URL(string: monumentImage)!, placeholder: Image("placeholder"))
+                CachedAsyncImage(url: URL(string: monumentImage)!, placeholder: Image("barrancoframe"))
                             .frame(width: 300, height: 300)
                 
                 VStack {
@@ -78,6 +78,6 @@ struct MonumentCelView: View {
 
 struct MonumentCelView_Previews: PreviewProvider {
     static var previews: some View {
-        MonumentCelView(monumentImage: "barrancoframe", distance: 0.20444, title: "Plaza de barranco")
+        MonumentCelView(monumentImage: "https://www.wagnerproducciones.com/travelmeit/monumentos/APP%20IMG__PUENTE%20DE%20LOS%20SUSPIROS%202.jpg", distance: 0.20444, title: "Plaza de barranco")
     }
 }

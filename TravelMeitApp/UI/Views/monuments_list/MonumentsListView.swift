@@ -16,7 +16,6 @@ struct MonumentsListView: View {
     let options = ["ic_3km", "ic_10km", "ic_50km"]
     let optionSelected = ["ic_3kmSelected", "ic_10kmSelected", "ic_50kmSelected"]
     @ObservedObject var viewModel = MonumentsListViewModel.shared
-    @EnvironmentObject private var userData: UserData
     
     var body: some View {
         ScrollView {
@@ -72,7 +71,8 @@ struct MonumentsListView: View {
                     }
                 }
             }
-        }.navigationBarBackButtonHidden(true).onAppear {
+        }.navigationBarBackButtonHidden(true)
+        .onAppear {
             viewModel.calculateDistance()
         }
     }

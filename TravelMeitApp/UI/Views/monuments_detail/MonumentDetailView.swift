@@ -239,8 +239,24 @@ struct MonumentDetailView: View {
     }
 }
 
-/*struct MonumentDetailView_Previews: PreviewProvider {
+struct MonumentDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        MonumentDetailView(image:"barrancoframe", name: "Vista de Prueba", distance: 2.5,textShort: "", textMedium: "", textLong: "")
+        MonumentDetailView(monumentData: MonumentData(pais: "Spain",
+                                                   ciudad: "Barcelona",
+                                                   district: "Eixample",
+                                                   latitude: 41.3851,
+                                                   longitude: 2.1734,
+                                                   general: 5,
+                                                   historic: 4,
+                                                   landscape: 3,
+                                                   artist: 4,
+                                                   party: 3,
+                                                   monument: "Sagrada Familia",
+                                                   short: "Gaudí's masterpiece",
+                                                   medium: "The Sagrada Familia is a renowned basilica...",
+                                                   long: "The Sagrada Familia is a monumental basilica...",
+                                                   image: "https://www.wagnerproducciones.com/travelmeit/monumentos/APP%20IMG__PUENTE%20DE%20LOS%20SUSPIROS%202.jpg",
+                                                   rating: 4,
+                                                   distance: 2.5))
     }
-}*/
+}
