@@ -31,6 +31,9 @@
 		F829CE672A150C080098E251 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F829CE662A150C080098E251 /* Preview Assets.xcassets */; };
 		F837B4D62A487C1200FABBCF /* VistaPruebas2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F837B4D52A487C1200FABBCF /* VistaPruebas2.swift */; };
 		F837B4D82A49EC2900FABBCF /* VistaPruebas3.swift in Sources */ = {isa = PBXBuildFile; fileRef = F837B4D72A49EC2900FABBCF /* VistaPruebas3.swift */; };
+		F837B4DA2A4A040900FABBCF /* VistaPruebas4.swift in Sources */ = {isa = PBXBuildFile; fileRef = F837B4D92A4A040900FABBCF /* VistaPruebas4.swift */; };
+		F837B4DC2A4A263100FABBCF /* MonumentCelMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F837B4DB2A4A263100FABBCF /* MonumentCelMapView.swift */; };
+		F837B4DE2A4A265E00FABBCF /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F837B4DD2A4A265E00FABBCF /* CheckBox.swift */; };
 		F83CAE752A32016200C6D5BC /* UserRegistered.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83CAE742A32016200C6D5BC /* UserRegistered.swift */; };
 		F8A0BA552A38E1D600B4E4FC /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A0BA542A38E1D600B4E4FC /* UserData.swift */; };
 		F8A0BA572A3E1DC800B4E4FC /* GoogleMapsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A0BA562A3E1DC800B4E4FC /* GoogleMapsView.swift */; };
@@ -68,6 +71,9 @@
 		F829CE662A150C080098E251 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F837B4D52A487C1200FABBCF /* VistaPruebas2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaPruebas2.swift; sourceTree = "<group>"; };
 		F837B4D72A49EC2900FABBCF /* VistaPruebas3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaPruebas3.swift; sourceTree = "<group>"; };
+		F837B4D92A4A040900FABBCF /* VistaPruebas4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaPruebas4.swift; sourceTree = "<group>"; };
+		F837B4DB2A4A263100FABBCF /* MonumentCelMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentCelMapView.swift; sourceTree = "<group>"; };
+		F837B4DD2A4A265E00FABBCF /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		F83CAE742A32016200C6D5BC /* UserRegistered.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistered.swift; sourceTree = "<group>"; };
 		F8A0BA542A38E1D600B4E4FC /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		F8A0BA562A3E1DC800B4E4FC /* GoogleMapsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsView.swift; sourceTree = "<group>"; };
@@ -114,6 +120,7 @@
 				A2948DD82A250D6000928576 /* MonumentsListViewModel.swift */,
 				F815232E2A20233700C9FB41 /* MonumentsListView.swift */,
 				F815232C2A1FFD6100C9FB41 /* MonumentCelView.swift */,
+				F837B4DD2A4A265E00FABBCF /* CheckBox.swift */,
 			);
 			path = monuments_list;
 			sourceTree = "<group>";
@@ -190,6 +197,7 @@
 			children = (
 				F8A0BA562A3E1DC800B4E4FC /* GoogleMapsView.swift */,
 				A231A5C92A4405A700E2D0AD /* FindIntermediatePoints.swift */,
+				F837B4DB2A4A263100FABBCF /* MonumentCelMapView.swift */,
 			);
 			path = ccomponents;
 			sourceTree = "<group>";
@@ -212,6 +220,7 @@
 				F8294E392A16879300FFA3DD /* VistaPruebas.swift */,
 				F837B4D52A487C1200FABBCF /* VistaPruebas2.swift */,
 				F837B4D72A49EC2900FABBCF /* VistaPruebas3.swift */,
+				F837B4D92A4A040900FABBCF /* VistaPruebas4.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -386,7 +395,9 @@
 				A2948DD92A250D6000928576 /* MonumentsListViewModel.swift in Sources */,
 				F8294E3A2A16879300FFA3DD /* VistaPruebas.swift in Sources */,
 				F83CAE752A32016200C6D5BC /* UserRegistered.swift in Sources */,
+				F837B4DE2A4A265E00FABBCF /* CheckBox.swift in Sources */,
 				F8E7B68C2A2BF47800B62165 /* MonumentDetailViewModel.swift in Sources */,
+				F837B4DA2A4A040900FABBCF /* VistaPruebas4.swift in Sources */,
 				F81523312A238E8D00C9FB41 /* MonumentDetailView.swift in Sources */,
 				A2948DD42A250D2C00928576 /* Monuments.swift in Sources */,
 				F8A0BA572A3E1DC800B4E4FC /* GoogleMapsView.swift in Sources */,
@@ -396,6 +407,7 @@
 				A2DDA9D52A4682B200B4EB9E /* MapRouteViewModel.swift in Sources */,
 				A2B4D32A2A24FE5500BA5635 /* RoundedCorners.swift in Sources */,
 				A23021652A3BC68F0030BFAE /* CachedAsyncImage.swift in Sources */,
+				F837B4DC2A4A263100FABBCF /* MonumentCelMapView.swift in Sources */,
 				F837B4D62A487C1200FABBCF /* VistaPruebas2.swift in Sources */,
 				F815232F2A20233700C9FB41 /* MonumentsListView.swift in Sources */,
 				F8A0BA5B2A3E1E4D00B4E4FC /* AppDelegate.swift in Sources */,

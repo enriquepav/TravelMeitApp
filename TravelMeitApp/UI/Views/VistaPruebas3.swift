@@ -20,7 +20,7 @@ struct VistaPruebas3: View {
                     Checkbox(isChecked: $isCheckboxChecked)
                 }
             }
-        }.frame(width: 150, height: 300)
+        }.frame(width: 150, height: 280)
     }
 }
 

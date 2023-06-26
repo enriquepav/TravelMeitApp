@@ -25,15 +25,15 @@ struct VistaPruebas: View {
                                 set: { value in
                                     if value {
                                         selectedItems.append(item)
-                                    } else {
-                                        if let index = selectedItems.firstIndex(of: item) {
-                                            selectedItems.remove(at: index)
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                            removeItem(item)
                                         }
                                     }
                                 }
                             ))
                         }
                         .frame(width: 100, height: 100)
+                        .transition(AnyTransition.opacity.animation(.easeInOut(duration: 2)))
                     }
                 }
             }
@@ -44,21 +44,14 @@ struct VistaPruebas: View {
     private func itemIsSelected(_ item: Int) -> Bool {
         selectedItems.contains(where: { $0 == item })
     }
-}
-
-struct Checkbox: View {
-    @Binding var isChecked: Bool
     
-    var body: some View {
-        Button(action: {
-            isChecked.toggle()
-        }) {
-            Image(systemName: isChecked ? "checkmark.square.fill" : "square")
-                .resizable()
-                .frame(width: 24, height: 24)
+    private func removeItem(_ item: Int) {
+        withAnimation {
+            items.removeAll(where: { $0 == item })
         }
     }
 }
+
 
 
 struct VistaPruebas_Previews: PreviewProvider {

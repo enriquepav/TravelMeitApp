@@ -57,7 +57,7 @@ struct MonumentCelView: View {
                             RoundedCorners(color: .thirdColor, tl: 3, tr: 3, bl: 3, br:3))
                         .padding(10)
                         Spacer().frame(width: 10)
-                        Checkbox(isChecked: $isCheckboxChecked)
+//                        Checkbox(isChecked: $isCheckboxChecked)
                         
                     }
                 }
