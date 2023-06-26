@@ -29,6 +29,8 @@
 		F829CE622A150C040098E251 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F829CE612A150C040098E251 /* ContentView.swift */; };
 		F829CE642A150C080098E251 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F829CE632A150C080098E251 /* Assets.xcassets */; };
 		F829CE672A150C080098E251 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F829CE662A150C080098E251 /* Preview Assets.xcassets */; };
+		F837B4D62A487C1200FABBCF /* VistaPruebas2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F837B4D52A487C1200FABBCF /* VistaPruebas2.swift */; };
+		F837B4D82A49EC2900FABBCF /* VistaPruebas3.swift in Sources */ = {isa = PBXBuildFile; fileRef = F837B4D72A49EC2900FABBCF /* VistaPruebas3.swift */; };
 		F83CAE752A32016200C6D5BC /* UserRegistered.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83CAE742A32016200C6D5BC /* UserRegistered.swift */; };
 		F8A0BA552A38E1D600B4E4FC /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A0BA542A38E1D600B4E4FC /* UserData.swift */; };
 		F8A0BA572A3E1DC800B4E4FC /* GoogleMapsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A0BA562A3E1DC800B4E4FC /* GoogleMapsView.swift */; };
@@ -64,6 +66,8 @@
 		F829CE612A150C040098E251 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F829CE632A150C080098E251 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F829CE662A150C080098E251 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F837B4D52A487C1200FABBCF /* VistaPruebas2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaPruebas2.swift; sourceTree = "<group>"; };
+		F837B4D72A49EC2900FABBCF /* VistaPruebas3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaPruebas3.swift; sourceTree = "<group>"; };
 		F83CAE742A32016200C6D5BC /* UserRegistered.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistered.swift; sourceTree = "<group>"; };
 		F8A0BA542A38E1D600B4E4FC /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		F8A0BA562A3E1DC800B4E4FC /* GoogleMapsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsView.swift; sourceTree = "<group>"; };
@@ -206,6 +210,8 @@
 				A231A5CC2A44079500E2D0AD /* monuments_list */,
 				A231A5CB2A44077E00E2D0AD /* maps */,
 				F8294E392A16879300FFA3DD /* VistaPruebas.swift */,
+				F837B4D52A487C1200FABBCF /* VistaPruebas2.swift */,
+				F837B4D72A49EC2900FABBCF /* VistaPruebas3.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -385,10 +391,12 @@
 				A2948DD42A250D2C00928576 /* Monuments.swift in Sources */,
 				F8A0BA572A3E1DC800B4E4FC /* GoogleMapsView.swift in Sources */,
 				A2D19E902A3431EA00898083 /* AppSettings.swift in Sources */,
+				F837B4D82A49EC2900FABBCF /* VistaPruebas3.swift in Sources */,
 				F829CE602A150C040098E251 /* TravelMeitAppApp.swift in Sources */,
 				A2DDA9D52A4682B200B4EB9E /* MapRouteViewModel.swift in Sources */,
 				A2B4D32A2A24FE5500BA5635 /* RoundedCorners.swift in Sources */,
 				A23021652A3BC68F0030BFAE /* CachedAsyncImage.swift in Sources */,
+				F837B4D62A487C1200FABBCF /* VistaPruebas2.swift in Sources */,
 				F815232F2A20233700C9FB41 /* MonumentsListView.swift in Sources */,
 				F8A0BA5B2A3E1E4D00B4E4FC /* AppDelegate.swift in Sources */,
 			);

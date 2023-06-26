@@ -16,6 +16,8 @@ struct MonumentsListView: View {
     let options = ["ic_3km", "ic_10km", "ic_50km"]
     let optionSelected = ["ic_3kmSelected", "ic_10kmSelected", "ic_50kmSelected"]
     @ObservedObject var viewModel = MonumentsListViewModel.shared
+    @State private var isCheckboxChecked = false
+    
     
     var body: some View {
         ScrollView {
@@ -34,7 +36,7 @@ struct MonumentsListView: View {
                     ], spacing: 300) {
                         ForEach(viewModel.monumentsData, id: \.monument) { item in
                             NavigationLink(destination: MonumentDetailView(monumentData: item)) {
-                                MonumentCelView(monumentImage:item.image, distance: item.distance, title: item.monument)
+                                MonumentCelView(isCheckboxChecked: $isCheckboxChecked, monumentImage:item.image, distance: item.distance, title: item.monument)
                             }
                         }
                     }
