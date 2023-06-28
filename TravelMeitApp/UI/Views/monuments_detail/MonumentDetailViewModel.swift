@@ -62,7 +62,7 @@ final class MonumentsDetailViewModel: ObservableObject {
             allLocations.append(CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude))
         }
         
-        var locations = findIntermediatePoints(startPoint: userCoordinate, endPoint: CLLocation(latitude: monumentCoordinate.latitude, longitude: monumentCoordinate.longitude), allPoints: allLocations)
+        var locations = encontrar_puntos_intermedios(puntos:allLocations, puntoA: userCoordinate, puntoB: CLLocation(latitude: monumentCoordinate.latitude, longitude: monumentCoordinate.longitude), radio: 1000)
         
         // with locations find monumentList
         var monumentList = [MonumentData]()

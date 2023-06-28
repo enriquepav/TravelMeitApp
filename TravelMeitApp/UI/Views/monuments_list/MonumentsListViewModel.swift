@@ -48,7 +48,7 @@ final class MonumentsListViewModel: ObservableObject {
             var updatedItem = item
             //calculamos valoración
             updatedItem.rating = getRating(user: user, data: item)
-            updatedItem.image = "https://www.wagnerproducciones.com/travelmeit/monumentos/APP%20IMG__PUENTE%20DE%20LOS%20SUSPIROS%202.jpg"
+            updatedItem.image = "https://www.wagnerproducciones.com/travelmeit/monumentos/PUENTE%20DE%20LOS%20SUSPIROS%201.jpg"
             return updatedItem
         }
     }
