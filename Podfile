@@ -7,5 +7,6 @@ target 'TravelMeitApp' do
 
   # Pods for TravelMeitApp
   pod 'GoogleMaps', '8.0.0'
+  pod 'SDWebImageSwiftUI'
 
 end

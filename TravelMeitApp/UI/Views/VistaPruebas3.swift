@@ -12,7 +12,7 @@ struct VistaPruebas3: View {
     
     var body: some View {
         ZStack {
-            MonumentCelView(isCheckboxChecked: $isCheckboxChecked, monumentImage: "https://www.wagnerproducciones.com/travelmeit/monumentos/APP%20IMG__PUENTE%20DE%20LOS%20SUSPIROS%202.jpg", distance: 2.34, title: "BarrancoPrueba")
+            MonumentCelView(monumentImage: "https://www.wagnerproducciones.com/travelmeit/monumentos/APP%20IMG__PUENTE%20DE%20LOS%20SUSPIROS%202.jpg", distance: 2.34, title: "BarrancoPrueba")
             VStack {
                 Spacer()
                 HStack {

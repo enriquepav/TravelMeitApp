@@ -6,30 +6,20 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
+
 
 struct VistaPruebas2: View {
-    @State private var isCheckboxChecked = false
-    
+    var imageUrl: String = "https://www.wagnerproducciones.com/travelmeit/monumentos/PARROQUIA%STA%CRUZ%1.jpg"
+
     var body: some View {
         VStack {
-            Text("Contenido de la vista principal")
-            
-            SubView(isCheckboxChecked: $isCheckboxChecked)
-            MonumentCelView(isCheckboxChecked: $isCheckboxChecked, monumentImage: "https://www.wagnerproducciones.com/travelmeit/monumentos/APP%20IMG__PUENTE%20DE%20LOS%20SUSPIROS%202.jpg", distance: 2.34, title: "BarrancoPrueba")
-            
-            Text("Checkbox seleccionado: \(isCheckboxChecked.description)")
-        }
-    }
-}
-
-struct SubView: View {
-    @Binding var isCheckboxChecked: Bool
-    
-    var body: some View {
-        HStack {
-            Text("Texto en la subvista")
-            
-            Checkbox(isChecked: $isCheckboxChecked)
+            WebImage(url: URL(string: imageUrl))
+                .resizable()
+                .placeholder(Image(systemName: "photo")) // Imagen de relleno mientras se carga
+                .indicator(.activity) // Indicador de actividad mientras se carga
+                .scaledToFit()
+                .frame(width: 300, height: 300)
         }
     }
 }

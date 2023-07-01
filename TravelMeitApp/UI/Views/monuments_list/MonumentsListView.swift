@@ -40,7 +40,7 @@ struct MonumentsListView: View {
                             NavigationLink(destination: MonumentDetailView(monumentData: item)) {
                                 if !itemIsSelected(item) {
                                     ZStack {
-                                        MonumentCelView(isCheckboxChecked: $isCheckboxChecked, monumentImage:item.image, distance: item.distance, title: item.monument)
+                                        MonumentCelView(monumentImage:item.image, distance: item.distance, title: item.monument)
                                         VStack {
                                             Spacer()
                                             HStack {

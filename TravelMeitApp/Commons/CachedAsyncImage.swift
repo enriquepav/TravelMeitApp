@@ -40,10 +40,8 @@ struct CachedAsyncImage: View {
     }
 
     private func downloadImage() {
-        guard let urlRequest = URLRequest(url: url) as? URLRequest else {
-            return
-        }
 
+        let urlRequest = URLRequest(url: url)
         URLSession.shared.dataTask(with: urlRequest) { data, response, error in
             guard let data = data, let image = UIImage(data: data) else {
                 return

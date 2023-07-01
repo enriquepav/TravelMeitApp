@@ -293,6 +293,7 @@
 				F829CE592A150C040098E251 /* Frameworks */,
 				F829CE5A2A150C040098E251 /* Resources */,
 				A402C65A90207E0DDA5C1AB2 /* [CP] Copy Pods Resources */,
+				CA3000D452A9ABA6E4664109 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -386,6 +387,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TravelMeitApp/Pods-TravelMeitApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA3000D452A9ABA6E4664109 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TravelMeitApp/Pods-TravelMeitApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TravelMeitApp/Pods-TravelMeitApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TravelMeitApp/Pods-TravelMeitApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

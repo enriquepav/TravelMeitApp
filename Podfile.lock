@@ -4,17 +4,27 @@ PODS:
   - GoogleMaps/Base (8.0.0)
   - GoogleMaps/Maps (8.0.0):
     - GoogleMaps/Base
+  - SDWebImage (5.16.0):
+    - SDWebImage/Core (= 5.16.0)
+  - SDWebImage/Core (5.16.0)
+  - SDWebImageSwiftUI (2.2.3):
+    - SDWebImage (~> 5.10)
 
 DEPENDENCIES:
   - GoogleMaps (= 8.0.0)
+  - SDWebImageSwiftUI
 
 SPEC REPOS:
   trunk:
     - GoogleMaps
+    - SDWebImage
+    - SDWebImageSwiftUI
 
 SPEC CHECKSUMS:
   GoogleMaps: 0dce473ab18742d0f327887853630927cbee9127
+  SDWebImage: 2aea163b50bfcb569a2726b6a754c54a4506fcf6
+  SDWebImageSwiftUI: 17396b7889f9abc27231caaeb64c537564284aab
 
-PODFILE CHECKSUM: c720f347f616d4b04d86e1a8dd5c6d0204d39f33
+PODFILE CHECKSUM: 66b4f34d87385bed58e4893f25c29000c049e447
 
 COCOAPODS: 1.12.1

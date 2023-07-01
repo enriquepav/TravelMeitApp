@@ -38,7 +38,7 @@ struct MapRouteView: View {
                     LazyHGrid(rows: [GridItem(.fixed(50))], spacing: 15) {
                         ForEach(monumentsList!, id: \.monument) { item in
                             NavigationLink(destination: MonumentDetailView(monumentData: item)) {
-                                MonumentCelView(isCheckboxChecked: $isCheckboxChecked, monumentImage:item.image, distance: item.distance, title: item.monument)
+                                MonumentCelView(monumentImage:item.image, distance: item.distance, title: item.monument)
                             }
                         }
                     }
