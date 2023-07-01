@@ -16,7 +16,10 @@ struct MonumentsListView: View {
     let options = ["ic_3km", "ic_10km", "ic_50km"]
     let optionSelected = ["ic_3kmSelected", "ic_10kmSelected", "ic_50kmSelected"]
     @ObservedObject var viewModel = MonumentsListViewModel.shared
-    @EnvironmentObject private var userData: UserData
+    @State private var isCheckboxChecked = false
+    @State private var selectedItems: [MonumentData] = []
+    
+    
     
     var body: some View {
         ScrollView {
@@ -28,14 +31,42 @@ struct MonumentsListView: View {
                 }
             }else{
                 VStack {
-                    Spacer(minLength: 150)
+                    Spacer(minLength: 40)
                     LazyVGrid(columns: [
                         GridItem(.flexible(), spacing: 20),
                         GridItem(.flexible(), spacing: 20)
-                    ], spacing: 300) {
+                    ], spacing: 40) {
                         ForEach(viewModel.monumentsData, id: \.monument) { item in
                             NavigationLink(destination: MonumentDetailView(monumentData: item)) {
-                                MonumentCelView(monumentImage:item.image, distance: item.distance, title: item.monument)
+                                if !itemIsSelected(item) {
+                                    ZStack {
+                                        MonumentCelView(isCheckboxChecked: $isCheckboxChecked, monumentImage:item.image, distance: item.distance, title: item.monument)
+                                        VStack {
+                                            Spacer()
+                                            HStack {
+                                                Spacer()
+                                                Checkbox(isChecked: Binding(
+                                                    get: {
+                                                        itemIsSelected(item)
+                                                    },
+                                                    set: { value in
+                                                        if value {
+                                                            selectedItems.append(item)
+                                                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                                                removeItem(item)
+                                                            }
+
+                                                        } else {
+                                                            if let index = selectedItems.firstIndex(of: item) {
+                                                                selectedItems.remove(at: index)
+                                                            }
+                                                        }
+                                                    }
+                                                ))                                        }
+                                        }
+                                    }.frame(width: 150, height: 280)
+                                        .transition(AnyTransition.opacity.animation(.easeInOut(duration: 2)))
+                                }
                             }
                         }
                     }
@@ -72,8 +103,17 @@ struct MonumentsListView: View {
                     }
                 }
             }
-        }.navigationBarBackButtonHidden(true).onAppear {
+        }.navigationBarBackButtonHidden(true)
+        .onAppear {
             viewModel.calculateDistance()
+        }
+    }
+    private func itemIsSelected(_ item: MonumentData) -> Bool {
+        selectedItems.contains(where: { $0 == item })
+    }
+    func removeItem(_ item: MonumentData) {
+        withAnimation {
+            viewModel.monumentsData.removeAll(where: { $0 == item })
         }
     }
 }

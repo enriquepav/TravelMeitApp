@@ -16,6 +16,7 @@ struct MapRouteView: View {
     @State var typeLong: String = "km."
     @State private var selectedMarker: GMSMarker? = nil
     @ObservedObject var viewModel = MapRouteViewModel.shared
+    @State private var isCheckboxChecked = false
 
     var body: some View {
         VStack {
@@ -37,7 +38,7 @@ struct MapRouteView: View {
                     LazyHGrid(rows: [GridItem(.fixed(50))], spacing: 15) {
                         ForEach(monumentsList!, id: \.monument) { item in
                             NavigationLink(destination: MonumentDetailView(monumentData: item)) {
-                                MonumentCelView(monumentImage:item.image, distance: item.distance, title: item.monument)
+                                MonumentCelView(isCheckboxChecked: $isCheckboxChecked, monumentImage:item.image, distance: item.distance, title: item.monument)
                             }
                         }
                     }

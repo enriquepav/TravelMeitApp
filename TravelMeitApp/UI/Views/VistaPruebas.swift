@@ -6,36 +6,54 @@
 //
 
 import SwiftUI
-import AVFoundation
 
 struct VistaPruebas: View {
+    @State private var items = Array(1...10)
+    @State private var selectedItems: [Int] = []
+
     var body: some View {
-            Image(uiImage: loadImageFromURL(urlString: "https://drive.google.com/uc?id=1wF7AeMJ8LcqnrFNHK_Xxx-ES92ao6h4l"))
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 200, height: 200)
-        }
-        
-        func loadImageFromURL(urlString: String) -> UIImage {
-            guard let url = URL(string: urlString) else {
-                // Manejo de error si la URL no es válida
-                return UIImage()
-            }
-            
-            do {
-                let data = try Data(contentsOf: url)
-                guard let image = UIImage(data: data) else {
-                    // Manejo de error si los datos no pueden ser convertidos en una imagen
-                    return UIImage()
+        ScrollView {
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))]) {
+                ForEach(items, id: \.self) { item in
+                    if !itemIsSelected(item) {
+                        VStack {
+                            Text("\(item)")
+                            Checkbox(isChecked: Binding(
+                                get: {
+                                    itemIsSelected(item)
+                                },
+                                set: { value in
+                                    if value {
+                                        selectedItems.append(item)
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                            removeItem(item)
+                                        }
+                                    }
+                                }
+                            ))
+                        }
+                        .frame(width: 100, height: 100)
+                        .transition(AnyTransition.opacity.animation(.easeInOut(duration: 2)))
+                    }
                 }
-                
-                return image
-            } catch {
-                // Manejo de error si no se puede cargar la imagen desde la URL
-                return UIImage()
             }
         }
+        .padding()
+    }
+    
+    private func itemIsSelected(_ item: Int) -> Bool {
+        selectedItems.contains(where: { $0 == item })
+    }
+    
+    private func removeItem(_ item: Int) {
+        withAnimation {
+            items.removeAll(where: { $0 == item })
+        }
+    }
 }
+
+
+
 struct VistaPruebas_Previews: PreviewProvider {
     static var previews: some View {
         VistaPruebas()

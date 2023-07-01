@@ -10,7 +10,7 @@ import SwiftUI
 
 struct MonumentCelView: View {
     
-    @State private var isChecked: Bool = false
+    @Binding var isCheckboxChecked: Bool
     @State var monumentImage: String
     @State var distance: Float
     @State var title: String
@@ -30,7 +30,7 @@ struct MonumentCelView: View {
                     ProgressView()
                 }*/
                 //a revisar si es funcional o no
-                CachedAsyncImage(url: URL(string: monumentImage)!, placeholder: Image("placeholder"))
+                CachedAsyncImage(url: URL(string: monumentImage)!, placeholder: Image("barrancoframe"))
                             .frame(width: 300, height: 300)
                 
                 VStack {
@@ -57,17 +57,8 @@ struct MonumentCelView: View {
                             RoundedCorners(color: .thirdColor, tl: 3, tr: 3, bl: 3, br:3))
                         .padding(10)
                         Spacer().frame(width: 10)
-                        Button(action: {
-                                    isChecked.toggle()
-                                }) {
-                                    HStack {
-                                        Image(systemName: isChecked ? "checkmark.square.fill" : "square")
-                                            .foregroundColor(isChecked ? .blue : .gray)
-                                            .imageScale(.large)
-                                        
-                                        Text("")
-                                    }
-                                }
+//                        Checkbox(isChecked: $isCheckboxChecked)
+                        
                     }
                 }
             }
@@ -76,8 +67,10 @@ struct MonumentCelView: View {
     }
 }
 
+
+
 struct MonumentCelView_Previews: PreviewProvider {
     static var previews: some View {
-        MonumentCelView(monumentImage: "barrancoframe", distance: 0.20444, title: "Plaza de barranco")
+        MonumentCelView(isCheckboxChecked: Binding.constant(false), monumentImage: "https://www.wagnerproducciones.com/travelmeit/monumentos/APP%20IMG__PUENTE%20DE%20LOS%20SUSPIROS%202.jpg", distance: 0.20444, title: "Plaza de barranco")
     }
 }
