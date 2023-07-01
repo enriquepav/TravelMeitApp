@@ -13,6 +13,10 @@ struct MapView: UIViewRepresentable {
     let monumentsData: [MonumentData]
     
     @Binding var selectedMarker: GMSMarker?
+    @ObservedObject var viewModel = MapRouteViewModel.shared
+    
+    @State private var userLocation: CLLocationCoordinate2D?
+    private let locationManager = CLLocationManager()
     
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
@@ -53,11 +57,21 @@ struct MapView: UIViewRepresentable {
             marker.map = mapView
         }
         
+        // Configurar el mapa
+        mapView.isMyLocationEnabled = true
+        mapView.settings.myLocationButton = true
+        
+        // Configurar el administrador de ubicación
+        locationManager.delegate = context.coordinator
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
+        
         return mapView
     }
     
     func updateUIView(_ mapView: GMSMapView, context: Context) {
-        
+
     }
     
     private func calculateRoute(from source: CLLocation, to destination: CLLocation, mapView: GMSMapView) {
@@ -84,8 +98,7 @@ struct MapView: UIViewRepresentable {
                             self.drawRouteOnMap(from: points, mapView: mapView)
                         }
                     }
-                    
-                    print("Total Time: \(durationText)")
+                    viewModel.getTotalDuration(durationText: durationText)
                 }else{
                     print("Unable to retrieve route information")
                 }
@@ -105,14 +118,12 @@ struct MapView: UIViewRepresentable {
         // Create a custom stroke pattern for dotted lines
         let strokeStyle = GMSStrokeStyle.solidColor(.blue)
         let strokePattern = [GMSStrokeStyle.solidColor(.clear), strokeStyle]
-        let spans = GMSStyleSpans(polyline.path!, strokePattern, [NSNumber(value: 1.0)], GMSLengthKind.rhumb)
+        let spans = GMSStyleSpans(polyline.path!, strokePattern, [NSNumber(value: 5.0)], GMSLengthKind.rhumb)
         polyline.spans = spans
-        
-        
         polyline.map = mapView
     }
     
-    class Coordinator: NSObject, GMSMapViewDelegate {
+    class Coordinator: NSObject, GMSMapViewDelegate, CLLocationManagerDelegate {
         var parent: MapView
         
         init(_ parent: MapView) {
@@ -145,6 +156,11 @@ struct MapView: UIViewRepresentable {
                 }
             }
             return true
+        }
+        
+        func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+            guard let location = locations.last?.coordinate else { return }
+            parent.userLocation = location
         }
     }
     
