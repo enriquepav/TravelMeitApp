@@ -23,7 +23,8 @@ struct MonumentDetailView: View {
     @State var textToSpeech = ""
     @State private var isSpeaking = false
     @State private var isPausedSpeech = false
-    
+    @StateObject private var textToSpeechManager = TextToSpeechManager()
+
     var body: some View {
         NavigationView {
             ZStack{
@@ -137,16 +138,19 @@ struct MonumentDetailView: View {
                                     HStack{
                                         Button(action: {
                                             if isSpeaking {
-                                                viewModel.pausarReproduccion()
+                                                //viewModel.pausarReproduccion()
+                                                textToSpeechManager.pauseSpeech()
                                                 self.isSpeaking = false
                                                 self.isPausedSpeech = true
                                             } else {
                                                 if isPausedSpeech {
-                                                    viewModel.reanudarReproduccion()
+                                                    //viewModel.reanudarReproduccion()
+                                                    textToSpeechManager.continueSpeech()
                                                     self.isSpeaking = true
                                                     self.isPausedSpeech = false
                                                 } else {
-                                                    viewModel.reproducirTextoEnDialogo(texto: textToSpeech)
+                                                    textToSpeechManager.speakText(textToSpeech)
+                                                    //viewModel.reproducirTextoEnDialogo(texto: textToSpeech)
                                                     self.isSpeaking = true
                                                 }
                                             }
@@ -157,12 +161,14 @@ struct MonumentDetailView: View {
                                                 .frame(width: 50, height: 50)
                                                 .padding()
                                         })
-                                        .onAppear {
+                                       /* .onAppear {
                                             self.viewModel.configurarAudioEnSegundoPlano()
-                                                }
+                                                }*/
                                        
                                         Button(action: {
-                                            viewModel.terminarReproduccion()
+                                            //viewModel.terminarReproduccion()
+                                            textToSpeechManager.stopSpeech()
+
                                             self.isSpeaking = false
                                             self.isPausedSpeech = false
                                         }, label: {
@@ -235,6 +241,42 @@ struct MonumentDetailView: View {
                     .scaledToFill().padding(30)
                 }
             }.navigationBarBackButtonHidden(true)
+        }.onAppear(){
+            // Solicitar permiso para mostrar notificaciones
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { _, _ in
+                // Manejar la respuesta de autorización si es necesario
+            }
+        }.background(EmptyView().onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
+            // Cuando la aplicación pasa a segundo plano, muestra la notificación
+            showAudioNotification()
+        })
+    }
+    
+    // Función para mostrar la notificación con controles de reproducción
+    func showAudioNotification() {
+        // Configurar las acciones de reproducción
+        let playAction = UNNotificationAction(identifier: "play", title: "Play", options: [])
+        let pauseAction = UNNotificationAction(identifier: "pause", title: "Pause", options: [])
+        let stopAction = UNNotificationAction(identifier: "stop", title: "Stop", options: [])
+
+        // Configurar la categoría de notificación con las acciones de reproducción
+        let category = UNNotificationCategory(identifier: "audioPlayback", actions: [playAction, pauseAction, stopAction], intentIdentifiers: [], options: .customDismissAction)
+        UNUserNotificationCenter.current().setNotificationCategories([category])
+        
+        // Configurar el contenido de la notificación
+        let content = UNMutableNotificationContent()
+        content.title = "Reproduciendo audio"
+        content.body = "Pulsa para pausar"
+        content.categoryIdentifier = "audioPlayback"
+        
+        // Configurar la solicitud de notificación
+        let request = UNNotificationRequest(identifier: "audioNotification", content: content, trigger: nil)
+        
+        // Agregar la solicitud de notificación al centro de notificaciones
+        UNUserNotificationCenter.current().add(request) { error in
+            if let error = error {
+                print("Error al agregar la solicitud de notificación: \(error)")
+            }
         }
     }
 }

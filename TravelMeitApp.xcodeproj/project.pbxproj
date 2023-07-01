@@ -10,6 +10,8 @@
 		19B82CC4EEBBF887AB9406B1 /* Pods_TravelMeitApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D74C196DA94174E1A0EAF930 /* Pods_TravelMeitApp.framework */; };
 		A23021652A3BC68F0030BFAE /* CachedAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23021642A3BC68F0030BFAE /* CachedAsyncImage.swift */; };
 		A231A5CA2A4405A700E2D0AD /* FindIntermediatePoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A231A5C92A4405A700E2D0AD /* FindIntermediatePoints.swift */; };
+		A267AF542A4CB4E700EA9F05 /* FindDistanceBetweenPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A267AF532A4CB4E700EA9F05 /* FindDistanceBetweenPoints.swift */; };
+		A267AF582A4CBCCE00EA9F05 /* TextToSpeechManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A267AF572A4CBCCE00EA9F05 /* TextToSpeechManager.swift */; };
 		A28C13512A28317300E19E29 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A28C13502A28317300E19E29 /* LocationManager.swift */; };
 		A2948DD42A250D2C00928576 /* Monuments.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2948DD32A250D2C00928576 /* Monuments.swift */; };
 		A2948DD72A250D4900928576 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2948DD62A250D4900928576 /* APIService.swift */; };
@@ -47,6 +49,8 @@
 		640524DE96F3CF91B5964FD4 /* Pods-TravelMeitApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelMeitApp.debug.xcconfig"; path = "Target Support Files/Pods-TravelMeitApp/Pods-TravelMeitApp.debug.xcconfig"; sourceTree = "<group>"; };
 		A23021642A3BC68F0030BFAE /* CachedAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedAsyncImage.swift; sourceTree = "<group>"; };
 		A231A5C92A4405A700E2D0AD /* FindIntermediatePoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIntermediatePoints.swift; sourceTree = "<group>"; };
+		A267AF532A4CB4E700EA9F05 /* FindDistanceBetweenPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindDistanceBetweenPoints.swift; sourceTree = "<group>"; };
+		A267AF572A4CBCCE00EA9F05 /* TextToSpeechManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextToSpeechManager.swift; sourceTree = "<group>"; };
 		A28C13502A28317300E19E29 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		A28C138C2A2845D000E19E29 /* MyLocation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = MyLocation.gpx; sourceTree = "<group>"; };
 		A2948DD32A250D2C00928576 /* Monuments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monuments.swift; sourceTree = "<group>"; };
@@ -128,6 +132,7 @@
 		A231A5CE2A4407BC00E2D0AD /* monuments_detail */ = {
 			isa = PBXGroup;
 			children = (
+				A267AF562A4CBCBA00EA9F05 /* audio */,
 				F8E7B68B2A2BF47800B62165 /* MonumentDetailViewModel.swift */,
 				F81523302A238E8D00C9FB41 /* MonumentDetailView.swift */,
 			);
@@ -141,6 +146,14 @@
 				F8294E372A166B3300FFA3DD /* CreateAccountView.swift */,
 			);
 			path = start;
+			sourceTree = "<group>";
+		};
+		A267AF562A4CBCBA00EA9F05 /* audio */ = {
+			isa = PBXGroup;
+			children = (
+				A267AF572A4CBCCE00EA9F05 /* TextToSpeechManager.swift */,
+			);
+			path = audio;
 			sourceTree = "<group>";
 		};
 		A28C134F2A28315500E19E29 /* Location */ = {
@@ -197,6 +210,7 @@
 			children = (
 				F8A0BA562A3E1DC800B4E4FC /* GoogleMapsView.swift */,
 				A231A5C92A4405A700E2D0AD /* FindIntermediatePoints.swift */,
+				A267AF532A4CB4E700EA9F05 /* FindDistanceBetweenPoints.swift */,
 				F837B4DB2A4A263100FABBCF /* MonumentCelMapView.swift */,
 			);
 			path = ccomponents;
@@ -381,6 +395,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A267AF582A4CBCCE00EA9F05 /* TextToSpeechManager.swift in Sources */,
 				F815232D2A1FFD6100C9FB41 /* MonumentCelView.swift in Sources */,
 				F81523342A24386700C9FB41 /* Colors.swift in Sources */,
 				A28C13512A28317300E19E29 /* LocationManager.swift in Sources */,
@@ -390,6 +405,7 @@
 				F829CE622A150C040098E251 /* ContentView.swift in Sources */,
 				A2948DDB2A252E8200928576 /* MonumentsResponse.swift in Sources */,
 				A231A5CA2A4405A700E2D0AD /* FindIntermediatePoints.swift in Sources */,
+				A267AF542A4CB4E700EA9F05 /* FindDistanceBetweenPoints.swift in Sources */,
 				F81523362A26F8E800C9FB41 /* FilterManager.swift in Sources */,
 				A2948DD72A250D4900928576 /* APIService.swift in Sources */,
 				A2948DD92A250D6000928576 /* MonumentsListViewModel.swift in Sources */,
