@@ -9,12 +9,13 @@ import SwiftUI
 import GoogleMaps
 
 struct MapView: UIViewRepresentable {
-    let locations: [CLLocation]
-    let monumentsData: [MonumentData]
-    
+    @Binding var locations: [CLLocation]
+    @Binding var monumentsData: [MonumentData]
+
     @Binding var selectedMarker: GMSMarker?
     @ObservedObject var viewModel = MapRouteViewModel.shared
-    
+    @ObservedObject var appSettings = AppSettings()
+
     @State private var userLocation: CLLocationCoordinate2D?
     private let locationManager = CLLocationManager()
     
@@ -67,10 +68,56 @@ struct MapView: UIViewRepresentable {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
         
+        appSettings.countMonuments = monumentsData.count
+        appSettings.countLocations = locations.count
+
         return mapView
     }
     
     func updateUIView(_ mapView: GMSMapView, context: Context) {
+        // Remueve todas las rutas y marcadores existentes
+        if (monumentsData.count != appSettings.countMonuments){
+            print(monumentsData.count)
+            appSettings.countMonuments = monumentsData.count
+            
+            mapView.clear()
+            
+            var centerLatitude: CLLocationDegrees = 0.0
+            var centerLongitude: CLLocationDegrees = 0.0
+            for location in locations {
+                centerLatitude += location.coordinate.latitude
+                centerLongitude += location.coordinate.longitude
+            }
+            let centerLocation = CLLocation(latitude: centerLatitude / Double(locations.count), longitude: centerLongitude / Double(locations.count))
+            
+            // Set camera to center location
+            let camera = GMSCameraPosition.camera(withTarget: centerLocation.coordinate, zoom: 15.0)
+            mapView.camera = camera
+            
+           
+            
+            for monument in monumentsData {
+                let marker = GMSMarker()
+                marker.position = CLLocationCoordinate2D(latitude: monument.latitude, longitude: monument.longitude)
+                marker.title = monument.monument
+                marker.map = mapView
+            }
+        }
+        
+        if (locations.count != appSettings.countLocations){
+            
+            for index in 0..<(locations.count - 1) {
+                let sourceLocation = locations[index]
+                let destinationLocation = locations[index + 1]
+                DispatchQueue.main.async {
+                    self.calculateRoute(from: sourceLocation, to: destinationLocation, mapView: mapView)
+                }
+            }
+            
+            appSettings.countLocations = locations.count
+
+        }
+
 
     }
     

@@ -12,7 +12,7 @@ import GoogleMaps
 struct MapRouteView: View {
     
     @State var locations: [CLLocation]
-    @State var monumentsList: [MonumentData]?
+    @State var monumentsList: [MonumentData]
     @State var typeLong: String = "km."
     @State private var selectedMarker: GMSMarker? = nil
     @ObservedObject var viewModel = MapRouteViewModel.shared
@@ -73,7 +73,7 @@ struct MapRouteView: View {
                 }
             }.background(Color.secondColor).cornerRadius(20).padding(EdgeInsets(top: 20, leading: 10, bottom: 10, trailing: 10))
             
-            MapView(locations: locations, monumentsData: monumentsList ?? [UserExample.sharedInstance.user1], selectedMarker: $selectedMarker)
+            MapView(locations: $locations, monumentsData: $monumentsList, selectedMarker: $selectedMarker)
                 .edgesIgnoringSafeArea(.all).cornerRadius(20).padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
             
             HStack{
@@ -142,12 +142,16 @@ struct MapRouteView: View {
     }
     func removeItem(_ item: MonumentData) {
         withAnimation {
-            viewModel1.monumentsData.removeAll(where: { $0 == item })
+            DispatchQueue.main.async {
+                monumentsList.removeAll(where: { $0 == item })
+                locations.removeAll(where: { $0.coordinate.latitude == item.latitude && $0.coordinate.longitude == item.longitude })
+            }
+            viewModel.clearTotalDuration()
         }
     }
 }
 
-struct MapRouteView_Previews: PreviewProvider {
+/*struct MapRouteView_Previews: PreviewProvider {
     static var previews: some View {
         let locations = [
             CLLocation(latitude: 37.7749, longitude: -122.4194), // Point 1
@@ -157,4 +161,4 @@ struct MapRouteView_Previews: PreviewProvider {
         ]
         MapRouteView(locations: locations, monumentsList: nil)
     }
-}
+}*/
