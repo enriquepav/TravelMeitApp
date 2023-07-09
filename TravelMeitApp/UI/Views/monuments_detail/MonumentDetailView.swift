@@ -206,8 +206,8 @@ struct MonumentDetailView: View {
                                             CLLocation(latitude: viewModel.userCoordinate.coordinate.latitude, longitude: viewModel.userCoordinate.coordinate.longitude), // Point 1
                                             CLLocation(latitude: monumentData.latitude, longitude: monumentData.longitude) // Point 2
                                         ]*/
-                                        let result = viewModel.findLocations(monumentCoordinate: monumentData, allCoordinates: listViewModel.newList)
-                                        MapRouteView(locations: result.1 , monumentsList: result.0 )
+                                        let result = viewModel.findLocations(monumentCoordinate: monumentData, allCoordinates: listViewModel.monumentsData)
+                                        MapRouteView(locations: result.1 , monumentsList: result.0)
                                     }
                                     ){
                                         Text("Yes")

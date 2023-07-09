@@ -14,7 +14,7 @@ struct MonumentCelView: View {
     @State var monumentImage: String
     @State var distance: Float
     @State var title: String
-    @State var typeLong: String = "km."
+    var typeLong: String = "km."
     
     
     var body: some View {

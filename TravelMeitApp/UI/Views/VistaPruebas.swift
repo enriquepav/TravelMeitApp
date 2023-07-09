@@ -8,48 +8,30 @@
 import SwiftUI
 
 struct VistaPruebas: View {
-    @State private var items = Array(1...10)
-    @State private var selectedItems: [Int] = []
+    let texto = "Plaza de barranco"
 
-    var body: some View {
-        ScrollView {
-            LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))]) {
-                ForEach(items, id: \.self) { item in
-                    if !itemIsSelected(item) {
-                        VStack {
-                            Text("\(item)")
-                            Checkbox(isChecked: Binding(
-                                get: {
-                                    itemIsSelected(item)
-                                },
-                                set: { value in
-                                    if value {
-                                        selectedItems.append(item)
-                                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                                            removeItem(item)
-                                        }
-                                    }
-                                }
-                            ))
-                        }
-                        .frame(width: 100, height: 100)
-                        .transition(AnyTransition.opacity.animation(.easeInOut(duration: 2)))
-                    }
-                }
+        var body: some View {
+            VStack {
+                Text(limitarCaracteresPorLinea(texto: texto, limiteCaracteresPorLinea: 5))
+                    .lineLimit(3)
+                    .padding()
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .background(Color.yellow)
+                    .foregroundColor(.black)
+                    .font(.body)
+                
+                Spacer()
             }
+            .padding()
         }
-        .padding()
-    }
-    
-    private func itemIsSelected(_ item: Int) -> Bool {
-        selectedItems.contains(where: { $0 == item })
-    }
-    
-    private func removeItem(_ item: Int) {
-        withAnimation {
-            items.removeAll(where: { $0 == item })
+        
+        func limitarCaracteresPorLinea(texto: String, limiteCaracteresPorLinea: Int) -> String {
+            let palabras = texto.split(separator: " ")
+            let textoFormateado = palabras
+                .map { String($0.prefix(limiteCaracteresPorLinea)) }
+                .joined(separator: " ")
+            return textoFormateado
         }
-    }
 }
 
 

@@ -17,5 +17,10 @@
 	</array>
 	<key>UIUserNotificationType</key>
 	<integer>7</integer>
+	<key>UIAppFonts</key>
+	<array>
+		<string>fontastique.ttf</string>
+		<string>MADE _TOMMY _Regular.otf</string>
+	</array>
 </dict>
 </plist>

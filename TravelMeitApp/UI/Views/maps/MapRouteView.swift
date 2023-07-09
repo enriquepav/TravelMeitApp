@@ -17,6 +17,8 @@ struct MapRouteView: View {
     @State private var selectedMarker: GMSMarker? = nil
     @ObservedObject var viewModel = MapRouteViewModel.shared
     @State private var isCheckboxChecked = false
+    @State private var selectedItems: [MonumentData] = []
+    @ObservedObject var viewModel1 = MonumentsListViewModel.shared
 
     var body: some View {
         VStack {
@@ -35,10 +37,35 @@ struct MapRouteView: View {
                 }
                 
                 ScrollView(.horizontal) {
-                    LazyHGrid(rows: [GridItem(.fixed(50))], spacing: 15) {
-                        ForEach(monumentsList!, id: \.monument) { item in
-                            NavigationLink(destination: MonumentDetailView(monumentData: item)) {
-                                MonumentCelView(monumentImage:item.image, distance: item.distance, title: item.monument)
+                    LazyHGrid(rows: [GridItem(.fixed(30))], spacing: 5) {
+                        ForEach(monumentsList ?? [UserExample.sharedInstance.user1], id: \.monument) { item in
+                            
+                            if !itemIsSelected(item) {
+                                ZStack {
+                                    MonumentCelMapView(monumentImage:item.image, title: item.monument)
+                                    VStack {
+                                        HStack {
+                                            Checkbox(isChecked: Binding(
+                                                get: {
+                                                    itemIsSelected(item)
+                                                },
+                                                set: { value in
+                                                    if value {
+                                                        selectedItems.append(item)
+                                                        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                                            removeItem(item)
+                                                        }
+
+                                                    } else {
+                                                        if let index = selectedItems.firstIndex(of: item) {
+                                                            selectedItems.remove(at: index)
+                                                        }
+                                                    }
+                                                }
+                                            ))}
+                                    }
+                                }.frame(width: 150, height: 280)
+                                    .transition(AnyTransition.opacity.animation(.easeInOut(duration: 2)))
                             }
                         }
                     }
@@ -46,7 +73,7 @@ struct MapRouteView: View {
                 }
             }.background(Color.secondColor).cornerRadius(20).padding(EdgeInsets(top: 20, leading: 10, bottom: 10, trailing: 10))
             
-            MapView(locations: locations, monumentsData: monumentsList!, selectedMarker: $selectedMarker)
+            MapView(locations: locations, monumentsData: monumentsList ?? [UserExample.sharedInstance.user1], selectedMarker: $selectedMarker)
                 .edgesIgnoringSafeArea(.all).cornerRadius(20).padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
             
             HStack{
@@ -109,6 +136,14 @@ struct MapRouteView: View {
                     .padding()
             }.cornerRadius(10).padding(-34)
         })
+    }
+    private func itemIsSelected(_ item: MonumentData) -> Bool {
+        selectedItems.contains(where: { $0 == item })
+    }
+    func removeItem(_ item: MonumentData) {
+        withAnimation {
+            viewModel1.monumentsData.removeAll(where: { $0 == item })
+        }
     }
 }
 
