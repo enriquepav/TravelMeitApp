@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		19B82CC4EEBBF887AB9406B1 /* Pods_TravelMeitApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D74C196DA94174E1A0EAF930 /* Pods_TravelMeitApp.framework */; };
+		8A1DD4C12A5F1F5200C9C036 /* ZenLoop-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8A1DD4C02A5F1F5100C9C036 /* ZenLoop-Regular.ttf */; };
 		A23021652A3BC68F0030BFAE /* CachedAsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23021642A3BC68F0030BFAE /* CachedAsyncImage.swift */; };
 		A231A5CA2A4405A700E2D0AD /* FindIntermediatePoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A231A5C92A4405A700E2D0AD /* FindIntermediatePoints.swift */; };
 		A267AF542A4CB4E700EA9F05 /* FindDistanceBetweenPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = A267AF532A4CB4E700EA9F05 /* FindDistanceBetweenPoints.swift */; };
@@ -32,7 +33,6 @@
 		F829CE642A150C080098E251 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F829CE632A150C080098E251 /* Assets.xcassets */; };
 		F829CE672A150C080098E251 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F829CE662A150C080098E251 /* Preview Assets.xcassets */; };
 		F82C9BA22A59A48F000FDE27 /* UserExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82C9BA12A59A48F000FDE27 /* UserExample.swift */; };
-		F82C9BA42A59C562000FDE27 /* MTSP.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F82C9BA32A59C562000FDE27 /* MTSP.ttf */; };
 		F837B4D62A487C1200FABBCF /* VistaPruebas2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F837B4D52A487C1200FABBCF /* VistaPruebas2.swift */; };
 		F837B4D82A49EC2900FABBCF /* VistaPruebas3.swift in Sources */ = {isa = PBXBuildFile; fileRef = F837B4D72A49EC2900FABBCF /* VistaPruebas3.swift */; };
 		F837B4DA2A4A040900FABBCF /* VistaPruebas4.swift in Sources */ = {isa = PBXBuildFile; fileRef = F837B4D92A4A040900FABBCF /* VistaPruebas4.swift */; };
@@ -50,6 +50,7 @@
 /* Begin PBXFileReference section */
 		33C1AB6FBA57804E52BE7E64 /* Pods-TravelMeitApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelMeitApp.release.xcconfig"; path = "Target Support Files/Pods-TravelMeitApp/Pods-TravelMeitApp.release.xcconfig"; sourceTree = "<group>"; };
 		640524DE96F3CF91B5964FD4 /* Pods-TravelMeitApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TravelMeitApp.debug.xcconfig"; path = "Target Support Files/Pods-TravelMeitApp/Pods-TravelMeitApp.debug.xcconfig"; sourceTree = "<group>"; };
+		8A1DD4C02A5F1F5100C9C036 /* ZenLoop-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ZenLoop-Regular.ttf"; sourceTree = "<group>"; };
 		A23021642A3BC68F0030BFAE /* CachedAsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedAsyncImage.swift; sourceTree = "<group>"; };
 		A231A5C92A4405A700E2D0AD /* FindIntermediatePoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindIntermediatePoints.swift; sourceTree = "<group>"; };
 		A267AF532A4CB4E700EA9F05 /* FindDistanceBetweenPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindDistanceBetweenPoints.swift; sourceTree = "<group>"; };
@@ -77,7 +78,6 @@
 		F829CE632A150C080098E251 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F829CE662A150C080098E251 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F82C9BA12A59A48F000FDE27 /* UserExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserExample.swift; sourceTree = "<group>"; };
-		F82C9BA32A59C562000FDE27 /* MTSP.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MTSP.ttf; sourceTree = "<group>"; };
 		F837B4D52A487C1200FABBCF /* VistaPruebas2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaPruebas2.swift; sourceTree = "<group>"; };
 		F837B4D72A49EC2900FABBCF /* VistaPruebas3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaPruebas3.swift; sourceTree = "<group>"; };
 		F837B4D92A4A040900FABBCF /* VistaPruebas4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaPruebas4.swift; sourceTree = "<group>"; };
@@ -293,7 +293,7 @@
 			isa = PBXGroup;
 			children = (
 				F8F609252A557E23002C60DE /* fontastique.ttf */,
-				F82C9BA32A59C562000FDE27 /* MTSP.ttf */,
+				8A1DD4C02A5F1F5100C9C036 /* ZenLoop-Regular.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -359,7 +359,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F82C9BA42A59C562000FDE27 /* MTSP.ttf in Resources */,
+				8A1DD4C12A5F1F5200C9C036 /* ZenLoop-Regular.ttf in Resources */,
 				F8F609262A557E23002C60DE /* fontastique.ttf in Resources */,
 				F829CE672A150C080098E251 /* Preview Assets.xcassets in Resources */,
 				F829CE642A150C080098E251 /* Assets.xcassets in Resources */,
@@ -594,7 +594,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TravelMeitApp/Preview Content\"";
-				DEVELOPMENT_TEAM = 589WUB4565;
+				DEVELOPMENT_TEAM = 5QVHRHTF76;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TravelMeitApp/Info.plist;
@@ -628,7 +628,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TravelMeitApp/Preview Content\"";
-				DEVELOPMENT_TEAM = 589WUB4565;
+				DEVELOPMENT_TEAM = 5QVHRHTF76;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TravelMeitApp/Info.plist;

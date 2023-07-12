@@ -40,7 +40,7 @@ struct MonumentCelView: View {
                 VStack {
                     Text(title)
                         .foregroundColor(.white)
-                        .font(.system(size: 12, weight: .bold))
+                        .font(.custom("ZenLoop-Regular", size: 18))
                         .padding(8)
                         .background(RoundedCorners(color: .principalColor, tl: 0, tr: 00, bl: 30, br:30))
                     Spacer()

@@ -18,6 +18,7 @@ struct MonumentsListView: View {
     @ObservedObject var viewModel = MonumentsListViewModel.shared
     @State private var isCheckboxChecked = false
     @State private var selectedItems: [MonumentData] = []
+    private var userData = UserData()
     
     
     
@@ -29,7 +30,7 @@ struct MonumentsListView: View {
                         .scaleEffect(1.0, anchor: .center)
                         .progressViewStyle(CircularProgressViewStyle(tint: .principalColor))  // Show the loader when isLoading is true
                 }
-            }else{
+            } else {
                 VStack {
                     Spacer(minLength: 40)
                     LazyVGrid(columns: [
@@ -92,7 +93,7 @@ struct MonumentsListView: View {
                                         Image(optionSelected[index])
                                             .resizable()
                                             .frame(width: 32, height: 32)
-                                    }else{
+                                    } else {
                                         Image(options[index])
                                             .resizable()
                                             .frame(width: 32, height: 32)
@@ -106,6 +107,8 @@ struct MonumentsListView: View {
         }.navigationBarBackButtonHidden(true)
         .onAppear {
             viewModel.calculateDistance()
+            FilterManager.sharedInstance.distanceSelected = distanceSelected[2]
+            viewModel.filterByDistanceSelected()
         }
     }
     private func itemIsSelected(_ item: MonumentData) -> Bool {

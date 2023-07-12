@@ -38,7 +38,7 @@ struct MapRouteView: View {
                 
                 ScrollView(.horizontal) {
                     LazyHGrid(rows: [GridItem(.fixed(30))], spacing: 5) {
-                        ForEach(monumentsList ?? [UserExample.sharedInstance.user1], id: \.monument) { item in
+                        ForEach(monumentsList, id: \.monument) { item in
                             
                             if !itemIsSelected(item) {
                                 ZStack {
