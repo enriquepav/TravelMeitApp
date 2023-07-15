@@ -52,7 +52,10 @@ struct MonumentDetailView: View {
                                         .imageScale(.large)
                                 }
                             }.padding(5)
-                            Text(monumentData.monument).foregroundColor(.white).padding()
+                            Text(monumentData.monument).foregroundColor(.white)
+                                .font(.custom("quicksand", size: 14))
+                                .bold()
+                                .padding()
                             
                         }
                         .background(RoundedCorners(color: .principalColor, tl: 5, tr: 5, bl: 5, br:5))
@@ -92,7 +95,7 @@ struct MonumentDetailView: View {
                                 if (showAudio){
                                     Text("Choose the audio duration")
                                         .foregroundColor(Color.principalColor)
-                                        .font(.system(size: 12).bold())
+                                        .font(.custom("", size: 12).bold())
                                         .frame(width: 200, height: 20)
                                         .multilineTextAlignment(.center)
                                     
@@ -297,7 +300,7 @@ struct MonumentDetailView_Previews: PreviewProvider {
                                                    short: "Gaudí's masterpiece",
                                                    medium: "The Sagrada Familia is a renowned basilica...",
                                                    long: "The Sagrada Familia is a monumental basilica...",
-                                                   image: "https://www.wagnerproducciones.com/travelmeit/monumentos/APP%20IMG__PUENTE%20DE%20LOS%20SUSPIROS%202.jpg",
+                                                   image:"https://www.wagnerproducciones.com/travelmeit/monumentos_tallinn/raekoja%20plats.jpg",
                                                    rating: 4,
                                                    distance: 2.5))
     }

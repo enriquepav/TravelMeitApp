@@ -37,10 +37,11 @@ struct MonumentCelView: View {
                     .frame(width: 300, height: 300)
                 
                 VStack {
-                    Text(title)
+                    Text(partirOracionEnDos(oracion:title))
                         .foregroundColor(.white)
-                        .font(.custom("omnes", size: 18))
-                        .padding(8)
+                        .font(.custom("quicksand", size: 18))
+                        .bold()
+                        .padding(10)
                         .background(RoundedCorners(color: .principalColor, tl: 0, tr: 00, bl: 30, br:30))
                     Spacer()
                     HStack {
@@ -66,12 +67,41 @@ struct MonumentCelView: View {
         }
         .frame(width: 90, height: 10)
     }
+    func partirOracionEnDos (oracion: String) -> String {
+        let longitud = oracion.count
+        let mitad = longitud / 2
+           
+        let espacioAnterior = oracion[..<oracion.index(oracion.startIndex, offsetBy: mitad)].lastIndex(of: " ") ?? oracion[..<oracion.index(oracion.startIndex, offsetBy: mitad)].lastIndex(of: "-")
+        let espacioSiguiente = oracion[oracion.index(oracion.startIndex, offsetBy: mitad)...].firstIndex(of: " ") ?? oracion[oracion.index(oracion.startIndex, offsetBy: mitad)...].firstIndex(of: "-")
+        
+        let indiceEspacio: String.Index
+        if let espacioAnterior = espacioAnterior {
+            if let espacioSiguiente = espacioSiguiente {
+                indiceEspacio = espacioAnterior > espacioSiguiente ? espacioAnterior : espacioSiguiente
+            } else {
+                indiceEspacio = espacioAnterior
+            }
+        } else {
+            if let espacioSiguiente = espacioSiguiente {
+                indiceEspacio = espacioSiguiente
+            } else {
+                indiceEspacio = oracion.index(oracion.startIndex, offsetBy: mitad)
+            }
+        }
+        
+        let primeraMitad = oracion[..<indiceEspacio]
+        let segundaMitad = oracion[indiceEspacio...]
+        
+        return "\(primeraMitad)\n\(segundaMitad)"
+    }
 }
+    
+
 
 
 
 struct MonumentCelView_Previews: PreviewProvider {
     static var previews: some View {
-        MonumentCelView(monumentImage: "https://www.wagnerproducciones.com/travelmeit/monumentos/APP%20IMG__PUENTE%20DE%20LOS%20SUSPIROS%202.jpg", distance: 0.20444, title: "Plaza de barranco")
+        MonumentCelView(monumentImage: "https://www.wagnerproducciones.com/travelmeit/monumentos_tallinn/raekoja%20plats.jpg", distance: 0.20444, title: "Barranco Train Station")
     }
 }

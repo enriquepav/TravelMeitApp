@@ -31,7 +31,7 @@ struct MonumentCelMapView: View {
                         Spacer(minLength: 5)
                         Text(partirOracionEnDos(oracion:title))
                             .foregroundColor(.white)
-                            .font(.custom("MTS", size: 7))
+                            .font(.custom("quicksand", size: 7))
                             .bold()
                             .padding(6)
                             .background(Color.principalColor)
@@ -46,19 +46,21 @@ struct MonumentCelMapView: View {
         .frame(width: 100, height: 100)
     }
     
-    func partirOracionEnDos(oracion: String) -> String {
-        let palabras = oracion.split(separator: " ")
-        let mitad = palabras.count / 2 + 1
-        
-        let primeraMitad = palabras[0..<mitad].joined(separator: " ")
-        let segundaMitad = palabras[mitad..<palabras.count].joined(separator: " ")
-        
-        return "\(primeraMitad)\n\(segundaMitad)"
+    func partirOracionEnDos (oracion: String) -> String {
+        let longitud = oracion.count
+           let mitad = longitud / 2
+           
+           let indiceEspacio = oracion.index(oracion.startIndex, offsetBy: mitad)
+           
+           let primeraMitad = oracion[..<indiceEspacio]
+           let segundaMitad = oracion[indiceEspacio...]
+           
+           return "\(primeraMitad)\n\(segundaMitad)"
     }
 }
 
 struct MonumentCelMapView_Previews: PreviewProvider {
     static var previews: some View {
-        MonumentCelMapView(monumentImage: "https://www.wagnerproducciones.com/travelmeit/monumentos/MUSEO%20PEDRO%20DE%20OSMA%201.jpg", title: "Plaza de barranco")
+        MonumentCelMapView(monumentImage: "https://www.wagnerproducciones.com/travelmeit/monumentos_tallinn/raekoja%20plats.jpg", title: "Plaza de barranco")
     }
 }

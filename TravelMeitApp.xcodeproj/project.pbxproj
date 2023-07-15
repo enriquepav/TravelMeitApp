@@ -22,6 +22,7 @@
 		A2B4D32A2A24FE5500BA5635 /* RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B4D3292A24FE5500BA5635 /* RoundedCorners.swift */; };
 		A2D19E902A3431EA00898083 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D19E8F2A3431EA00898083 /* AppSettings.swift */; };
 		A2DDA9D52A4682B200B4EB9E /* MapRouteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DDA9D42A4682B200B4EB9E /* MapRouteViewModel.swift */; };
+		C625CEB92A61F449003DED1B /* quicksand.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C625CEB82A61F449003DED1B /* quicksand.ttf */; };
 		F815232D2A1FFD6100C9FB41 /* MonumentCelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F815232C2A1FFD6100C9FB41 /* MonumentCelView.swift */; };
 		F815232F2A20233700C9FB41 /* MonumentsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F815232E2A20233700C9FB41 /* MonumentsListView.swift */; };
 		F81523312A238E8D00C9FB41 /* MonumentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81523302A238E8D00C9FB41 /* MonumentDetailView.swift */; };
@@ -66,6 +67,7 @@
 		A2B4D3292A24FE5500BA5635 /* RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorners.swift; sourceTree = "<group>"; };
 		A2D19E8F2A3431EA00898083 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		A2DDA9D42A4682B200B4EB9E /* MapRouteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouteViewModel.swift; sourceTree = "<group>"; };
+		C625CEB82A61F449003DED1B /* quicksand.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = quicksand.ttf; path = ../../../../../Downloads/Quicksand/quicksand.ttf; sourceTree = "<group>"; };
 		D74C196DA94174E1A0EAF930 /* Pods_TravelMeitApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelMeitApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F815232C2A1FFD6100C9FB41 /* MonumentCelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentCelView.swift; sourceTree = "<group>"; };
 		F815232E2A20233700C9FB41 /* MonumentsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentsListView.swift; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 			children = (
 				F8F609252A557E23002C60DE /* fontastique.ttf */,
 				8A1DD4FC2A5F797600C9C036 /* omnes.ttf */,
+				C625CEB82A61F449003DED1B /* quicksand.ttf */,
 				8A1DD4C02A5F1F5100C9C036 /* ZenLoop-Regular.ttf */,
 			);
 			path = Fonts;
@@ -363,6 +366,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A1DD4C12A5F1F5200C9C036 /* ZenLoop-Regular.ttf in Resources */,
+				C625CEB92A61F449003DED1B /* quicksand.ttf in Resources */,
 				F8F609262A557E23002C60DE /* fontastique.ttf in Resources */,
 				F829CE672A150C080098E251 /* Preview Assets.xcassets in Resources */,
 				8A1DD4FD2A5F797600C9C036 /* omnes.ttf in Resources */,

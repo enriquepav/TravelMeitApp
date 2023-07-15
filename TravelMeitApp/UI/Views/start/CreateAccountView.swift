@@ -65,21 +65,21 @@ struct CreateAccountView: View {
                         
                         VStack {
                             
-                            VStack(spacing:12) {
+                            VStack(spacing:10) {
                                 Text("Create your account")
                                     .font(.custom("fontastique", size: 25))
-                                    .foregroundColor(.principalColor).padding(5)
+                                    .foregroundColor(.principalColor).padding(2)
                                 TextField("Name", text: $name)
                                     .padding()
-                                    .frame(maxWidth: 350, maxHeight: 40)
+                                    .frame(maxWidth: 350, maxHeight: 35)
                                     .background(Color.white.opacity(0.7))
                                     .cornerRadius(150)
-                                    .font(.custom("MADE _TOMMY _Regular", size: 18))
+                                    .font(.custom("quicksand", size: 15))
                                     .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
                                     .shadow(color: Color.gray, radius: 3, x: 7, y: 3)
                                 
                                 HStack{
-                                    Text("Country of origin").font(.custom("MADE _TOMMY _Regular", size: 18)).foregroundColor(Color.gray)
+                                    Text("Country of origin").font(.custom("quicksand", size: 15)).foregroundColor(Color.gray)
                                     Spacer()
                                     Picker("", selection: $selectedCountry,
                                            content: {
@@ -89,14 +89,14 @@ struct CreateAccountView: View {
                                     }).pickerStyle(.menu)
                                 }
                                 .padding()
-                                .frame(maxWidth: 350, maxHeight: 40)
+                                .frame(maxWidth: 350, maxHeight: 35)
                                 .background(Color.white.opacity(0.7))
                                 .cornerRadius(150)
                                 .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
                                 .shadow(color: Color.gray, radius: 3, x: 7, y: 3)
                                 
                                 HStack{
-                                    Text("Language:").font(.custom("MTSP", size: 18)).foregroundColor(Color.gray)
+                                    Text("Language:").font(.custom("quicksand", size: 15)).foregroundColor(Color.gray)
                                     Spacer()
                                     Picker("", selection: $selectedLanguage,
                                            content: {
@@ -107,7 +107,7 @@ struct CreateAccountView: View {
                                     }).pickerStyle(.menu)
                                 }
                                 .padding()
-                                .frame(maxWidth: 350, maxHeight: 40)
+                                .frame(maxWidth: 350, maxHeight: 35)
                                 .background(Color.white.opacity(0.7))
                                 .cornerRadius(150)
                                 .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
@@ -116,34 +116,34 @@ struct CreateAccountView: View {
                                 
                                 DatePicker("Date of birth -\n dd/mm/aaaa", selection: $selectedDate, displayedComponents: .date)
                                     .padding()
-                                    .frame(maxWidth: 350, maxHeight: 40)
+                                    .frame(maxWidth: 350, maxHeight: 35)
                                     .background(Color.white.opacity(0.7))
                                     .cornerRadius(150)
-                                    .font(.body)
+                                    .font(.custom("quicksand", size: 15))
                                     .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
                                     .foregroundColor(Color.gray)
                                     .shadow(color: Color.gray, radius: 3, x: 7, y: 3)
                                 
                                 TextField("Email", text: $mail)
                                     .padding()
-                                    .frame(maxWidth: 350, maxHeight: 40)
+                                    .frame(maxWidth: 350, maxHeight: 35)
                                     .background(Color.white.opacity(0.7))
                                     .cornerRadius(150)
-                                    .font(.body)
+                                    .font(.custom("quicksand", size: 16))
                                     .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
                                     .shadow(color: Color.gray, radius: 3, x: 7, y: 3)
                                 
                                 TextField("Emergency number and/or email", text: $emergencyData)
                                     .padding()
-                                    .frame(maxWidth: 350, maxHeight: 40)
+                                    .frame(maxWidth: 350, maxHeight: 35)
                                     .background(Color.white.opacity(0.7))
                                     .cornerRadius(150)
-                                    .font(.body)
+                                    .font(.custom("quicksand", size: 15))
                                     .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
                                     .shadow(color: Color.gray, radius: 3, x: 7, y: 3)
                                 
                                 HStack{
-                                    Text("Set distance measurement:").foregroundColor(Color.gray)
+                                    Text("Set distance measurement:").font(.custom("quicksand", size: 15)).foregroundColor(Color.gray)
                                     Picker("", selection: $sizeType,
                                            content: {
                                         ForEach(sizes, id: \.self) { index in
@@ -153,14 +153,14 @@ struct CreateAccountView: View {
                                     }).pickerStyle(.menu)
                                 }
                                 .padding()
-                                .frame(maxWidth: 350, maxHeight: 40)
+                                .frame(maxWidth: 350, maxHeight: 35)
                                 .background(Color.white.opacity(0.7))
                                 .cornerRadius(150)
                                 .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
                                 .shadow(color: Color.gray, radius: 3, x: 7, y: 3)
                                 
-                                Text("Type of traveler").font(.custom("fontastique", size: 20))                            .foregroundColor(.principalColor).padding(10)
-                                Text("Select one or more options").foregroundColor(Color.gray).font(.system(size: 15))
+                                Text("Type of traveler").font(.custom("fontastique", size: 20))                     .foregroundColor(.principalColor).padding(15)
+                                Text("Select one or more options").foregroundColor(Color.gray).font(.custom("quicksand", size: 12))
                                 
                             }
                             ScrollView(.horizontal) {
@@ -175,20 +175,17 @@ struct CreateAccountView: View {
                                                 .frame(width: 80, height: 80)
                                                 .colorMultiply(Color.white.opacity(0.9))
                                                 .padding(2)
-                                           
-
                                         }
                                     }
                                 }
-                                .padding()
                             }
                             Button(action: {
                                 showAlert = true
                             }) {
                                 Image("continueButton")
                                     .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 220, height: 100)
+                                    .scaledToFill()
+                                    .frame(width: 200)
                             }
                             .padding()
                             .alert(isPresented: $showAlert) {

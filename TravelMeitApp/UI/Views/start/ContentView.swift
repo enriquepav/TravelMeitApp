@@ -24,14 +24,18 @@ struct ContentView: View {
                     .blur(radius: 3)
                 VStack {
                     Spacer()
-                        .frame(height: 300)
+                        .frame(height: 330)
                     Image("logoTravelmeit")
+                        .resizable()
                         .renderingMode(.template)
                         .foregroundColor(.white)
-                        .shadow(color: .black, radius: 4, x: 0, y: 2)
+                        .scaledToFit()
+                        .frame(width: 300)
+                        
+        
                     Text("Where do you want to go today?")
                         .foregroundColor(.white)
-                        .font(.system(size: 18, weight: .regular))
+                        .font(.custom("quicksand", size: 16))
                         .shadow(color: .black, radius: 4, x: 0, y: 2)
                     Spacer()
                         .frame(height: 100)
@@ -51,12 +55,12 @@ struct ContentView: View {
                     HStack {
                         Text("If you haven't an account")
                             .foregroundColor(.secondColor)
-                            .font(.system(size: 12))
-                        NavigationLink(destination: MonumentsListView()) {
-                            Text("click here to create")
-                                .foregroundColor(.secondColor)
-                                .font(.system(size: 12, weight: .bold))
-                        }
+                            .font(.custom("quicksand", size: 11))
+                        Text("If you haven't an account")
+                            .foregroundColor(.secondColor)
+                            .font(.custom("quicksand", size: 11))
+                            .bold()
+
                         
                     }
                     Spacer()
@@ -66,7 +70,7 @@ struct ContentView: View {
                     Rectangle()
                         .fill(Color.principalColor)
                         .frame(width: 350,height: 60)
-                        .cornerRadius(20)
+                        .cornerRadius(30)
                         .offset(y: 40)
                         .padding()
                 }.cornerRadius(10).padding(-34)
