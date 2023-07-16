@@ -55,7 +55,6 @@ struct MonumentsListView: View {
                                                             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                                                                 removeItem(item)
                                                             }
-                                                            
                                                         } else {
                                                             if let index = selectedItems.firstIndex(of: item) {
                                                                 selectedItems.remove(at: index)
@@ -65,14 +64,15 @@ struct MonumentsListView: View {
                                                 ))
                                             }
                                         }
-                                    }.frame(width: 150, height: 280)
-                                        .transition(AnyTransition.opacity.animation(.easeInOut(duration: 2)))
+                                    }
+                                    .frame(width: 150, height: 280)
+                                    .transition(AnyTransition.opacity.animation(.easeInOut(duration: 2)))
                                 }
                             }
                         }
-                    }.id(UUID())
-
+                    }
                     .padding()
+
                 }
             }
         }.toolbar {
