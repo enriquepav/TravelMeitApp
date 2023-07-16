@@ -61,7 +61,7 @@
 		A2B4D3292A24FE5500BA5635 /* RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorners.swift; sourceTree = "<group>"; };
 		A2D19E8F2A3431EA00898083 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		A2DDA9D42A4682B200B4EB9E /* MapRouteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouteViewModel.swift; sourceTree = "<group>"; };
-		C625CEB82A61F449003DED1B /* quicksand.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = quicksand.ttf; path = ../../../../../Downloads/Quicksand/quicksand.ttf; sourceTree = "<group>"; };
+		C625CEB82A61F449003DED1B /* quicksand.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = quicksand.ttf; sourceTree = "<group>"; };
 		D74C196DA94174E1A0EAF930 /* Pods_TravelMeitApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelMeitApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F815232C2A1FFD6100C9FB41 /* MonumentCelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentCelView.swift; sourceTree = "<group>"; };
 		F815232E2A20233700C9FB41 /* MonumentsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentsListView.swift; sourceTree = "<group>"; };
