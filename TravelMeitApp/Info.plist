@@ -11,16 +11,16 @@
 	<string>alert</string>
 	<key>NSUserNotificationEnabled</key>
 	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>fontastique.ttf</string>
+		<string>MADE _TOMMY _Regular.otf</string>
+	</array>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>audio</string>
 	</array>
 	<key>UIUserNotificationType</key>
 	<integer>7</integer>
-	<key>UIAppFonts</key>
-	<array>
-		<string>fontastique.ttf</string>
-		<string>MADE _TOMMY _Regular.otf</string>
-	</array>
 </dict>
 </plist>

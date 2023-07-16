@@ -55,21 +55,23 @@ struct MonumentsListView: View {
                                                             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                                                                 removeItem(item)
                                                             }
-
+                                                            
                                                         } else {
                                                             if let index = selectedItems.firstIndex(of: item) {
                                                                 selectedItems.remove(at: index)
                                                             }
                                                         }
                                                     }
-                                                ))                                        }
+                                                ))
+                                            }
                                         }
                                     }.frame(width: 150, height: 280)
                                         .transition(AnyTransition.opacity.animation(.easeInOut(duration: 2)))
                                 }
                             }
                         }
-                    }
+                    }.id(UUID())
+
                     .padding()
                 }
             }
@@ -106,6 +108,7 @@ struct MonumentsListView: View {
         }.navigationBarBackButtonHidden(true)
         .onAppear {
             viewModel.calculateDistance()
+            viewModel.filterByDistanceSelected()
         }
     }
     private func itemIsSelected(_ item: MonumentData) -> Bool {

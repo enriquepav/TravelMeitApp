@@ -10,6 +10,6 @@ import Foundation
 class FilterManager {
     
     static let sharedInstance = FilterManager()
-    var distanceSelected: Float = 10.00
+    var distanceSelected: Float = 50.00
     
 }

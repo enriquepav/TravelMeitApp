@@ -39,6 +39,8 @@
 		F837B4DC2A4A263100FABBCF /* MonumentCelMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F837B4DB2A4A263100FABBCF /* MonumentCelMapView.swift */; };
 		F837B4DE2A4A265E00FABBCF /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F837B4DD2A4A265E00FABBCF /* CheckBox.swift */; };
 		F83CAE752A32016200C6D5BC /* UserRegistered.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83CAE742A32016200C6D5BC /* UserRegistered.swift */; };
+		F8759F852A648925005605C2 /* NewMonumentListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8759F842A648925005605C2 /* NewMonumentListViewModel.swift */; };
+		F8759F872A648A9C005605C2 /* NewMonumentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8759F862A648A9C005605C2 /* NewMonumentListView.swift */; };
 		F8A0BA552A38E1D600B4E4FC /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A0BA542A38E1D600B4E4FC /* UserData.swift */; };
 		F8A0BA572A3E1DC800B4E4FC /* GoogleMapsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A0BA562A3E1DC800B4E4FC /* GoogleMapsView.swift */; };
 		F8A0BA592A3E1E0200B4E4FC /* MapRouteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A0BA582A3E1E0200B4E4FC /* MapRouteView.swift */; };
@@ -84,6 +86,8 @@
 		F837B4DB2A4A263100FABBCF /* MonumentCelMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentCelMapView.swift; sourceTree = "<group>"; };
 		F837B4DD2A4A265E00FABBCF /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		F83CAE742A32016200C6D5BC /* UserRegistered.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistered.swift; sourceTree = "<group>"; };
+		F8759F842A648925005605C2 /* NewMonumentListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMonumentListViewModel.swift; sourceTree = "<group>"; };
+		F8759F862A648A9C005605C2 /* NewMonumentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMonumentListView.swift; sourceTree = "<group>"; };
 		F8A0BA542A38E1D600B4E4FC /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		F8A0BA562A3E1DC800B4E4FC /* GoogleMapsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapsView.swift; sourceTree = "<group>"; };
 		F8A0BA582A3E1E0200B4E4FC /* MapRouteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouteView.swift; sourceTree = "<group>"; };
@@ -131,6 +135,8 @@
 				F815232E2A20233700C9FB41 /* MonumentsListView.swift */,
 				F815232C2A1FFD6100C9FB41 /* MonumentCelView.swift */,
 				F837B4DD2A4A265E00FABBCF /* CheckBox.swift */,
+				F8759F842A648925005605C2 /* NewMonumentListViewModel.swift */,
+				F8759F862A648A9C005605C2 /* NewMonumentListView.swift */,
 			);
 			path = monuments_list;
 			sourceTree = "<group>";
@@ -434,6 +440,7 @@
 			files = (
 				A267AF582A4CBCCE00EA9F05 /* TextToSpeechManager.swift in Sources */,
 				F815232D2A1FFD6100C9FB41 /* MonumentCelView.swift in Sources */,
+				F8759F872A648A9C005605C2 /* NewMonumentListView.swift in Sources */,
 				F81523342A24386700C9FB41 /* Colors.swift in Sources */,
 				A28C13512A28317300E19E29 /* LocationManager.swift in Sources */,
 				F8A0BA592A3E1E0200B4E4FC /* MapRouteView.swift in Sources */,
@@ -462,6 +469,7 @@
 				A2B4D32A2A24FE5500BA5635 /* RoundedCorners.swift in Sources */,
 				A23021652A3BC68F0030BFAE /* CachedAsyncImage.swift in Sources */,
 				F837B4DC2A4A263100FABBCF /* MonumentCelMapView.swift in Sources */,
+				F8759F852A648925005605C2 /* NewMonumentListViewModel.swift in Sources */,
 				F837B4D62A487C1200FABBCF /* VistaPruebas2.swift in Sources */,
 				F815232F2A20233700C9FB41 /* MonumentsListView.swift in Sources */,
 				F8A0BA5B2A3E1E4D00B4E4FC /* AppDelegate.swift in Sources */,
@@ -611,7 +619,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = TraveilMeitGroup.TravelMeitApp;
+				PRODUCT_BUNDLE_IDENTIFIER = TraveilMeitGroup.TravelMeitApp003;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -645,7 +653,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = TraveilMeitGroup.TravelMeitApp;
+				PRODUCT_BUNDLE_IDENTIFIER = TraveilMeitGroup.TravelMeitApp003;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
