@@ -19,17 +19,7 @@ struct MonumentCelView: View {
     var body: some View {
         VStack {
             ZStack {
-                /*AsyncImage(url: URL(string: monumentImage)) { image in
-                    image
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .imageScale(.large)
-                        .frame(width: 300, height: 300)
-                } placeholder: {
-                    ProgressView()
-                }*/
-                //a revisar si es funcional o no
-                WebImage(url: URL(string: monumentImage))
+              WebImage(url: URL(string: monumentImage))
                     .resizable()
                     .placeholder(Image(systemName: "photo")) // Imagen de relleno mientras se carga
                     .indicator(.activity) // Indicador de actividad mientras se carga

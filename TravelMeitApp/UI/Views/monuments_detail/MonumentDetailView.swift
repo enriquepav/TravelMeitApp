@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CoreLocation
+import SDWebImageSwiftUI
 
 struct MonumentDetailView: View {
     @State private var isChecked: Bool = false
@@ -28,15 +29,10 @@ struct MonumentDetailView: View {
     var body: some View {
         NavigationView {
             ZStack{
-                AsyncImage(url: URL(string: monumentData.image)) { image in
-                    image
+                WebImage(url: URL(string: monumentData.image))
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .edgesIgnoringSafeArea(.all)
-                } placeholder: {
-                    ProgressView()
-                }
-                
                 HStack {
                     Spacer()
                     VStack(alignment: .trailing, spacing: 0) {
