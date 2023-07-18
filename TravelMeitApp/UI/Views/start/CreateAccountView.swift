@@ -216,9 +216,9 @@ struct CreateAccountView: View {
                         .hidden()
                         
                     }
-                }.border(.red).background(Color.white.opacity(0.75)).cornerRadius(20).padding()
+                }.background(Color.white.opacity(0.75)).cornerRadius(20).padding()
             }
-            .border(.red)
+//            .border(.red)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .edgesIgnoringSafeArea(.all)
             .statusBar(hidden: true)

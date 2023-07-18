@@ -33,12 +33,12 @@ struct ContentView: View {
                         .scaledToFit()
                         .shadow(color: .black, radius: 4, x: 0, y: 2)
                         .frame(width: 300)
-                        .border(.red)
+//                        .border(.red)
                     Text("Where do you want to go today?")
                         .foregroundColor(.white)
                         .font(.custom("quicksand", size: 16))
                         .shadow(color: .black, radius: 4, x: 0, y: 2)
-                        .border(.red)
+//                        .border(.red)
                     Spacer()
                     NavigationLink(destination: {
                         if (appSettings.isUserCreated){
@@ -51,7 +51,7 @@ struct ContentView: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 100, height: 100)
-                            .border(.red)
+//                            .border(.red)
                     }
                     Spacer()
                     HStack {
@@ -63,7 +63,7 @@ struct ContentView: View {
                                 .foregroundColor(.secondColor)
                                 .font(.custom("quicksand", size: 12)).bold()
                         }
-                    }.border(.red)
+                    }
                         .padding().padding()
                 }
             }.overlay(alignment: .bottom, content: {
@@ -77,7 +77,7 @@ struct ContentView: View {
                 }.cornerRadius(10).padding(-34)
             })
         }
-        .border(.red)
+//        .border(.red)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .edgesIgnoringSafeArea(.all)
         .statusBar(hidden: true)
