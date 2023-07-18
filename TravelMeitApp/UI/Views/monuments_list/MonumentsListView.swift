@@ -18,6 +18,7 @@ struct MonumentsListView: View {
     @ObservedObject var viewModel = MonumentsListViewModel.shared
     @State private var isCheckboxChecked = false
     @State private var selectedItems: [MonumentData] = []
+    @State private var isAscending = true
     
     
     
@@ -102,6 +103,14 @@ struct MonumentsListView: View {
                                 }
                             }
                         }
+                    }
+                    Button(action: {
+                        isAscending.toggle()
+                    }) {
+                        Image("buttonOrder")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 38, height: 38)
                     }
                 }
             }

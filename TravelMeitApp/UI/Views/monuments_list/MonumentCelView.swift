@@ -32,7 +32,7 @@ struct MonumentCelView: View {
                 //a revisar si es funcional o no
                 WebImage(url: URL(string: monumentImage))
                     .resizable()
-                    .placeholder(Image(systemName: "photo")) // Imagen de relleno mientras se carga
+                    .placeholder(Image("loadingView")) // Imagen de relleno mientras se carga
                     .indicator(.activity) // Indicador de actividad mientras se carga
                     .scaledToFit()
                     .frame(width: 300, height: 300)

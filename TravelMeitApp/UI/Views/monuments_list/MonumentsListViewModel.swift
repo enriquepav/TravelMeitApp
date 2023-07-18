@@ -80,11 +80,11 @@ final class MonumentsListViewModel: ObservableObject {
         }
     }
     
-    func calculateDistance(){
+    func calculateDistance() {
         var list : [MonumentData] = []
         for monument in newList {
             var updateMonument = monument
-            updateMonument.distance = Float(self.calculateDistance(point1: self.userCoordinate.coordinate, point2: CLLocationCoordinate2D(latitude: updateMonument.latitude , longitude: updateMonument.longitude)))
+            updateMonument.distance = Float(self.calculateDistanceByTwoPoints(point1: self.userCoordinate.coordinate, point2: CLLocationCoordinate2D(latitude: updateMonument.latitude , longitude: updateMonument.longitude)))
             list.append(updateMonument)
         }
         newList = list
@@ -95,7 +95,7 @@ final class MonumentsListViewModel: ObservableObject {
     }
     
     
-    func calculateDistance(point1: CLLocationCoordinate2D, point2: CLLocationCoordinate2D) -> CLLocationDistance {
+    func calculateDistanceByTwoPoints(point1: CLLocationCoordinate2D, point2: CLLocationCoordinate2D) -> CLLocationDistance {
            let location1 = CLLocation(latitude: point1.latitude, longitude: point1.longitude)
            let location2 = CLLocation(latitude: point2.latitude, longitude: point2.longitude)
            return location1.distance(from: location2) / 1000

@@ -34,7 +34,10 @@ struct MonumentDetailView: View {
                         .aspectRatio(contentMode: .fill)
                         .edgesIgnoringSafeArea(.all)
                 } placeholder: {
-                    ProgressView()
+                    Image("loadingView")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .edgesIgnoringSafeArea(.all)
                 }
                 
                 HStack {
@@ -157,7 +160,7 @@ struct MonumentDetailView: View {
                                             }
                                             
                                         }, label: {
-                                            Image(self.isSpeaking ? "ic_pausenew" : "btn_play")
+                                            Image(self.isSpeaking ? "Pause.Fill" : "btn_play")
                                                 .resizable()
                                                 .frame(width: 50, height: 50)
                                                 .padding()
@@ -180,7 +183,7 @@ struct MonumentDetailView: View {
                                         })
                                     }
                                 }
-                            }.padding(EdgeInsets(top: 20, leading: 40, bottom: 10, trailing:50))
+                            }.padding(EdgeInsets(top: 20, leading: 40, bottom: 10, trailing:40))
                             
                             VStack {
                                 Button(action: {
@@ -236,11 +239,11 @@ struct MonumentDetailView: View {
                                 Image("buy_ticket")
                                     .resizable()
                                     .frame(width: 170, height: 45)
-                            }.padding(EdgeInsets(top: 5, leading: 40, bottom: 10, trailing: 40))
+                            }.padding(EdgeInsets(top: 5, leading: 40, bottom: 15, trailing: 40))
                         }
                         .background(Color.white.opacity(0.7)) // Fondo translúcido
                         .cornerRadius(10) // Esquinas redondeadas
-                        .padding(EdgeInsets(top: 0, leading: 0, bottom: -30, trailing: 50))
+                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 50))
                     })
                     .scaledToFill().padding(30)
                 }
