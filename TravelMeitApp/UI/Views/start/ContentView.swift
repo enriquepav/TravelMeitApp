@@ -24,6 +24,8 @@ struct ContentView: View {
                     .blur(radius: 3)
                 VStack {
                     Spacer()
+                    Spacer()
+                    Spacer()
                     Image("logoTravelmeit")
                         .resizable()
                         .renderingMode(.template)
@@ -62,7 +64,7 @@ struct ContentView: View {
                                 .font(.custom("quicksand", size: 12)).bold()
                         }
                     }.border(.red)
-                    Spacer()
+                        .padding().padding()
                 }
             }.overlay(alignment: .bottom, content: {
                 ZStack {
