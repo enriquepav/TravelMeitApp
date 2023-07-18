@@ -31,7 +31,7 @@ struct MonumentCelMapView: View {
                         Spacer(minLength: 5)
                         Text(partirOracionEnDos(oracion:title))
                             .foregroundColor(.white)
-                            .font(.custom("MTS", size: 7))
+                            .font(.custom("quicksand", size: 7))
                             .bold()
                             .padding(6)
                             .background(Color.principalColor)

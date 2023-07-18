@@ -53,6 +53,7 @@ struct MonumentDetailView: View {
                                 }
                             }.padding(5)
                             Text(monumentData.monument).foregroundColor(.white).padding()
+                                .font(.custom("quicksand", size: 15).bold())
                             
                         }
                         .background(RoundedCorners(color: .principalColor, tl: 5, tr: 5, bl: 5, br:5))
@@ -60,7 +61,7 @@ struct MonumentDetailView: View {
                         Label{
                             Text(String(format: "%.2f" + " " + typeLong, monumentData.distance))
                                 .foregroundColor(.white)
-                                .font(.system(size: 12, weight: .bold))
+                                .font(.custom("quicksand",size: 12).bold())
                                 .padding(5)
                         } icon: {
                             Image("ic_location")
@@ -92,7 +93,7 @@ struct MonumentDetailView: View {
                                 if (showAudio){
                                     Text("Choose the audio duration")
                                         .foregroundColor(Color.principalColor)
-                                        .font(.system(size: 12).bold())
+                                        .font(.custom("quicksand",size: 12).bold())
                                         .frame(width: 200, height: 20)
                                         .multilineTextAlignment(.center)
                                     
@@ -107,7 +108,7 @@ struct MonumentDetailView: View {
                                             Text("45 seg")
                                                 .frame(width: 45, height: 8)
                                                 .padding()
-                                                .foregroundColor(didTap45 ? Color.white : Color.principalColor).font(.system(size: 13))
+                                                .foregroundColor(didTap45 ? Color.white : Color.principalColor).font(.custom("quicksand",size: 12).bold())
                                         }).background(didTap45 ? Color.thirdColor : Color.white).cornerRadius(10)
 
                                         Button(action: {
@@ -119,7 +120,7 @@ struct MonumentDetailView: View {
                                             Text("1.5 min")
                                                 .frame(width: 45, height: 8)
                                                 .padding()
-                                                .foregroundColor(didTap15 ? Color.white : Color.principalColor).font(.system(size: 13))
+                                                .foregroundColor(didTap15 ? Color.white : Color.principalColor).font(.custom("quicksand",size: 12).bold())
                                         }).background(didTap15 ? Color.thirdColor : Color.white).cornerRadius(10)
                                         
                                         Button(action: {
@@ -131,7 +132,7 @@ struct MonumentDetailView: View {
                                             Text("3 min")
                                                 .frame(width: 45, height: 8)
                                                 .padding()
-                                                .foregroundColor(didTap3 ? Color.white : Color.principalColor).font(.system(size: 13))
+                                                .foregroundColor(didTap3 ? Color.white : Color.principalColor).font(.custom("quicksand",size: 12).bold())
                                         }).background(didTap3 ? Color.thirdColor : Color.white).cornerRadius(10)
                                     }
                                     
@@ -198,7 +199,7 @@ struct MonumentDetailView: View {
                                 if (showGoto){
                                     Text("Do you want to stop along the way?")
                                         .foregroundColor(Color.principalColor)
-                                        .font(.system(size: 10).bold())
+                                        .font(.custom("quicksand", size: 10)).bold()
                                         .multilineTextAlignment(.center)
                                     
                                     NavigationLink(destination: {
@@ -216,6 +217,7 @@ struct MonumentDetailView: View {
                                             .background(Color.thirdColor)
                                             .cornerRadius(20)
                                             .foregroundColor(Color.white)
+                                            .font(.custom("quicksand",size: 12).bold())
                                     }
                                     
                                     Button(action: {}, label: {
@@ -224,7 +226,9 @@ struct MonumentDetailView: View {
                                             .padding()
                                             .background(Color.white)
                                             .cornerRadius(20)
+                                            .font(.custom("quicksand",size: 12).bold())
                                             .foregroundColor(Color.principalColor)
+                                        
                                     })
                                 }
                             }
@@ -297,7 +301,7 @@ struct MonumentDetailView_Previews: PreviewProvider {
                                                    short: "Gaudí's masterpiece",
                                                    medium: "The Sagrada Familia is a renowned basilica...",
                                                    long: "The Sagrada Familia is a monumental basilica...",
-                                                   image: "https://www.wagnerproducciones.com/travelmeit/monumentos/APP%20IMG__PUENTE%20DE%20LOS%20SUSPIROS%202.jpg",
+                                                   image: "https://www.wagnerproducciones.com/travelmeit/monumentos_tallinn/raekoja%20plats.jpg",
                                                    rating: 4,
                                                    distance: 2.5))
     }

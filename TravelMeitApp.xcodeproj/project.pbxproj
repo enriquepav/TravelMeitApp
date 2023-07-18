@@ -20,6 +20,8 @@
 		A2B4D32A2A24FE5500BA5635 /* RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B4D3292A24FE5500BA5635 /* RoundedCorners.swift */; };
 		A2D19E902A3431EA00898083 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D19E8F2A3431EA00898083 /* AppSettings.swift */; };
 		A2DDA9D52A4682B200B4EB9E /* MapRouteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DDA9D42A4682B200B4EB9E /* MapRouteViewModel.swift */; };
+		C625CEBF2A64C566003DED1B /* quicksand.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C625CEBE2A64C566003DED1B /* quicksand.ttf */; };
+		C625CEC02A660508003DED1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F829CE632A150C080098E251 /* Assets.xcassets */; };
 		F815232D2A1FFD6100C9FB41 /* MonumentCelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F815232C2A1FFD6100C9FB41 /* MonumentCelView.swift */; };
 		F815232F2A20233700C9FB41 /* MonumentsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F815232E2A20233700C9FB41 /* MonumentsListView.swift */; };
 		F81523312A238E8D00C9FB41 /* MonumentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81523302A238E8D00C9FB41 /* MonumentDetailView.swift */; };
@@ -29,10 +31,8 @@
 		F8294E3A2A16879300FFA3DD /* VistaPruebas.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8294E392A16879300FFA3DD /* VistaPruebas.swift */; };
 		F829CE602A150C040098E251 /* TravelMeitAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F829CE5F2A150C040098E251 /* TravelMeitAppApp.swift */; };
 		F829CE622A150C040098E251 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F829CE612A150C040098E251 /* ContentView.swift */; };
-		F829CE642A150C080098E251 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F829CE632A150C080098E251 /* Assets.xcassets */; };
 		F829CE672A150C080098E251 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F829CE662A150C080098E251 /* Preview Assets.xcassets */; };
 		F82C9BA22A59A48F000FDE27 /* UserExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82C9BA12A59A48F000FDE27 /* UserExample.swift */; };
-		F82C9BA42A59C562000FDE27 /* MTSP.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F82C9BA32A59C562000FDE27 /* MTSP.ttf */; };
 		F837B4D62A487C1200FABBCF /* VistaPruebas2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F837B4D52A487C1200FABBCF /* VistaPruebas2.swift */; };
 		F837B4D82A49EC2900FABBCF /* VistaPruebas3.swift in Sources */ = {isa = PBXBuildFile; fileRef = F837B4D72A49EC2900FABBCF /* VistaPruebas3.swift */; };
 		F837B4DA2A4A040900FABBCF /* VistaPruebas4.swift in Sources */ = {isa = PBXBuildFile; fileRef = F837B4D92A4A040900FABBCF /* VistaPruebas4.swift */; };
@@ -65,6 +65,7 @@
 		A2B4D3292A24FE5500BA5635 /* RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorners.swift; sourceTree = "<group>"; };
 		A2D19E8F2A3431EA00898083 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		A2DDA9D42A4682B200B4EB9E /* MapRouteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouteViewModel.swift; sourceTree = "<group>"; };
+		C625CEBE2A64C566003DED1B /* quicksand.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = quicksand.ttf; sourceTree = "<group>"; };
 		D74C196DA94174E1A0EAF930 /* Pods_TravelMeitApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TravelMeitApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F815232C2A1FFD6100C9FB41 /* MonumentCelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentCelView.swift; sourceTree = "<group>"; };
 		F815232E2A20233700C9FB41 /* MonumentsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonumentsListView.swift; sourceTree = "<group>"; };
@@ -79,7 +80,6 @@
 		F829CE632A150C080098E251 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F829CE662A150C080098E251 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F82C9BA12A59A48F000FDE27 /* UserExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserExample.swift; sourceTree = "<group>"; };
-		F82C9BA32A59C562000FDE27 /* MTSP.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MTSP.ttf; sourceTree = "<group>"; };
 		F837B4D52A487C1200FABBCF /* VistaPruebas2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaPruebas2.swift; sourceTree = "<group>"; };
 		F837B4D72A49EC2900FABBCF /* VistaPruebas3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaPruebas3.swift; sourceTree = "<group>"; };
 		F837B4D92A4A040900FABBCF /* VistaPruebas4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaPruebas4.swift; sourceTree = "<group>"; };
@@ -299,7 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				F8F609252A557E23002C60DE /* fontastique.ttf */,
-				F82C9BA32A59C562000FDE27 /* MTSP.ttf */,
+				C625CEBE2A64C566003DED1B /* quicksand.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -365,10 +365,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F82C9BA42A59C562000FDE27 /* MTSP.ttf in Resources */,
 				F8F609262A557E23002C60DE /* fontastique.ttf in Resources */,
 				F829CE672A150C080098E251 /* Preview Assets.xcassets in Resources */,
-				F829CE642A150C080098E251 /* Assets.xcassets in Resources */,
+				C625CEC02A660508003DED1B /* Assets.xcassets in Resources */,
+				C625CEBF2A64C566003DED1B /* quicksand.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,7 +602,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TravelMeitApp/Preview Content\"";
-				DEVELOPMENT_TEAM = 589WUB4565;
+				DEVELOPMENT_TEAM = 5QVHRHTF76;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TravelMeitApp/Info.plist;
@@ -619,7 +619,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = TraveilMeitGroup.TravelMeitApp003;
+				PRODUCT_BUNDLE_IDENTIFIER = TraveilMeitGroup.TravelMeitApp004;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -636,7 +636,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TravelMeitApp/Preview Content\"";
-				DEVELOPMENT_TEAM = 589WUB4565;
+				DEVELOPMENT_TEAM = 5QVHRHTF76;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TravelMeitApp/Info.plist;
@@ -653,7 +653,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = TraveilMeitGroup.TravelMeitApp003;
+				PRODUCT_BUNDLE_IDENTIFIER = TraveilMeitGroup.TravelMeitApp004;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

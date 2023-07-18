@@ -24,17 +24,20 @@ struct ContentView: View {
                     .blur(radius: 3)
                 VStack {
                     Spacer()
-                        .frame(height: 300)
                     Image("logoTravelmeit")
+                        .resizable()
                         .renderingMode(.template)
                         .foregroundColor(.white)
+                        .scaledToFit()
                         .shadow(color: .black, radius: 4, x: 0, y: 2)
+                        .frame(width: 300)
+                        .border(.red)
                     Text("Where do you want to go today?")
                         .foregroundColor(.white)
-                        .font(.system(size: 18, weight: .regular))
+                        .font(.custom("quicksand", size: 16))
                         .shadow(color: .black, radius: 4, x: 0, y: 2)
+                        .border(.red)
                     Spacer()
-                        .frame(height: 100)
                     NavigationLink(destination: {
                         if (appSettings.isUserCreated){
                             MonumentsListView()
@@ -46,19 +49,19 @@ struct ContentView: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 100, height: 100)
+                            .border(.red)
                     }
                     Spacer()
                     HStack {
                         Text("If you haven't an account")
                             .foregroundColor(.secondColor)
-                            .font(.system(size: 12))
+                            .font(.custom("quicksand", size: 12))
                         NavigationLink(destination: MonumentsListView()) {
                             Text("click here to create")
                                 .foregroundColor(.secondColor)
-                                .font(.system(size: 12, weight: .bold))
+                                .font(.custom("quicksand", size: 12)).bold()
                         }
-                        
-                    }
+                    }.border(.red)
                     Spacer()
                 }
             }.overlay(alignment: .bottom, content: {
@@ -71,7 +74,12 @@ struct ContentView: View {
                         .padding()
                 }.cornerRadius(10).padding(-34)
             })
-        }.environmentObject(userData).onAppear(){
+        }
+        .border(.red)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .edgesIgnoringSafeArea(.all)
+        .statusBar(hidden: true)
+        .environmentObject(userData).onAppear(){
             locationManager.requestLocation()
         }
     }

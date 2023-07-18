@@ -40,7 +40,7 @@ struct MonumentCelView: View {
                 VStack {
                     Text(title)
                         .foregroundColor(.white)
-                        .font(.system(size: 12, weight: .bold))
+                        .font(.custom("quicksand", size: 12).bold())
                         .padding(8)
                         .background(RoundedCorners(color: .principalColor, tl: 0, tr: 00, bl: 30, br:30))
                     Spacer()
@@ -48,7 +48,7 @@ struct MonumentCelView: View {
                         Label{
                             Text(String(format: "%.2f" + " " + typeLong, distance))
                                 .foregroundColor(.white)
-                                .font(.system(size: 10, weight: .bold))
+                                .font(.custom("quicksand", size: 10).bold())
                                 .padding(3)
                         } icon: {
                             Image("ic_location")
@@ -72,7 +72,9 @@ struct MonumentCelView: View {
 
 
 struct MonumentCelView_Previews: PreviewProvider {
+    
     static var previews: some View {
-        MonumentCelView(monumentImage: "https://www.wagnerproducciones.com/travelmeit/monumentos/APP%20IMG__PUENTE%20DE%20LOS%20SUSPIROS%202.jpg", distance: 0.20444, title: "Plaza de barranco")
+        
+        MonumentCelView(monumentImage: "https://www.wagnerproducciones.com/travelmeit/monumentos_tallinn/raekoja%20plats.jpg", distance: 0.20444, title: "Plaza de barranco")
     }
 }

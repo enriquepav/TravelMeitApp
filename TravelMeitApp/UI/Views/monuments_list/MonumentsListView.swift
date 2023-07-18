@@ -29,7 +29,7 @@ struct MonumentsListView: View {
                         .scaleEffect(1.0, anchor: .center)
                         .progressViewStyle(CircularProgressViewStyle(tint: .principalColor))  // Show the loader when isLoading is true
                 }
-            }else{
+            } else {
                 VStack {
                     Spacer(minLength: 40)
                     LazyVGrid(columns: [
@@ -94,7 +94,7 @@ struct MonumentsListView: View {
                                         Image(optionSelected[index])
                                             .resizable()
                                             .frame(width: 32, height: 32)
-                                    }else{
+                                    } else {
                                         Image(options[index])
                                             .resizable()
                                             .frame(width: 32, height: 32)
