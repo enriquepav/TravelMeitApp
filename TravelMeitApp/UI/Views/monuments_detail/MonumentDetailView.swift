@@ -259,6 +259,7 @@ struct MonumentDetailView: View {
         })
     }
     
+    
     // Función para mostrar la notificación con controles de reproducción
     func showAudioNotification() {
         // Configurar las acciones de reproducción

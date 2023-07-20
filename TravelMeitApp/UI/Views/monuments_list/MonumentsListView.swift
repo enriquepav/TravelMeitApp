@@ -76,7 +76,8 @@ struct MonumentsListView: View {
 
                 }
             }
-        }.toolbar {
+        }.padding(.top, -20)
+            .toolbar {
             ToolbarItemGroup() {
                 HStack {
                     Image("logoTravelmeit")
@@ -115,7 +116,8 @@ struct MonumentsListView: View {
                 }
             }
         }.navigationBarBackButtonHidden(true)
-        .onAppear {
+            .navigationBarTitleDisplayMode(.inline)
+            .onAppear {
             viewModel.calculateDistance()
             viewModel.filterByDistanceSelected()
         }

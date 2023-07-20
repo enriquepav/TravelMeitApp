@@ -77,7 +77,7 @@ struct MapRouteView: View {
                 .edgesIgnoringSafeArea(.all).cornerRadius(20).padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
             
             HStack{
-                Text("your\ntotal")
+                Text("Your\ntotal")
                     .foregroundColor(Color.thirdColor)
                     .font(.system(size: 12).bold()).padding(10)
                     .frame(width: 50, height: 50)
@@ -124,7 +124,8 @@ struct MapRouteView: View {
             
             }.background(Color.white).cornerRadius(20).padding(EdgeInsets(top: 20, leading: 10, bottom: 25, trailing: 10))
             // Other UI elements...
-        }.navigationBarBackButtonHidden(true).background(Color.principalColor).cornerRadius(20).padding(EdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10)).onDisappear(){
+        }.navigationBarBackButtonHidden(true).navigationBarHidden(true)
+            .edgesIgnoringSafeArea(.all).background(Color.principalColor).cornerRadius(20).padding(EdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10)).onDisappear(){
             viewModel.clearTotalDuration()
         }.overlay(alignment: .bottom, content: {
             ZStack {

@@ -15,7 +15,7 @@ struct Checkbox: View {
         Button(action: {
             isChecked.toggle()
         }) {
-            Image(systemName: isChecked ? "checkmark.square.fill" : "square")
+            Image(isChecked ? "checkBoxTrue" : "checkBoxFalse")
                 .resizable()
                 .frame(width: 24, height: 24)
         }

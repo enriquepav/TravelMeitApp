@@ -19,17 +19,16 @@ struct MonumentCelMapView: View {
             ZStack {
                 WebImage(url: URL(string: monumentImage))
                     .resizable()
-                    .placeholder(Image(systemName: "photo")) // Imagen de relleno mientras se carga
+                    .placeholder(Image("loadingView")) // Imagen de relleno mientras se carga
                     .indicator(.activity) // Indicador de actividad mientras se carga
                     .aspectRatio(contentMode: .fit)
                     .clipped()
-                    .scaleEffect(1.3)
 //                    .border(Color.red, width: 2)
                 
                 VStack(alignment: .leading) {
                     HStack {
                         Spacer(minLength: 5)
-                        Text(partirOracionEnDos(oracion:title))
+                        Text(splitTextIntoTwoLines(title))
                             .foregroundColor(.white)
                             .font(.custom("quicksand", size: 7))
                             .bold()
@@ -44,21 +43,36 @@ struct MonumentCelMapView: View {
             }
         }
         .frame(width: 100, height: 100)
+
+            
     }
     
-    func partirOracionEnDos(oracion: String) -> String {
-        let palabras = oracion.split(separator: " ")
-        let mitad = palabras.count / 2 + 1
-        
-        let primeraMitad = palabras[0..<mitad].joined(separator: " ")
-        let segundaMitad = palabras[mitad..<palabras.count].joined(separator: " ")
-        
-        return "\(primeraMitad)\n\(segundaMitad)"
+    func splitTextIntoTwoLines(_ sentence: String) -> String {
+        let words = sentence.split(separator: " ")
+        let wordsQuan = words.count
+        var line1 = ""
+        var line2 = ""
+        var diferences: [Int] = []
+
+        for i in 0...(wordsQuan-1) {
+            line1 = words.prefix(i).joined(separator: " ")
+            line2 = words.suffix(from: i).joined(separator: " ")
+            let diference = abs(line1.count - line2.count)
+            diferences.append(diference)
+        }
+        if let minValue = diferences.min(), let index = diferences.firstIndex(of: minValue) {
+            line1 = words.prefix(index).joined(separator: " ")
+            line2 = words.suffix(from: index).joined(separator: " ")
+
+            return "\(line1)\n\(line2)"
+        } else {
+            return "Error en obtener el titulo"
+        }
     }
 }
 
 struct MonumentCelMapView_Previews: PreviewProvider {
     static var previews: some View {
-        MonumentCelMapView(monumentImage: "https://www.wagnerproducciones.com/travelmeit/monumentos/MUSEO%20PEDRO%20DE%20OSMA%201.jpg", title: "Plaza de barranco")
+        MonumentCelMapView(monumentImage: "https://www.wagnerproducciones.com/travelmeit/monumentos_tallinn/raekoja%20plats.jpg", title: "Plaza de barranco")
     }
 }

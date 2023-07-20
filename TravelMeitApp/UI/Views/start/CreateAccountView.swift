@@ -46,7 +46,7 @@ struct CreateAccountView: View {
                     .aspectRatio(contentMode: .fill)
                     .edgesIgnoringSafeArea(.all)
                     .blur(radius: 3)
-                ScrollView {
+                VStack {
                     VStack {
                         ZStack {
                             Image("bg_title_cell")
@@ -64,9 +64,9 @@ struct CreateAccountView: View {
                         
                         VStack {
                             
-                            VStack(spacing:12) {
+                            VStack(spacing:10) {
                                 Text("Create your account")
-                                    .font(.custom("fontastique", size: 25))
+                                    .font(.custom("fontastique", size: 20))
                                     .foregroundColor(.principalColor).padding(5)
                                 TextField("Name", text: $name)
                                     .padding()
@@ -76,7 +76,6 @@ struct CreateAccountView: View {
                                     .font(.custom("quicksand", size: 17)).foregroundColor(Color.black)
                                     .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
                                     .shadow(color: Color.gray, radius: 3, x: 7, y: 3)
-                                
                                 HStack{
                                     Text("Country of origin").font(.custom("quicksand", size: 17)).foregroundColor(Color.gray)
                                     Spacer()
@@ -93,7 +92,6 @@ struct CreateAccountView: View {
                                 .cornerRadius(150)
                                 .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
                                 .shadow(color: Color.gray, radius: 3, x: 7, y: 3)
-                                
                                 HStack{
                                     Text("Language:").font(.custom("quicksand", size: 17)).foregroundColor(Color.gray)
                                     Spacer()
@@ -112,7 +110,6 @@ struct CreateAccountView: View {
                                 .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
                                 .shadow(color: Color.gray, radius: 3, x: 7, y: 3)
                                 
-                                
                                 DatePicker("Date of birth -\n dd/mm/aaaa", selection: $selectedDate, displayedComponents: .date)
                                     .padding()
                                     .frame(maxWidth: 350, maxHeight: 40)
@@ -122,7 +119,6 @@ struct CreateAccountView: View {
                                     .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
                                     .foregroundColor(Color.gray)
                                     .shadow(color: Color.gray, radius: 3, x: 7, y: 3)
-                                
                                 TextField("Email", text: $mail)
                                     .padding()
                                     .frame(maxWidth: 350, maxHeight: 40)
@@ -131,7 +127,6 @@ struct CreateAccountView: View {
                                     .font(.custom("quicksand", size: 17)).foregroundColor(Color.black)
                                     .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
                                     .shadow(color: Color.gray, radius: 3, x: 7, y: 3)
-                                
                                 TextField("Emergency number and/or email", text: $emergencyData)
                                     .padding()
                                     .frame(maxWidth: 350, maxHeight: 40)
@@ -140,7 +135,6 @@ struct CreateAccountView: View {
                                     .font(.custom("quicksand", size: 17)).foregroundColor(Color.black)
                                     .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
                                     .shadow(color: Color.gray, radius: 3, x: 7, y: 3)
-                                
                                 HStack{
                                     Text("Set distance measurement:").font(.custom("quicksand", size: 17)).foregroundColor(Color.gray)
                                     Picker("", selection: $sizeType,
@@ -157,10 +151,8 @@ struct CreateAccountView: View {
                                 .cornerRadius(150)
                                 .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
                                 .shadow(color: Color.gray, radius: 3, x: 7, y: 3)
-                                
                                 Text("Type of traveler").font(.custom("fontastique", size: 20))                            .foregroundColor(.principalColor).padding(10)
                                 Text("Select one or more options").foregroundColor(Color.gray).font(.custom("quicksand", size: 15))
-                                
                             }
                             HStack(alignment: .center) {
                                 ScrollView(.horizontal) {
@@ -188,7 +180,6 @@ struct CreateAccountView: View {
                                     .scaledToFit()
                                     .frame(width: 220, height: 100)
                             }
-                            .padding()
                             .alert(isPresented: $showAlert) {
                                 Alert(
                                     title: Text("Estamos creando tu usuario..."),
@@ -215,11 +206,13 @@ struct CreateAccountView: View {
                             .hidden()
                         }
                     }.background(Color.white.opacity(0.75)).cornerRadius(20)
-                }
-            }
-        }
-        
-        
+                }.frame(width: 350, height: 600, alignment: .center)
+                    .edgesIgnoringSafeArea(.all)
+            }.padding(.top, -65)
+        }.navigationBarBackButtonHidden(true)
+            .navigationBarHidden(true)
+            .edgesIgnoringSafeArea(.all)
+            .navigationBarTitleDisplayMode(.inline)
     }
     
     func toggleSelection(_ option: Option) {
