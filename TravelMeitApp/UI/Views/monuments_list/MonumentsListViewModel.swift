@@ -17,8 +17,10 @@ final class MonumentsListViewModel: ObservableObject {
     private let locationManager = LocationManager.shared
     let zeroPoint = CLLocationCoordinate2D(latitude: 0, longitude: 0)
     var newList : [MonumentData] = []
+    var firstList : [MonumentData] = []
     @Published private var userData = UserData()
     @Published var isLoading = true
+    @Published var isFirst = true
 
     var userCoordinate: CLLocation{
         while locationManager.currentLocation == nil || locationManager.currentLocation?.coordinate.longitude == zeroPoint.longitude {
@@ -27,7 +29,7 @@ final class MonumentsListViewModel: ObservableObject {
         return locationManager.currentLocation!
     }
 
-   private init(){
+    private init(){
         coordinateZero = CLLocationCoordinate2D(latitude:-12.1471894081759, longitude: -77.02099655561172)
         self.apiService = APIService()
         self.callFuncToGetEmpData(user: userData.user!)
@@ -35,12 +37,8 @@ final class MonumentsListViewModel: ObservableObject {
     
     //La primera vez carga con el orden por valoración y 50km  -> lista1
     func callFuncToGetEmpData(user: User) {
-        
         // ordenamiento por valoración sortBy
         self.newList = getListWithRating(user: user, list: apiService.apiToGetMonumentsData())
-        self.monumentsData = newList.filter { item in
-             item.distance < FilterManager.sharedInstance.distanceSelected
-        }
     }
     
     func getListWithRating(user: User, list: [MonumentData]) -> [MonumentData] {
@@ -75,7 +73,13 @@ final class MonumentsListViewModel: ObservableObject {
     }
     
     func filterByDistanceSelected(){
-        self.monumentsData = newList.filter { item in
+        self.monumentsData = self.monumentsData.filter { item in
+           return item.distance < FilterManager.sharedInstance.distanceSelected
+        }
+    }
+    
+    func filterByDistanceSelectedToFirstList(){
+        self.monumentsData = firstList.filter { item in
            return item.distance < FilterManager.sharedInstance.distanceSelected
         }
     }
@@ -87,11 +91,12 @@ final class MonumentsListViewModel: ObservableObject {
             updateMonument.distance = Float(self.calculateDistanceByTwoPoints(point1: self.userCoordinate.coordinate, point2: CLLocationCoordinate2D(latitude: updateMonument.latitude , longitude: updateMonument.longitude)))
             list.append(updateMonument)
         }
-        newList = list
-        self.monumentsData = newList
+        self.monumentsData = list
+        self.firstList = list
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.isLoading = false
         }
+        self.isFirst = false
     }
     
     

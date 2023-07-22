@@ -602,7 +602,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TravelMeitApp/Preview Content\"";
-				DEVELOPMENT_TEAM = 5QVHRHTF76;
+				DEVELOPMENT_TEAM = Y2W27H2WF8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TravelMeitApp/Info.plist;
@@ -619,7 +619,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = TraveilMeitGroup.TravelMeitApp004;
+				PRODUCT_BUNDLE_IDENTIFIER = TraveilMeitGroup.TravelMeitApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -636,7 +636,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TravelMeitApp/Preview Content\"";
-				DEVELOPMENT_TEAM = 5QVHRHTF76;
+				DEVELOPMENT_TEAM = Y2W27H2WF8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TravelMeitApp/Info.plist;
@@ -653,7 +653,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = TraveilMeitGroup.TravelMeitApp004;
+				PRODUCT_BUNDLE_IDENTIFIER = TraveilMeitGroup.TravelMeitApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

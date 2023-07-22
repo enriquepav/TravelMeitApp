@@ -17,11 +17,9 @@ struct MonumentsListView: View {
     let optionSelected = ["ic_3kmSelected", "ic_10kmSelected", "ic_50kmSelected"]
     @ObservedObject var viewModel = MonumentsListViewModel.shared
     @State private var isCheckboxChecked = false
-    @State private var selectedItems: [MonumentData] = []
     @State private var isAscending = true
-    
-    
-    
+    @State private var finalList: [MonumentData] = []
+
     var body: some View {
         ScrollView {
             if viewModel.isLoading {
@@ -37,43 +35,30 @@ struct MonumentsListView: View {
                         GridItem(.flexible(), spacing: 20),
                         GridItem(.flexible(), spacing: 20)
                     ], spacing: 40) {
-                        ForEach(viewModel.monumentsData, id: \.monument) { item in
-                            NavigationLink(destination: MonumentDetailView(monumentData: item)) {
-                                if !itemIsSelected(item) {
-                                    ZStack {
-                                        MonumentCelView(monumentImage:item.image, distance: item.distance, title: item.monument)
-                                        VStack {
-                                            Spacer()
-                                            HStack {
-                                                Spacer()
-                                                Checkbox(isChecked: Binding(
-                                                    get: {
-                                                        itemIsSelected(item)
-                                                    },
-                                                    set: { value in
-                                                        if value {
-                                                            selectedItems.append(item)
-                                                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                                                                removeItem(item)
-                                                            }
-                                                        } else {
-                                                            if let index = selectedItems.firstIndex(of: item) {
-                                                                selectedItems.remove(at: index)
-                                                            }
-                                                        }
-                                                    }
-                                                ))
-                                            }
+                        ForEach(finalList, id: \.monument) { item in
+                            ZStack {
+                                NavigationLink(destination: MonumentDetailView(monumentData: item)){
+                                    MonumentCelView(monumentImage:item.image, distance: item.distance, title: item.monument)
+                                }
+                                VStack {
+                                    Spacer()
+                                    HStack {
+                                        Spacer()
+                                        Button(action: {
+                                            finalList.removeAll(where: { $0 == item })
+                                            viewModel.monumentsData = finalList
+                                        }) {
+                                            Image("buttonDelete")
+                                                .resizable()
+                                                .frame(width: 24, height: 24)
                                         }
                                     }
-                                    .frame(width: 150, height: 280)
-                                    .transition(AnyTransition.opacity.animation(.easeInOut(duration: 2)))
                                 }
                             }
+                            .frame(width: 150, height: 280)
+                            .transition(AnyTransition.opacity.animation(.easeInOut(duration: 2)))
                         }
-                    }
-                    .padding()
-                    
+                    }.padding()
                 }
             }
         }.padding(.top, -20)
@@ -87,9 +72,12 @@ struct MonumentsListView: View {
                             LazyHStack(spacing: 0) {
                                 ForEach(0..<options.count, id: \.self) { index in
                                     Button(action: {
+                                        self.finalList = viewModel.monumentsData
                                         FilterManager.sharedInstance.distanceSelected = distanceSelected[index]
                                         selectedOption = index
-                                        viewModel.filterByDistanceSelected()
+                                        self.finalList = self.finalList.filter { item in
+                                            return item.distance < FilterManager.sharedInstance.distanceSelected
+                                        }
                                         // Actualizar el estado de selección al hacer clic en la opción
                                     }) {
                                         if (selectedOption == index ){
@@ -118,17 +106,12 @@ struct MonumentsListView: View {
             }.navigationBarBackButtonHidden(true)
             .navigationBarTitleDisplayMode(.inline)
             .onAppear {
-                viewModel.calculateDistance()
-                viewModel.filterByDistanceSelected()
+                if(viewModel.isFirst){
+                    viewModel.calculateDistance()
+                    viewModel.filterByDistanceSelected()
+                }
+                self.finalList = viewModel.monumentsData
             }
-    }
-    private func itemIsSelected(_ item: MonumentData) -> Bool {
-        selectedItems.contains(where: { $0 == item })
-    }
-    func removeItem(_ item: MonumentData) {
-        withAnimation {
-            viewModel.monumentsData.removeAll(where: { $0 == item })
-        }
     }
 }
 
