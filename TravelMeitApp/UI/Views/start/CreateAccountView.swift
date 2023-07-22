@@ -18,7 +18,7 @@ struct CreateAccountView: View {
     let languages = ["Español", "Inglés"]
     @State private var selectedDate = Date()
     @State private var sizeType : String = ""
-    let sizes = ["Kilómetros y metros", "Millas y pies"]
+    let sizes = ["Kilómetros", "Millas"]
 
     struct Option: Identifiable {
         let id: String

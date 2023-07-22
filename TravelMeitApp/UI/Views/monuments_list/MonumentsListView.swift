@@ -73,54 +73,54 @@ struct MonumentsListView: View {
                         }
                     }
                     .padding()
-
+                    
                 }
             }
         }.padding(.top, -20)
             .toolbar {
-            ToolbarItemGroup() {
-                HStack {
-                    Image("logoTravelmeit")
-                        .resizable()
-                        .frame(width: 150, height: 40)
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        LazyHStack(spacing: 0) {
-                            ForEach(0..<options.count, id: \.self) { index in
-                                Button(action: {
-                                    FilterManager.sharedInstance.distanceSelected = distanceSelected[index]
-                                    selectedOption = index
-                                    viewModel.filterByDistanceSelected()
-                                    // Actualizar el estado de selección al hacer clic en la opción
-                                }) {
-                                    if (selectedOption == index ){
-                                        Image(optionSelected[index])
-                                            .resizable()
-                                            .frame(width: 32, height: 32)
-                                    } else {
-                                        Image(options[index])
-                                            .resizable()
-                                            .frame(width: 32, height: 32)
+                ToolbarItemGroup() {
+                    HStack {
+                        Image("logoTravelmeit")
+                            .resizable()
+                            .frame(width: 150, height: 40)
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            LazyHStack(spacing: 0) {
+                                ForEach(0..<options.count, id: \.self) { index in
+                                    Button(action: {
+                                        FilterManager.sharedInstance.distanceSelected = distanceSelected[index]
+                                        selectedOption = index
+                                        viewModel.filterByDistanceSelected()
+                                        // Actualizar el estado de selección al hacer clic en la opción
+                                    }) {
+                                        if (selectedOption == index ){
+                                            Image(optionSelected[index])
+                                                .resizable()
+                                                .frame(width: 32, height: 32)
+                                        } else {
+                                            Image(options[index])
+                                                .resizable()
+                                                .frame(width: 32, height: 32)
+                                        }
                                     }
                                 }
                             }
                         }
-                    }
-                    Button(action: {
-                        isAscending.toggle()
-                    }) {
-                        Image("buttonOrder")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 38, height: 38)
+                        Button(action: {
+                            isAscending.toggle()
+                        }) {
+                            Image("buttonOrder")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 38, height: 38)
+                        }
                     }
                 }
-            }
-        }.navigationBarBackButtonHidden(true)
+            }.navigationBarBackButtonHidden(true)
             .navigationBarTitleDisplayMode(.inline)
             .onAppear {
-            viewModel.calculateDistance()
-            viewModel.filterByDistanceSelected()
-        }
+                viewModel.calculateDistance()
+                viewModel.filterByDistanceSelected()
+            }
     }
     private func itemIsSelected(_ item: MonumentData) -> Bool {
         selectedItems.contains(where: { $0 == item })
