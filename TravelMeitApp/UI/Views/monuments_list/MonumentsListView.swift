@@ -78,6 +78,9 @@ struct MonumentsListView: View {
                                         self.finalList = self.finalList.filter { item in
                                             return item.distance < FilterManager.sharedInstance.distanceSelected
                                         }
+                                        self.finalList.sort{
+                                            $0.distance < $1.distance
+                                        }
                                         // Actualizar el estado de selección al hacer clic en la opción
                                     }) {
                                         if (selectedOption == index ){
@@ -95,6 +98,9 @@ struct MonumentsListView: View {
                         }
                         Button(action: {
                             isAscending.toggle()
+                            self.finalList.sort{
+                                $0.rating < $1.rating
+                            }
                         }) {
                             Image("buttonOrder")
                                 .resizable()
@@ -111,7 +117,7 @@ struct MonumentsListView: View {
                     viewModel.filterByDistanceSelected()
                 }
                 self.finalList = viewModel.monumentsData
-            }
+            }.accentColor(Color.principalColor)
     }
 }
 

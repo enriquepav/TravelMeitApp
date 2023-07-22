@@ -17,7 +17,6 @@ final class MonumentsListViewModel: ObservableObject {
     private let locationManager = LocationManager.shared
     let zeroPoint = CLLocationCoordinate2D(latitude: 0, longitude: 0)
     var newList : [MonumentData] = []
-    var firstList : [MonumentData] = []
     @Published private var userData = UserData()
     @Published var isLoading = true
     @Published var isFirst = true
@@ -78,12 +77,6 @@ final class MonumentsListViewModel: ObservableObject {
         }
     }
     
-    func filterByDistanceSelectedToFirstList(){
-        self.monumentsData = firstList.filter { item in
-           return item.distance < FilterManager.sharedInstance.distanceSelected
-        }
-    }
-    
     func calculateDistance() {
         var list : [MonumentData] = []
         for monument in newList {
@@ -92,13 +85,14 @@ final class MonumentsListViewModel: ObservableObject {
             list.append(updateMonument)
         }
         self.monumentsData = list
-        self.firstList = list
+        self.monumentsData.sort{
+            $0.distance < $1.distance
+        }
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.isLoading = false
         }
         self.isFirst = false
     }
-    
     
     func calculateDistanceByTwoPoints(point1: CLLocationCoordinate2D, point2: CLLocationCoordinate2D) -> CLLocationDistance {
            let location1 = CLLocation(latitude: point1.latitude, longitude: point1.longitude)

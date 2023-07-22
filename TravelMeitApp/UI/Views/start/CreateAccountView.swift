@@ -212,7 +212,7 @@ struct CreateAccountView: View {
         }.navigationBarBackButtonHidden(true)
             .navigationBarHidden(true)
             .edgesIgnoringSafeArea(.all)
-            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarTitleDisplayMode(.inline).accentColor(Color.principalColor)
     }
     
     func toggleSelection(_ option: Option) {
