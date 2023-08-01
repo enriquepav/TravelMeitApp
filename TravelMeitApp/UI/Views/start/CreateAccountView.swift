@@ -110,7 +110,8 @@ struct CreateAccountView: View {
                                 .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
                                 .shadow(color: Color.gray, radius: 3, x: 7, y: 3)
                                 
-                                DatePicker("Date of birth -\n dd/mm/aaaa", selection: $selectedDate, displayedComponents: .date)
+                                /*
+                                 DatePicker("Date of birth -\n dd/mm/aaaa", selection: $selectedDate, displayedComponents: .date)
                                     .padding()
                                     .frame(maxWidth: 350, maxHeight: 40)
                                     .background(Color.white.opacity(0.7))
@@ -127,6 +128,7 @@ struct CreateAccountView: View {
                                     .font(.custom("quicksand", size: 17)).foregroundColor(Color.black)
                                     .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20))
                                     .shadow(color: Color.gray, radius: 3, x: 7, y: 3)
+                                 */
                                 TextField("Emergency number and/or email", text: $emergencyData)
                                     .padding()
                                     .frame(maxWidth: 350, maxHeight: 40)

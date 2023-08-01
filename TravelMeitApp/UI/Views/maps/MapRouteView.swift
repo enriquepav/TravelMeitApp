@@ -38,7 +38,7 @@ struct MapRouteView: View {
                 
                 ScrollView(.horizontal) {
                     LazyHGrid(rows: [GridItem(.fixed(30))], spacing: 5) {
-                        ForEach(monumentsList ?? [UserExample.sharedInstance.user1], id: \.monument) { item in
+                        ForEach(monumentsList , id: \.monument) { item in
                             
                             if !itemIsSelected(item) {
                                 ZStack {
@@ -150,6 +150,17 @@ struct MapRouteView: View {
             viewModel.clearTotalDuration()
         }
     }
+    func addItem(_ newItem: MonumentData) {
+        withAnimation {
+            DispatchQueue.main.async {
+                monumentsList.append(newItem) // Agregar el nuevo elemento a la colección
+                let newLocation = CLLocation(latitude: newItem.latitude, longitude: newItem.longitude)
+                locations.append(newLocation)
+            }
+            viewModel.clearTotalDuration()
+        }
+    }
+
 }
 
 /*struct MapRouteView_Previews: PreviewProvider {

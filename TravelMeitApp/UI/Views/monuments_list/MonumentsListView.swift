@@ -48,7 +48,7 @@ struct MonumentsListView: View {
                                             finalList.removeAll(where: { $0 == item })
                                             viewModel.monumentsData = finalList
                                         }) {
-                                            Image("buttonDelete")
+                                            Image("checkBoxFalse")
                                                 .resizable()
                                                 .frame(width: 24, height: 24)
                                         }
@@ -102,7 +102,7 @@ struct MonumentsListView: View {
                                 $0.rating < $1.rating
                             }
                         }) {
-                            Image("buttonOrder")
+                            Image("ic_brujula")
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 38, height: 38)

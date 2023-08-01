@@ -9,9 +9,10 @@ import Foundation
 import AVFoundation
 
 class TextToSpeechManager: NSObject, ObservableObject, AVSpeechSynthesizerDelegate {
+    static let shared = TextToSpeechManager()
     let speechSynthesizer = AVSpeechSynthesizer()
 
-    override init() {
+    private override init() {
         super.init()
         speechSynthesizer.delegate = self
         // Configura la sesión de audio para reproducir en segundo plano
@@ -20,6 +21,7 @@ class TextToSpeechManager: NSObject, ObservableObject, AVSpeechSynthesizerDelega
     }
 
     func speakText(_ text: String) {
+        stopSpeech()
         let speechUtterance = AVSpeechUtterance(string: text)
         speechUtterance.voice = AVSpeechSynthesisVoice(language: "en-US") // Establece el idioma de la voz
         speechSynthesizer.speak(speechUtterance)

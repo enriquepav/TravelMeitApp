@@ -23,7 +23,7 @@ struct MonumentDetailView: View {
     @State var textToSpeech = ""
     @State private var isSpeaking = false
     @State private var isPausedSpeech = false
-    @StateObject private var textToSpeechManager = TextToSpeechManager()
+    @StateObject private var textToSpeechManager = TextToSpeechManager.shared
 
     var body: some View {
         NavigationView {
@@ -102,6 +102,8 @@ struct MonumentDetailView: View {
                                     
                                     HStack{
                                         Button(action: {
+                                            textToSpeechManager.stopSpeech()
+                                            self.isSpeaking = false
                                             self.didTap45 = true
                                             self.didTap15 = false
                                             self.didTap3 = false
@@ -115,6 +117,8 @@ struct MonumentDetailView: View {
                                         }).background(didTap45 ? Color.thirdColor : Color.white).cornerRadius(10)
 
                                         Button(action: {
+                                            textToSpeechManager.stopSpeech()
+                                            self.isSpeaking = false
                                             self.didTap15 = true
                                             self.didTap45 = false
                                             self.didTap3 = false
@@ -127,6 +131,8 @@ struct MonumentDetailView: View {
                                         }).background(didTap15 ? Color.thirdColor : Color.white).cornerRadius(10)
                                         
                                         Button(action: {
+                                            textToSpeechManager.stopSpeech()
+                                            self.isSpeaking = false
                                             self.didTap3 = true
                                             self.didTap15 = false
                                             self.didTap45 = false
@@ -223,7 +229,10 @@ struct MonumentDetailView: View {
                                             .font(.custom("quicksand",size: 12).bold())
                                     }
                                     
-                                    Button(action: {}, label: {
+                                    NavigationLink(destination: {
+                                        MapRouteView(locations:[CLLocation(latitude: monumentData.latitude, longitude: monumentData.longitude)] , monumentsList: [monumentData])
+                                        
+                                    }, label: {
                                         Text("No")
                                             .frame(width: 100, height: 10)
                                             .padding()
