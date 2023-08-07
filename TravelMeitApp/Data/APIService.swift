@@ -18,4 +18,14 @@ class APIService :  ObservableObject {
         }
         return []
     }
+    
+    func apiToGetDistricts() -> [District] {
+        let decoder = JSONDecoder()
+        do {
+            return try decoder.decode([District].self, from: districtsData)
+        } catch {
+            print("Error decoding JSON: \(error.localizedDescription)")
+        }
+        return []
+    }
 }

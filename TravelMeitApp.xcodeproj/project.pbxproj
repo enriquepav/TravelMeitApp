@@ -33,6 +33,8 @@
 		F829CE622A150C040098E251 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F829CE612A150C040098E251 /* ContentView.swift */; };
 		F829CE672A150C080098E251 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F829CE662A150C080098E251 /* Preview Assets.xcassets */; };
 		F82C9BA22A59A48F000FDE27 /* UserExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82C9BA12A59A48F000FDE27 /* UserExample.swift */; };
+		F8349FDE2A8083A1004CDE1F /* DistrictsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8349FDD2A8083A1004CDE1F /* DistrictsResponse.swift */; };
+		F8349FE02A808617004CDE1F /* Districts.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8349FDF2A808617004CDE1F /* Districts.swift */; };
 		F837B4D62A487C1200FABBCF /* VistaPruebas2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F837B4D52A487C1200FABBCF /* VistaPruebas2.swift */; };
 		F837B4D82A49EC2900FABBCF /* VistaPruebas3.swift in Sources */ = {isa = PBXBuildFile; fileRef = F837B4D72A49EC2900FABBCF /* VistaPruebas3.swift */; };
 		F837B4DA2A4A040900FABBCF /* VistaPruebas4.swift in Sources */ = {isa = PBXBuildFile; fileRef = F837B4D92A4A040900FABBCF /* VistaPruebas4.swift */; };
@@ -80,6 +82,8 @@
 		F829CE632A150C080098E251 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F829CE662A150C080098E251 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F82C9BA12A59A48F000FDE27 /* UserExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserExample.swift; sourceTree = "<group>"; };
+		F8349FDD2A8083A1004CDE1F /* DistrictsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistrictsResponse.swift; sourceTree = "<group>"; };
+		F8349FDF2A808617004CDE1F /* Districts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Districts.swift; sourceTree = "<group>"; };
 		F837B4D52A487C1200FABBCF /* VistaPruebas2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaPruebas2.swift; sourceTree = "<group>"; };
 		F837B4D72A49EC2900FABBCF /* VistaPruebas3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaPruebas3.swift; sourceTree = "<group>"; };
 		F837B4D92A4A040900FABBCF /* VistaPruebas4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VistaPruebas4.swift; sourceTree = "<group>"; };
@@ -197,9 +201,8 @@
 		A2948DD22A250D1B00928576 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				A2948DD32A250D2C00928576 /* Monuments.swift */,
-				A2948DDA2A252E8200928576 /* MonumentsResponse.swift */,
-				F83CAE742A32016200C6D5BC /* UserRegistered.swift */,
+				F8349FDC2A808376004CDE1F /* Districts */,
+				F8349FDA2A80834C004CDE1F /* Monuments */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -293,6 +296,25 @@
 				F829CE662A150C080098E251 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F8349FDA2A80834C004CDE1F /* Monuments */ = {
+			isa = PBXGroup;
+			children = (
+				A2948DD32A250D2C00928576 /* Monuments.swift */,
+				A2948DDA2A252E8200928576 /* MonumentsResponse.swift */,
+				F83CAE742A32016200C6D5BC /* UserRegistered.swift */,
+			);
+			path = Monuments;
+			sourceTree = "<group>";
+		};
+		F8349FDC2A808376004CDE1F /* Districts */ = {
+			isa = PBXGroup;
+			children = (
+				F8349FDD2A8083A1004CDE1F /* DistrictsResponse.swift */,
+				F8349FDF2A808617004CDE1F /* Districts.swift */,
+			);
+			path = Districts;
 			sourceTree = "<group>";
 		};
 		F8F609242A557D7D002C60DE /* Fonts */ = {
@@ -472,6 +494,8 @@
 				F8759F852A648925005605C2 /* NewMonumentListViewModel.swift in Sources */,
 				F837B4D62A487C1200FABBCF /* VistaPruebas2.swift in Sources */,
 				F815232F2A20233700C9FB41 /* MonumentsListView.swift in Sources */,
+				F8349FDE2A8083A1004CDE1F /* DistrictsResponse.swift in Sources */,
+				F8349FE02A808617004CDE1F /* Districts.swift in Sources */,
 				F8A0BA5B2A3E1E4D00B4E4FC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

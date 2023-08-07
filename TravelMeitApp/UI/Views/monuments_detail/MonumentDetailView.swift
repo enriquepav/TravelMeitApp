@@ -46,7 +46,7 @@ struct MonumentDetailView: View {
                         Spacer().frame(height: 70)
                         
                         HStack {
-                            Button(action: {
+                            /*Button(action: {
                                 isChecked.toggle()
                             }) {
                                 HStack {
@@ -54,7 +54,7 @@ struct MonumentDetailView: View {
                                         .foregroundColor(isChecked ? .blue : .gray)
                                         .imageScale(.large)
                                 }
-                            }.padding(5)
+                            }.padding(5)*/
                             Text(monumentData.monument).foregroundColor(.white).padding()
                                 .font(.custom("quicksand", size: 15).bold())
                             
@@ -212,12 +212,9 @@ struct MonumentDetailView: View {
                                         .multilineTextAlignment(.center)
                                     
                                     NavigationLink(destination: {
-                                        /*let locations = [
-                                            CLLocation(latitude: viewModel.userCoordinate.coordinate.latitude, longitude: viewModel.userCoordinate.coordinate.longitude), // Point 1
-                                            CLLocation(latitude: monumentData.latitude, longitude: monumentData.longitude) // Point 2
-                                        ]*/
+                                       
                                         let result = viewModel.findLocations(monumentCoordinate: monumentData, allCoordinates: listViewModel.monumentsData)
-                                        MapRouteView(locations: result.1 , monumentsList: result.0)
+                                        MapRouteView(locations: result.1 , monumentsList: result.0, showOnlyFirstElement: false)
                                     }
                                     ){
                                         Text("Yes")
@@ -227,10 +224,18 @@ struct MonumentDetailView: View {
                                             .cornerRadius(20)
                                             .foregroundColor(Color.white)
                                             .font(.custom("quicksand",size: 12).bold())
-                                    }
+                                    }.simultaneousGesture(TapGesture().onEnded {
+                                        if let existingIndex = listViewModel.monumentsData.firstIndex(of: monumentData) {
+                                            // Mover el monument a la primera posición eliminando primero su instancia actual
+                                            listViewModel.monumentsData.remove(at: existingIndex)
+                                            listViewModel.monumentsData.insert(monumentData, at: 0)
+                                        }
+                                        print(listViewModel.monumentsData)
+                                    })
                                     
                                     NavigationLink(destination: {
-                                        MapRouteView(locations:[CLLocation(latitude: monumentData.latitude, longitude: monumentData.longitude)] , monumentsList: [monumentData])
+                                        let result = viewModel.findLocations(monumentCoordinate: monumentData, allCoordinates: listViewModel.monumentsData)
+                                        MapRouteView(locations: result.1 , monumentsList: result.0, showOnlyFirstElement: true)
                                         
                                     }, label: {
                                         Text("No")
@@ -294,6 +299,15 @@ struct MonumentDetailView: View {
             if let error = error {
                 print("Error al agregar la solicitud de notificación: \(error)")
             }
+        }
+    }
+    
+    func moveMonumentToFirstPosition(_ monument: MonumentData, in monumentsInstance: inout Monuments) {
+        // Verificar si el monument ya existe en el arreglo
+        if let existingIndex = listViewModel.monumentsData.firstIndex(of: monument) {
+            // Mover el monument a la primera posición eliminando primero su instancia actual
+            listViewModel.monumentsData.remove(at: existingIndex)
+            listViewModel.monumentsData.insert(monument, at: 0)
         }
     }
 }
