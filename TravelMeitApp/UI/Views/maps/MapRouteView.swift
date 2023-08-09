@@ -18,6 +18,7 @@ struct MapRouteView: View {
     @ObservedObject var viewModel = MapRouteViewModel.shared
     @State private var isCheckboxChecked = false
     @State private var selectedItems: [MonumentData] = []
+    @State private var locationItems: [CLLocation] = []
     @ObservedObject var viewModel1 = MonumentsListViewModel.shared
 
     var body: some View {
@@ -56,11 +57,11 @@ struct MapRouteView: View {
                                                     }
                                                     if value {
                                                         selectedItems.append(item)
+                                                        locations.append(CLLocation(latitude: item.latitude, longitude: item.longitude))
                                                         monumentsList = selectedItems
-                                                        
-                                                        
                                                     } else {
                                                         selectedItems.removeAll { $0 == item }
+                                                        locations.removeAll { $0 == CLLocation(latitude: item.latitude, longitude: item.longitude) }
                                                         monumentsList = selectedItems
                                                     }
                                                 }

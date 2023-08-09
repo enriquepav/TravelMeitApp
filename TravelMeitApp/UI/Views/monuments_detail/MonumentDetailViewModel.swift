@@ -75,9 +75,12 @@ final class MonumentsDetailViewModel: ObservableObject {
             }
         }
         
-        locations.append(CLLocation(latitude: userCoordinate.coordinate.latitude, longitude: userCoordinate.coordinate.longitude))
+        var firstLocations = [CLLocation]()
         
-        return (monumentList, locations)
+        firstLocations.append(CLLocation(latitude: userCoordinate.coordinate.latitude, longitude: userCoordinate.coordinate.longitude))
+        firstLocations.append(CLLocation(latitude: monumentCoordinate.latitude, longitude: monumentCoordinate.longitude))
+
+        return (monumentList, firstLocations)
     }
     
 }
