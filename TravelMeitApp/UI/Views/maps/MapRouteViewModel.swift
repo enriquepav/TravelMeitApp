@@ -11,6 +11,7 @@ final class MapRouteViewModel: ObservableObject {
     @Published var totalDuration: TimeInterval = 0
     @Published private var totalTime: TimeInterval = 0
     static let shared = MapRouteViewModel()
+    @Published var totalDistance: Double = 0
 
     func getTotalDuration(durationText: String) {
         let components = durationText.components(separatedBy: " ")
@@ -20,9 +21,15 @@ final class MapRouteViewModel: ObservableObject {
         }
     }
     
+    func getTotalDistance(distanceInMeters: Double) {
+        print(distanceInMeters)
+        totalDistance += distanceInMeters
+    }
+    
     func clearTotalDuration(){
         totalDuration = 0
         totalTime = 0
+        totalDistance = 0.0
     }
     
     func formattedDuration(_ duration: TimeInterval) -> String {
@@ -40,6 +47,10 @@ final class MapRouteViewModel: ObservableObject {
                 return "\(minutes)min"
             }
         }
+    }
+    
+    func formattedDistance(_ distance: Double) -> String {
+        return String(format: String(distance/1000) + " km.")
     }
 
     enum DurationUnit: String {

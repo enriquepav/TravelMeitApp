@@ -136,7 +136,9 @@ struct MapView: UIViewRepresentable {
                 let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
                 if let routes = json["routes"] as? [[String: Any]], let route = routes.first,
                    let legs = route["legs"] as? [[String: Any]], let leg = legs.first,
-                   let duration = leg["duration"] as? [String: Any], let durationText = duration["text"] as? String
+                   let duration = leg["duration"] as? [String: Any], let durationText = duration["text"] as? String,
+                    let distance = legs.first?["distance"] as? [String: Any],
+                    let distanceValue = distance["value"] as? Int
                 {
                     for route in routes {
                         let routeOverviewPolyline = route["overview_polyline"] as! [String: Any]
@@ -145,6 +147,7 @@ struct MapView: UIViewRepresentable {
                             self.drawRouteOnMap(from: points, mapView: mapView)
                         }
                     }
+                    viewModel.getTotalDistance(distanceInMeters: Double(distanceValue))
                     viewModel.getTotalDuration(durationText: durationText)
                 }else{
                     print("Unable to retrieve route information")

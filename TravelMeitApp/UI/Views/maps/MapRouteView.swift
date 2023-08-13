@@ -147,7 +147,7 @@ struct MapRouteView: View {
                             .frame(width: 15, height: 10)
                             .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
                         
-                        Text(String(format: "%.2f" + " " + " km."))
+                        Text(viewModel.formattedDistance(viewModel.totalDistance))
                             .foregroundColor(.white)
                             .font(.system(size: 12, weight: .bold))
                             .padding(EdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 5))
