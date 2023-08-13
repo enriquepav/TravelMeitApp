@@ -21,6 +21,7 @@ struct MapRouteView: View {
     @State private var locationItems: [CLLocation] = []
     @ObservedObject var viewModel1 = MonumentsListViewModel.shared
     @State var supportArray = [0,0]
+    @StateObject private var textToSpeechManager = TextToSpeechManager.shared
 
     var body: some View {
         VStack {
@@ -157,17 +158,10 @@ struct MapRouteView: View {
                     .padding(.trailing, 10)
                     
                     Button(action: {
-                        
-                        for monument in selectedItems {
-                            print(monument.monument)
-                            
-                        }
-                        print("pruebasEPAV")
-                        print(supportArray)
-                        
-                        for i in locations {
-                            print (i)
-                        }
+                        viewModel.getDistrictsData()
+                        let district = selectedItems.first?.district ?? "Barranco"
+                        print(district)
+                        textToSpeechManager.speakText(viewModel.getActualDistrict(district: district))
                         
                     }, label: {
                         Text("Start!")

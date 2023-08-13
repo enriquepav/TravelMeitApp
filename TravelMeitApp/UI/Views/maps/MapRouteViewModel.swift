@@ -12,6 +12,10 @@ final class MapRouteViewModel: ObservableObject {
     @Published private var totalTime: TimeInterval = 0
     static let shared = MapRouteViewModel()
     @Published var totalDistance: Double = 0
+    var newList : [District] = []
+    private var apiService: APIService!
+    
+    
 
     func getTotalDuration(durationText: String) {
         let components = durationText.components(separatedBy: " ")
@@ -51,6 +55,20 @@ final class MapRouteViewModel: ObservableObject {
     
     func formattedDistance(_ distance: Double) -> String {
         return String(format: String(distance/1000) + " km.")
+    }
+    
+    func getDistrictsData(){
+        self.apiService = APIService()
+        self.newList = apiService.apiToGetDistricts()
+    }
+    
+    func getActualDistrict(district: String)-> String{
+        for i in newList {
+            if i.district == district {
+                return i.resume
+            }
+        }
+        return ""
     }
 
     enum DurationUnit: String {
