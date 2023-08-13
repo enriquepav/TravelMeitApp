@@ -20,6 +20,7 @@ struct MapRouteView: View {
     @State private var selectedItems: [MonumentData] = []
     @State private var locationItems: [CLLocation] = []
     @ObservedObject var viewModel1 = MonumentsListViewModel.shared
+    @State var supportArray = [0,0]
 
     var body: some View {
         VStack {
@@ -56,12 +57,51 @@ struct MapRouteView: View {
                                                         return
                                                     }
                                                     if value {
+                                                        viewModel.clearTotalDuration()
                                                         selectedItems.append(item)
                                                         locations.append(CLLocation(latitude: item.latitude, longitude: item.longitude))
+                                                        supportArray.append(index)
+                                                        var pairs = [(CLLocation, Int)]()
+                                                        for i in 0...(locations.count-1) {
+                                                            pairs.append((locations[i], supportArray[i]))
+                                                        }
+                                                        let referenceLocation = pairs[0].0
+                                                        reorderTuplesByDistance(from: referenceLocation, varTuples: &pairs)
+                                                        var locationList: [CLLocation] = []
+                                                        var intList: [Int] = []
+
+                                                        for tuple in pairs {
+                                                            locationList.append(tuple.0)
+                                                            intList.append(tuple.1)
+                                                        }
+                                                        
+                                                        locations = locationList
+                                                        supportArray = intList
+                                                    
                                                         monumentsList = selectedItems
                                                     } else {
+                                                        viewModel.clearTotalDuration()
                                                         selectedItems.removeAll { $0 == item }
-                                                        locations.removeAll { $0 == CLLocation(latitude: item.latitude, longitude: item.longitude) }
+                                                        let position = supportArray.firstIndex(of: index)
+                                                        supportArray.removeAll { $0 == index }
+                                                        locations.remove(at: position!)
+                                                        var pairs = [(CLLocation, Int)]()
+                                                        for i in 0...(locations.count-1) {
+                                                            pairs.append((locations[i], supportArray[i]))
+                                                        }
+                                                        let referenceLocation = pairs[0].0
+                                                        reorderTuplesByDistance(from: referenceLocation, varTuples: &pairs)
+                                                        var locationList: [CLLocation] = []
+                                                        var intList: [Int] = []
+
+                                                        for tuple in pairs {
+                                                            locationList.append(tuple.0)
+                                                            intList.append(tuple.1)
+                                                        }
+                                                        
+                                                        locations = locationList
+                                                        supportArray = intList
+                                                        
                                                         monumentsList = selectedItems
                                                     }
                                                 }
@@ -120,8 +160,14 @@ struct MapRouteView: View {
                         
                         for monument in selectedItems {
                             print(monument.monument)
+                            
                         }
                         print("pruebasEPAV")
+                        print(supportArray)
+                        
+                        for i in locations {
+                            print (i)
+                        }
                         
                     }, label: {
                         Text("Start!")
@@ -152,6 +198,13 @@ struct MapRouteView: View {
         }
         
     }
+    
+    func reorderTuplesByDistance(from referenceLocation: CLLocation, varTuples: inout [(CLLocation, Int)]) {
+        varTuples.sort(by: {
+            $0.0.distance(from: referenceLocation) < $1.0.distance(from: referenceLocation)
+        })
+    }
+    
 }
 
 /*struct MapRouteView_Previews: PreviewProvider {
