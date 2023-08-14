@@ -41,7 +41,7 @@ struct MapRouteView: View {
                 }
                 
                 ScrollView(.horizontal) {
-                    LazyHGrid(rows: [GridItem(.fixed(30))], spacing: 5) {
+                    LazyHGrid(rows: [GridItem(.fixed(60))], spacing: 0) {
                         ForEach(Array(viewModel1.monumentsData.enumerated()), id: \.1.monument) { (index, item) in
                             if !showOnlyFirstElement || index == 0 {
                                 ZStack {
@@ -110,7 +110,6 @@ struct MapRouteView: View {
                                         }
                                     }
                                 }.frame(width: 150, height: 280)
-                                    .padding()
                             }
                         }
                     }
