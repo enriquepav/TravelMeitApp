@@ -14,7 +14,7 @@ final class MonumentsListViewModel: ObservableObject {
     private var apiService: APIService!
     @Published var monumentsData = [MonumentData]()
     @Published var coordinateZero : CLLocationCoordinate2D
-    private let locationManager = LocationManager.shared
+    let locationManager = LocationManager.shared
     let zeroPoint = CLLocationCoordinate2D(latitude: 0, longitude: 0)
     var newList : [MonumentData] = []
     @Published private var userData = UserData()

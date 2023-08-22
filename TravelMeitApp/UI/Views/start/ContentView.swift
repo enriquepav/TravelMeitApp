@@ -81,7 +81,8 @@ struct ContentView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .edgesIgnoringSafeArea(.all)
         .statusBar(hidden: true)
-        .environmentObject(userData).onAppear(){
+        .environmentObject(userData)
+        .onAppear(){
             locationManager.requestLocation()
         }
     }

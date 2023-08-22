@@ -158,10 +158,9 @@ struct MapRouteView: View {
                     
                     Button(action: {
                         viewModel.getDistrictsData()
-                        let district = selectedItems.first?.district ?? "Barranco"
+                        let district = selectedItems.first?.district ?? "Tallin"
                         print(district)
                         textToSpeechManager.speakText(viewModel.getActualDistrict(district: district))
-                        
                     }, label: {
                         Text("Start!")
                             .frame(width: 80, height: 8)
@@ -188,6 +187,16 @@ struct MapRouteView: View {
         }.onAppear {
             selectedItems.append(viewModel1.monumentsData.first!)
             monumentsList = selectedItems
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
+                if success {
+                    print("All set!")
+                } else if let error = error {
+                    print(error.localizedDescription)
+                }
+            }
+            
+            let targetLocation = CLLocationCoordinate2D(latitude: monumentsList[0].latitude, longitude: monumentsList[0].longitude)
+            viewModel1.locationManager.startMonitoringTargetRegion(targetLocation1: targetLocation)
         }
         
     }

@@ -7,11 +7,13 @@
 
 import Foundation
 import CoreLocation
+import UserNotifications
 
 class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     static let shared = LocationManager()
 
     private let manager = CLLocationManager()
+    private let regionIdentifier = "TargetRegion"
 
     @Published var currentLocation: CLLocation?
 
@@ -49,5 +51,35 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
                currentLocation = location
+    }
+    
+    func startMonitoringTargetRegion(targetLocation1: CLLocationCoordinate2D) {
+        let region = CLCircularRegion(center: targetLocation1, radius: 100, identifier: regionIdentifier)
+        region.notifyOnEntry = true
+        manager.startMonitoring(for: region)
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+        if region.identifier == regionIdentifier {
+            self.showNotification()
+        }
+    }
+    
+    func showNotification() {
+        let content = UNMutableNotificationContent()
+        content.title = "NOTIFICACION DE CERCANIA"
+        content.body = "Estas llegando al punto esperado"
+        content.sound = UNNotificationSound.default
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request) { error in
+            if let error = error {
+                print("Error scheduling notification: \(error)")
+            } else {
+                print("Notification scheduled successfully.")
+            }
+        }
     }
 }
